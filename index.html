@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <main class="shell">
@@ -38,12 +38,12 @@
     </section>
 
     <section class="watch-section" id="watch-section" hidden>
-      <div class="section-head"><h2>Watchlist</h2><span id="watch-count">0 stocks</span></div>
+      <div class="section-head"><div><small>PINNED</small><h2>Watchlist</h2></div><span id="watch-count">0 stocks</span></div>
       <div id="watch-list" class="stock-list"></div>
     </section>
 
     <section class="results">
-      <div class="section-head"><h2 id="results-title">Signals</h2><span id="result-label">Nearest first</span></div>
+      <div class="section-head"><div><small>200W SCREEN</small><h2 id="results-title">Signals</h2></div><span id="result-label">Nearest first</span></div>
       <div id="stock-list" class="stock-list" aria-live="polite">
         <div class="empty"><span class="loader"></span><p>Loading data…</p></div>
       </div>
@@ -66,6 +66,6 @@
       <p>For research only. Not investment advice.</p>
     </footer>
   </main>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>
