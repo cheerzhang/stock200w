@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-07-03T13:39:20.235536+00:00",
+  "stocks": [
+    {
+      "price": 308.63,
+      "sma200": 206.946303,
+      "updated": "2026-07-02",
+      "symbol": "AAPL",
+      "name": "Apple",
+      "distance": 49.13530492013669
+    },
+    {
+      "price": 148.93,
+      "sma200": 129.542975,
+      "updated": "2026-07-02",
+      "symbol": "ABNB",
+      "name": "Airbnb",
+      "distance": 14.965709255943827
+    },
+    {
+      "price": 377.16,
+      "sma200": 217.591885,
+      "updated": "2026-07-02",
+      "symbol": "ADI",
+      "name": "Analog Devices",
+      "distance": 73.33367004932194
+    },
+    {
+      "price": 242.27,
+      "sma200": 243.40636750000002,
+      "updated": "2026-07-02",
+      "symbol": "ADP",
+      "name": "Automatic Data Processing",
+      "distance": -0.4668602188478088
+    },
+    {
+      "price": 207.48,
+      "sma200": 246.301425,
+      "updated": "2026-07-02",
+      "symbol": "ADSK",
+      "name": "Autodesk",
+      "distance": -15.761754118962168
+    },
+    {
+      "price": 138.51,
+      "sma200": 93.32836950000001,
+      "updated": "2026-07-02",
+      "symbol": "AEP",
+      "name": "American Electric Power",
+      "distance": 48.41146453330032
+    },
+    {
+      "price": 312.78,
+      "sma200": 256.47665,
+      "updated": "2026-07-02",
+      "symbol": "ALNY",
+      "name": "Alnylam Pharmaceuticals",
+      "distance": 21.95262219777121
+    },
+    {
+      "price": 603.04,
+      "sma200": 194.113947,
+      "updated": "2026-07-02",
+      "symbol": "AMAT",
+      "name": "Applied Materials",
+      "distance": 210.66289121409704
+    },
+    {
+      "price": 517.82,
+      "sma200": 156.027325,
+      "updated": "2026-07-02",
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "distance": 231.8777656413709
+    },
+    {
+      "price": 374.15,
+      "sma200": 274.8619555,
+      "updated": "2026-07-02",
+      "symbol": "AMGN",
+      "name": "Amgen",
+      "distance": 36.12287641604877
+    },
+    {
+      "price": 242.67,
+      "sma200": 176.788825,
+      "updated": "2026-07-02",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "distance": 37.26546347032964
+    },
+    {
+      "price": 527.06,
+      "sma200": 219.717325,
+      "updated": "2026-07-02",
+      "symbol": "APP",
+      "name": "AppLovin",
+      "distance": 139.8809470304629
+    },
+    {
+      "price": 1769.32,
+      "sma200": 839.9609690000001,
+      "updated": "2026-07-02",
+      "symbol": "ASML",
+      "name": "ASML Holding",
+      "distance": 110.64312096625524
+    },
+    {
+      "price": 360.45,
+      "sma200": 182.31090550000002,
+      "updated": "2026-07-02",
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "distance": 97.71170518375816
+    },
+    {
+      "price": 597.04,
+      "sma200": 398.69910000000004,
+      "updated": "2026-07-02",
+      "symbol": "AXON",
+      "name": "Axon Enterprise",
+      "distance": 49.74701472865124
+    },
+    {
+      "price": 184.56,
+      "sma200": 152.78909149999998,
+      "updated": "2026-07-02",
+      "symbol": "BKNG",
+      "name": "Booking Holdings",
+      "distance": 20.793963880595513
+    },
+    {
+      "price": 52.78,
+      "sma200": 37.840298499999996,
+      "updated": "2026-07-02",
+      "symbol": "BKR",
+      "name": "Baker Hughes",
+      "distance": 39.48092930609415
+    },
+    {
+      "price": 106.61,
+      "sma200": 71.8203935,
+      "updated": "2026-07-02",
+      "symbol": "CCEP",
+      "name": "Coca-Cola Europacific Partners",
+      "distance": 48.43973251135141
+    },
+    {
+      "price": 373.14,
+      "sma200": 272.12905,
+      "updated": "2026-07-02",
+      "symbol": "CDNS",
+      "name": "Cadence Design Systems",
+      "distance": 37.118767731706704
+    },
+    {
+      "price": 239.25,
+      "sma200": 201.512687,
+      "updated": "2026-07-02",
+      "symbol": "CEG",
+      "name": "Constellation Energy",
+      "distance": 18.727015932252456
+    },
+    {
+      "price": 23.79,
+      "sma200": 30.2075985,
+      "updated": "2026-07-02",
+      "symbol": "CMCSA",
+      "name": "Comcast",
+      "distance": -21.244980795146628
+    },
+    {
+      "price": 951.67,
+      "sma200": 766.1924700000001,
+      "updated": "2026-07-02",
+      "symbol": "COST",
+      "name": "Costco Wholesale",
+      "distance": 24.207694184204122
+    }
+  ],
+  "insufficient_history": [
+    {
+      "symbol": "ALAB",
+      "name": "Astera Labs",
+      "weeks": 119,
+      "checked_at": "2026-07-03",
+      "retry_after": "2028-01-20"
+    },
+    {
+      "symbol": "ARM",
+      "name": "Arm Holdings",
+      "weeks": 146,
+      "checked_at": "2026-07-03",
+      "retry_after": "2027-07-15"
+    }
+  ]
+}
