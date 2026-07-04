@@ -33,7 +33,7 @@ Run the daily update:
 ./scripts/local_update.sh
 ```
 
-The wrapper runs at most once per UTC day. It updates up to 25 eligible stocks, skips excluded and young listings, and continues from `data/update-state.json` without repeating stocks within the current cycle.
+Each invocation updates up to 25 eligible stocks, skips excluded and young listings, and continues from `data/update-state.json` without repeating stocks within the current cycle. The wrapper does not restrict how many times it can run per day.
 
 ## Local preview
 
@@ -60,5 +60,7 @@ Both files use a JSON array:
 2. Run the updater locally.
 3. Commit `data/stocks.json` and `data/update-state.json`, then push to `main`.
 4. The Pages workflow publishes the static site. GitHub only receives the generated market data, never the API key.
+
+Every deployment stamps the page assets with the pushed commit and publishes a version marker. An open page checks that marker every 30 seconds and reloads automatically after a newer deployment becomes available.
 
 The constituent list reflects the Nasdaq-100 June 2026 quarterly changes. For research only; not investment advice.
