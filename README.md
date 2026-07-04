@@ -61,4 +61,8 @@ Both files use a JSON array:
 3. Run the updater locally.
 4. Commit the generated data and any code changes, then push to `main`. GitHub Pages publishes the branch automatically. GitHub only receives the generated market data, never the API key.
 
+The branch build injects the current commit revision into the CSS and JavaScript URLs, preventing stale browser assets after a push. Open pages check `version.json` every 30 seconds and reload after the new branch build is live.
+
+The site is designed as a mobile web (WAP) page with responsive controls, touch-sized targets, and phone safe-area support.
+
 The constituent list reflects the Nasdaq-100 June 2026 quarterly changes. For research only; not investment advice.

@@ -1,6 +1,16 @@
 const state={stocks:[],insufficient:[],blacklist:[],watchlist:[],companies:new Map(),range:"below",query:""};
 const $=s=>document.querySelector(s);
 const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2}).format(n);
+let deployedRevision=null;
+async function checkForUpdate(){
+  try{
+    const response=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!response.ok)return;
+    const {revision}=await response.json();
+    if(deployedRevision&&revision&&revision!==deployedRevision){location.reload();return}
+    deployedRevision=revision||deployedRevision;
+  }catch(e){}
+}
 function weekLabel(value){
   if(!value)return "Unknown week"; const date=new Date(`${value.slice(0,10)}T12:00:00Z`);
   const day=date.getUTCDay()||7; date.setUTCDate(date.getUTCDate()+4-day);
@@ -114,3 +124,5 @@ function renderAllWatchlist(){
 $("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render();renderWatchlist()});
 $("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderAllWatchlist();renderInsufficient();renderBlacklist()}});
 init();
+checkForUpdate();
+setInterval(checkForUpdate,30000);

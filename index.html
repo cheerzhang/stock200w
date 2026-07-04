@@ -1,15 +1,20 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f3f0e8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Find Nasdaq-100 stocks trading near or below their 200-week moving average">
   <title>200W · Nasdaq Trend Watch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v={{ site.github.build_revision }}">
 </head>
 <body>
   <main class="shell">
@@ -70,6 +75,6 @@
       <p>For research only. Not investment advice.</p>
     </footer>
   </main>
-  <script src="app.js?v=2" defer></script>
+  <script src="app.js?v={{ site.github.build_revision }}" defer></script>
 </body>
 </html>
