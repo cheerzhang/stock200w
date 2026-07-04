@@ -92,22 +92,29 @@ function renderAbove(){
   $("#above-note").hidden=!rows.length; $("#above-count").textContent=rows.length;
   $("#above-list").innerHTML=rows.map(s=>`<div class="above-row"><strong>${s.symbol}</strong><span>${s.name}</span><b>+${s.distance.toFixed(2)}%</b></div>`).join("");
 }
-function card(s,flag=""){
+function card(s,flag="",extraClass=""){
   const d=s.distance; const below=d<0;
   const label=below?`${Math.abs(d).toFixed(1)}% below`:`${d.toFixed(1)}% above`;
   const width=Math.max(3,Math.min(100,50+d*5));
-  return `<article class="stock-card">
+  return `<article class="stock-card ${extraClass}">
     <div class="identity"><div class="ticker">${s.symbol}</div><div class="company"><strong>${s.name}</strong><span>200W · ${fmt(s.sma200)}${flag?` · ${flag}`:""}</span></div></div>
     <div class="price"><strong>${fmt(s.price)}</strong><span class="distance ${below?"below":""}">${label}</span></div>
     <div class="bar-wrap"><div class="bar"><i style="width:${width}%"></i></div><span>${weekLabel(s.updated)}</span></div>
   </article>`;
 }
 function renderWatchlist(){
-  const rows=state.watchlist.map(symbol=>state.stocks.find(s=>s.symbol===symbol)).filter(stock=>stock&&inSelectedRange(stock.distance));
+  const rows=state.watchlist.map(symbol=>({symbol,stock:state.stocks.find(s=>s.symbol===symbol)}));
   $("#watch-section").hidden=state.query||!rows.length;
   if(state.query||!rows.length)return;
-  $("#watch-count").textContent=`${rows.length} stocks`;
-  $("#watch-list").innerHTML=rows.map(stock=>card(stock,state.blacklist.includes(stock.symbol)?"Excluded":"Watchlist")).join("");
+  const matches=rows.filter(({stock})=>stock&&inSelectedRange(stock.distance));
+  const outside=rows.filter(({stock})=>!stock||!inSelectedRange(stock.distance));
+  $("#watch-count").textContent=`${matches.length} matches · ${rows.length} total`;
+  $("#watch-list").innerHTML=[...matches,...outside].map(({symbol,stock})=>{
+    if(!stock)return `<article class="stock-card status-card watch-outside"><div class="identity"><div class="ticker">${symbol}</div><div class="company"><strong>${state.companies.get(symbol)||symbol}</strong><span>Watchlist · Awaiting scan</span></div></div></article>`;
+    const excluded=state.blacklist.includes(symbol),matched=inSelectedRange(stock.distance);
+    const flag=excluded?"Excluded":matched?"Watchlist · In current range":"Watchlist · Outside current range";
+    return card(stock,flag,matched?"watch-match":"watch-outside");
+  }).join("");
 }
 function renderAllWatchlist(){
   const rows=state.watchlist.map(symbol=>({symbol,stock:state.stocks.find(s=>s.symbol===symbol)}));
