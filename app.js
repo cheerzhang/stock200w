@@ -22,7 +22,7 @@ async function init(){
     state.watchlist=[...new Set(state.watchlist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())||value.toUpperCase()).filter(Boolean))];
     const dates=state.stocks.map(x=>x.updated).filter(Boolean).sort();
     $("#asof").textContent=dates.length?`Updated ${weekLabel(dates.at(-1))}`:"Awaiting first update";
-    render(); renderWatchlist(); renderInsufficient(); renderBlacklist();
+    render(); renderWatchlist(); renderAllWatchlist(); renderInsufficient(); renderBlacklist();
   }catch(e){
     $("#stock-list").innerHTML=`<div class="empty"><p>No market data yet</p><small>Run the local update script to populate this page.</small></div>`;
     updateStats([]);
@@ -52,7 +52,7 @@ function renderSearch(){
   $("#watch-section").hidden=true;
   $("#results-title").textContent="Search results"; $("#result-label").textContent=`${matches.length} stocks`;
   $("#stock-list").innerHTML=matches.length?matches.map(([symbol,name])=>searchResult(symbol,name)).join(""):`<div class="empty"><p>No match in the Nasdaq-100.</p><small>Check the symbol or company name.</small></div>`;
-  $("#above-note").hidden=true; $("#history-note").hidden=true; $("#blacklist-note").hidden=true;
+  $("#above-note").hidden=true; $("#watchlist-all-note").hidden=true; $("#history-note").hidden=true; $("#blacklist-note").hidden=true;
 }
 function searchResult(symbol,name){
   const stock=state.stocks.find(s=>s.symbol===symbol),young=state.insufficient.find(s=>s.symbol===symbol);
@@ -99,6 +99,18 @@ function renderWatchlist(){
   $("#watch-count").textContent=`${rows.length} stocks`;
   $("#watch-list").innerHTML=rows.map(stock=>card(stock,state.blacklist.includes(stock.symbol)?"Excluded":"Watchlist")).join("");
 }
+function renderAllWatchlist(){
+  const rows=state.watchlist.map(symbol=>({symbol,stock:state.stocks.find(s=>s.symbol===symbol)}));
+  $("#watchlist-all-note").hidden=state.query||!rows.length;
+  if(state.query||!rows.length)return;
+  $("#watchlist-all-count").textContent=rows.length;
+  $("#watchlist-all-list").innerHTML=rows.map(({symbol,stock})=>{
+    const name=stock?.name||state.companies.get(symbol)||symbol;
+    if(!stock||!Number.isFinite(stock.distance))return `<div class="above-row"><strong>${symbol}</strong><span>${name}</span><b class="pending">Awaiting scan</b></div>`;
+    const below=stock.distance<0;
+    return `<div class="above-row"><strong>${symbol}</strong><span>${name}</span><b class="${below?"below":""}">${below?"":"+"}${stock.distance.toFixed(2)}%</b></div>`;
+  }).join("");
+}
 $("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render();renderWatchlist()});
-$("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderInsufficient();renderBlacklist()}});
+$("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderAllWatchlist();renderInsufficient();renderBlacklist()}});
 init();
