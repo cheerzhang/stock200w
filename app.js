@@ -43,7 +43,7 @@ async function init(){
   }
 }
 function filtered(){
-  return state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance<=state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
+  return state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance<=state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
 }
 function render(){
   if(state.query){renderSearch();return}
@@ -83,7 +83,7 @@ function renderBlacklist(){
   $("#blacklist-list").innerHTML=state.blacklist.length?state.blacklist.map(symbol=>`<div class="blacklist-row"><strong>${symbol}</strong><span>${state.companies.get(symbol)||"Excluded from scanning"}</span><i>Not scanned</i></div>`).join(""):`<div class="blacklist-row empty-row"><span>No stocks are currently excluded</span></div>`;
 }
 function renderAbove(){
-  const rows=state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);
+  const rows=state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);
   $("#above-note").hidden=!rows.length; $("#above-count").textContent=rows.length;
   $("#above-list").innerHTML=rows.map(s=>`<div class="above-row"><strong>${s.symbol}</strong><span>${s.name}</span><b>+${s.distance.toFixed(2)}%</b></div>`).join("");
 }
