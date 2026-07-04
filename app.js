@@ -43,12 +43,14 @@ async function init(){
   }
 }
 function filtered(){
-  const threshold=Number(state.range);
   return state.stocks.filter(s=>{
     if(state.blacklist.includes(s.symbol)||state.watchlist.includes(s.symbol)||!Number.isFinite(s.distance))return false;
-    const inRange=state.range==="below"?s.distance<0:s.distance>=0&&s.distance<threshold;
-    return inRange&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query));
+    return inSelectedRange(s.distance)&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query));
   }).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
+}
+function inSelectedRange(distance){
+  if(!Number.isFinite(distance))return false;
+  return state.range==="below"?distance<0:distance>=0&&distance<Number(state.range);
 }
 function render(){
   if(state.query){renderSearch();return}
@@ -105,14 +107,13 @@ function card(s,flag=""){
   </article>`;
 }
 function renderWatchlist(){
-  if(!state.watchlist.length)return;
-  $("#watch-section").hidden=false; $("#watch-count").textContent=`${state.watchlist.length} stocks`;
-  $("#watch-list").innerHTML=state.watchlist.map(symbol=>{
-    const stock=state.stocks.find(s=>s.symbol===symbol); if(stock)return card(stock,state.blacklist.includes(symbol)?"Excluded":"Watchlist");
-    return searchResult(symbol,state.companies.get(symbol)||symbol);
-  }).join("");
+  const rows=state.watchlist.map(symbol=>state.stocks.find(s=>s.symbol===symbol)).filter(stock=>stock&&inSelectedRange(stock.distance));
+  $("#watch-section").hidden=state.query||!rows.length;
+  if(state.query||!rows.length)return;
+  $("#watch-count").textContent=`${rows.length} stocks`;
+  $("#watch-list").innerHTML=rows.map(stock=>card(stock,state.blacklist.includes(stock.symbol)?"Excluded":"Watchlist")).join("");
 }
-$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render()});
+$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render();renderWatchlist()});
 $("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderInsufficient();renderBlacklist()}});
 init();
 checkDeployment();
