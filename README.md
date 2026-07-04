@@ -56,11 +56,9 @@ Both files use a JSON array:
 
 ## GitHub Pages deployment
 
-1. In the repository, open **Settings → Pages** and select **GitHub Actions** as the source.
-2. Run the updater locally.
-3. Commit `data/stocks.json` and `data/update-state.json`, then push to `main`.
-4. The Pages workflow publishes the static site. GitHub only receives the generated market data, never the API key.
-
-Every deployment stamps the page assets with the pushed commit and publishes a version marker. An open page checks that marker every 30 seconds and reloads automatically after a newer deployment becomes available.
+1. In the repository, open **Settings → Pages** and select **Deploy from a branch** as the source.
+2. Select the `main` branch and the `/ (root)` folder.
+3. Run the updater locally.
+4. Commit the generated data and any code changes, then push to `main`. GitHub Pages publishes the branch automatically. GitHub only receives the generated market data, never the API key.
 
 The constituent list reflects the Nasdaq-100 June 2026 quarterly changes. For research only; not investment advice.
