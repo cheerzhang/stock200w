@@ -1,4 +1,4 @@
-const state={stocks:[],insufficient:[],blacklist:[],watchlist:[],companies:new Map(),threshold:5,query:""};
+const state={stocks:[],insufficient:[],blacklist:[],watchlist:[],companies:new Map(),range:"below",query:""};
 const $=s=>document.querySelector(s);
 const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2}).format(n);
 let deploymentVersion=null;
@@ -43,13 +43,19 @@ async function init(){
   }
 }
 function filtered(){
-  return state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance<=state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
+  const threshold=Number(state.range);
+  return state.stocks.filter(s=>{
+    if(state.blacklist.includes(s.symbol)||state.watchlist.includes(s.symbol)||!Number.isFinite(s.distance))return false;
+    const inRange=state.range==="below"?s.distance<0:s.distance>=0&&s.distance<threshold;
+    return inRange&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query));
+  }).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
 }
 function render(){
   if(state.query){renderSearch();return}
   const rows=filtered(); updateStats(rows);
   $("#results-title").textContent="Signals";
-  $("#result-label").textContent=`${rows.length} stocks · nearest first`;
+  const rangeLabel=state.range==="below"?"below 200W":`0–${state.range}% above 200W`;
+  $("#result-label").textContent=`${rows.length} stocks · ${rangeLabel}`;
   $("#stock-list").innerHTML=rows.length?rows.map(card).join(""):`<div class="empty"><p>No stocks in this range.</p><small>Try widening the near range.</small></div>`;
   renderAbove();
 }
@@ -83,7 +89,8 @@ function renderBlacklist(){
   $("#blacklist-list").innerHTML=state.blacklist.length?state.blacklist.map(symbol=>`<div class="blacklist-row"><strong>${symbol}</strong><span>${state.companies.get(symbol)||"Excluded from scanning"}</span><i>Not scanned</i></div>`).join(""):`<div class="blacklist-row empty-row"><span>No stocks are currently excluded</span></div>`;
 }
 function renderAbove(){
-  const rows=state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>state.threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);
+  const threshold=state.range==="below"?0:Number(state.range);
+  const rows=state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>=threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);
   $("#above-note").hidden=!rows.length; $("#above-count").textContent=rows.length;
   $("#above-list").innerHTML=rows.map(s=>`<div class="above-row"><strong>${s.symbol}</strong><span>${s.name}</span><b>+${s.distance.toFixed(2)}%</b></div>`).join("");
 }
@@ -105,7 +112,7 @@ function renderWatchlist(){
     return searchResult(symbol,state.companies.get(symbol)||symbol);
   }).join("");
 }
-$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.threshold=+e.target.dataset.value;render()});
+$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render()});
 $("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderInsufficient();renderBlacklist()}});
 init();
 checkDeployment();
