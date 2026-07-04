@@ -1,6 +1,78 @@
 {
-  "generated_at": "2026-07-04T08:35:00.744332+00:00",
+  "generated_at": "2026-07-04T08:57:57.122084+00:00",
   "stocks": [
+    {
+      "price": 434.16,
+      "sma200": 179.35312150000001,
+      "updated": "2026-07-02",
+      "symbol": "TSM",
+      "name": "TSM",
+      "distance": 142.06994356660806
+    },
+    {
+      "price": 194.83,
+      "sma200": 104.63239449999999,
+      "updated": "2026-07-02",
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "distance": 86.20428303396996
+    },
+    {
+      "price": 975.56,
+      "sma200": 162.420996,
+      "updated": "2026-07-02",
+      "symbol": "MU",
+      "name": "Micron Technology",
+      "distance": 500.63663197829425
+    },
+    {
+      "price": 245.29,
+      "sma200": 76.544758,
+      "updated": "2026-07-02",
+      "symbol": "MRVL",
+      "name": "Marvell Technology",
+      "distance": 220.45303481134528
+    },
+    {
+      "price": 120.35,
+      "sma200": 35.870967,
+      "updated": "2026-07-02",
+      "symbol": "INTC",
+      "name": "Intel",
+      "distance": 235.50810046464593
+    },
+    {
+      "price": 196.79,
+      "sma200": 56.327281,
+      "updated": "2026-07-02",
+      "symbol": "GLW",
+      "name": "GLW",
+      "distance": 249.36889639675664
+    },
+    {
+      "price": 129.3,
+      "sma200": 67.84445,
+      "updated": "2026-07-02",
+      "symbol": "PLTR",
+      "name": "Palantir Technologies",
+      "distance": 90.58301747600581
+    },
+    {
+      "price": 390.49,
+      "sma200": 382.5795005,
+      "updated": "2026-07-02",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "distance": 2.0676746897472675
+    },
+    {
+      "price": 140.27,
+      "sma200": 142.83720499999998,
+      "updated": "2026-07-02",
+      "symbol": "ORCL",
+      "name": "ORCL",
+      "distance": -1.7972943393844587
+    },
     {
       "price": 308.63,
       "sma200": 206.946303,
