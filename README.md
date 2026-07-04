@@ -7,7 +7,7 @@ A mobile-friendly static site that finds Nasdaq-100 stocks trading near or below
 - Market data comes from Alpha Vantage `TIME_SERIES_WEEKLY_ADJUSTED`.
 - The signal uses the latest adjusted weekly close and the arithmetic mean of the latest 200 adjusted weekly closes.
 - Distance is calculated as `(price / 200-week average - 1) × 100%`.
-- The free Alpha Vantage service is limited to 25 requests per day, so the updater scans a rotating batch and resumes from its saved cursor on the next run.
+- The free Alpha Vantage service is limited to 25 requests per day, so the updater scans a rotating batch and resumes from its saved cursor on the next run. Each cycle scans watchlist stocks first, then the remaining Nasdaq-100 stocks in list order, without duplicates.
 - Listings with fewer than 200 weeks of history are recorded with a future retry date and skipped until then.
 
 ## Local setup
@@ -46,7 +46,7 @@ Open <http://localhost:8000>.
 ## Lists
 
 - Add symbols to `data/blacklist.json` to exclude them from both scanning and the signal lists.
-- Add symbols to `data/watchlist.json` to keep them in the prominent Watchlist section. This does not change scan order or API usage.
+- Add symbols to `data/watchlist.json` to keep them in the prominent Watchlist section and scan them first in each cycle. Symbols outside the Nasdaq-100 pool are supported, and duplicate entries are scanned only once.
 
 Both files use a JSON array:
 

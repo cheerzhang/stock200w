@@ -19,7 +19,7 @@ async function init(){
     if(companiesRes.ok)state.companies=new Map(await companiesRes.json());
     const byName=new Map([...state.companies].map(([symbol,name])=>[name.toUpperCase(),symbol]));
     state.blacklist=[...new Set(state.blacklist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())).filter(Boolean))];
-    state.watchlist=[...new Set(state.watchlist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())).filter(Boolean))];
+    state.watchlist=[...new Set(state.watchlist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())||value.toUpperCase()).filter(Boolean))];
     const dates=state.stocks.map(x=>x.updated).filter(Boolean).sort();
     $("#asof").textContent=dates.length?`Updated ${weekLabel(dates.at(-1))}`:"Awaiting first update";
     render(); renderWatchlist(); renderInsufficient(); renderBlacklist();
@@ -56,7 +56,8 @@ function searchResult(symbol,name){
 function updateStats(rows){
   $("#match-count").textContent=rows.length;
   $("#below-count").textContent=rows.filter(x=>x.distance<0).length;
-  $("#coverage").textContent=`${state.stocks.filter(s=>!state.blacklist.includes(s.symbol)).length}/${101-state.blacklist.length}`;
+  const eligible=new Set([...state.companies.keys(),...state.watchlist].filter(symbol=>!state.blacklist.includes(symbol)));
+  $("#coverage").textContent=`${state.stocks.filter(s=>!state.blacklist.includes(s.symbol)).length}/${eligible.size}`;
 }
 function renderInsufficient(){
   const rows=state.insufficient.filter(s=>!state.blacklist.includes(s.symbol)); $("#history-note").hidden=!rows.length; if(!rows.length)return;
