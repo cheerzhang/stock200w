@@ -1,18 +1,18 @@
 # 200W
 
-一个适合手机浏览的静态页面，按 Wishlist、纳指 100 和标普 500 三个股票池查看股价与 200 周均线的距离。
+A mobile-friendly static site for comparing Wishlist, Nasdaq-100, and S&P 500 stocks with their 200-week moving averages.
 
-## 工作方式
+## How it works
 
-- 行情来自 Alpha Vantage `TIME_SERIES_WEEKLY_ADJUSTED`。
-- 距离按 `(最新复权周收盘价 / 200 周均线 - 1) × 100%` 计算。
-- 正常扫描顺序为 Wishlist → 纳指 100 → 标普 500；跨列表重复的股票只出现一次，扫描游标会在每天的批次之间延续。
-- `data/blacklist.json` 是三个股票池共享的黑名单。进入黑名单的股票不会被扫描，也不会占用请求 quota。
-- 不足 200 周历史的股票会记录预计可重试日期；日期到来前直接跳过且不占 quota，到期后自动重新进入扫描计划。
+- Market data comes from Alpha Vantage `TIME_SERIES_WEEKLY_ADJUSTED`.
+- Distance is calculated as `(latest adjusted weekly close / 200-week average - 1) × 100%`.
+- The normal scan order is Wishlist → Nasdaq-100 → S&P 500. Symbols shared by multiple lists are scanned only once, and the scan cursor continues across batches.
+- `data/blacklist.json` is shared by all three stock universes. Blacklisted stocks are never scanned and do not consume request quota.
+- Stocks with less than 200 weeks of history are stored with an estimated retry date. They are skipped without consuming quota until that date, then automatically rejoin the scan plan.
 
-## 本地设置
+## Local setup
 
-复制环境文件并填入 Alpha Vantage key：
+Copy the private environment file and add your Alpha Vantage key:
 
 ```bash
 cp .env.local.example .env.local
@@ -23,49 +23,51 @@ ALPHA_VANTAGE_API_KEY=your_key
 DAILY_LIMIT=25
 ```
 
-运行扫描：
+Run a scan:
 
 ```bash
 ./scripts/local_update.sh
 ```
 
-在终端交互运行时，脚本会询问本次是否优先重扫 Wishlist。选择 `y` 后，先扫描 Wishlist，剩余 quota 再从保存的游标继续原计划；同一批次不会重复请求同一只股票。也可以直接传参数：
+When run interactively, the script asks whether to rescan the Wishlist first. Choosing `y` scans the Wishlist before resuming the saved plan with any remaining quota. A symbol is never requested twice within the same batch. You can also pass the option directly:
 
 ```bash
 ./scripts/local_update.sh --rescan-wishlist
 ```
 
-非交互运行默认不重扫 Wishlist，继续原计划。单个 Alpha Vantage key 每批最多使用 25 次请求；`DAILY_LIMIT` 可以把本次批次设得更小。
+A non-interactive run resumes the normal plan without an extra Wishlist scan. One Alpha Vantage key uses at most 25 requests per batch; set `DAILY_LIMIT` to use a smaller batch.
 
-## 本地预览
+## Local preview
 
 ```bash
 python3 -m http.server 8000
 ```
 
-打开 <http://localhost:8000>。首页是 Wishlist，第二个 tab 是纳指 100，第三个 tab 是标普 500；Wishlist 卡片会同时标注它是否属于这两个指数。
+Open <http://localhost:8000>. The first tab is Wishlist, followed by Nasdaq-100 and S&P 500. Wishlist cards show whether each stock belongs to either index.
 
-## 列表文件
+## List files
 
-- `data/watchlist.json`：Wishlist 股票代码数组，允许放入两个指数之外的股票。
-- `data/blacklist.json`：共享黑名单股票代码数组。
-- `data/nasdaq100.json`：纳指 100 的 `[代码, 名称]` 快照。
-- `data/sp500.json`：标普 500 的 `[代码, 名称]` 快照。
+- `data/watchlist.json`: Wishlist symbol array; stocks outside both indexes are supported.
+- `data/blacklist.json`: shared blacklist symbol array.
+- `data/nasdaq100.json`: Nasdaq-100 `[symbol, name]` snapshot.
+- `data/sp500.json`: S&P 500 `[symbol, name]` snapshot.
 
-Wishlist 和黑名单示例：
+Wishlist and blacklist example:
 
 ```json
 ["AAPL", "MSFT"]
 ```
 
-更新标普 500 快照时，先下载成分股页面，再运行：
+To refresh the S&P 500 snapshot, download the constituents page and run:
 
 ```bash
 python3 scripts/update_sp500.py /path/to/downloaded-page.html
 ```
 
-## GitHub Pages 发布
+## GitHub Pages deployment
 
-扫描完成后提交 `data/stocks.json`、`data/update-state.json` 和相关列表文件并推送。GitHub Pages 只会收到生成后的行情数据，不会收到 `.env.local` 或 API key。
+After scanning, commit and push `data/stocks.json`, `data/update-state.json`, and any changed list files. GitHub Pages receives only generated market data—never `.env.local` or the API key.
 
-页面每 30 秒检查一次 `version.json`；新版本部署完成后，已打开的页面会自动刷新。仅供研究，不构成投资建议。
+The page checks `version.json` every 30 seconds. Once a new commit has been deployed, an open page reloads automatically. A locally generated update is not visible on a phone until it has been committed, pushed, and deployed.
+
+For research only. Not investment advice.
