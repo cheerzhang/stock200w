@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Rotate through Nasdaq-100 symbols and update weekly 200-week SMA data."""
+"""Rotate through wishlist, Nasdaq-100 and S&P 500 weekly 200-week SMA data."""
+import argparse
 import datetime as dt
 import json
 import os
@@ -10,12 +11,13 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 SYMBOLS_FILE=ROOT/"data/nasdaq100.json"
+SP500_FILE=ROOT/"data/sp500.json"
 OUTPUT_FILE=ROOT/"data/stocks.json"
 STATE_FILE=ROOT/"data/update-state.json"
 BLACKLIST_FILE=ROOT/"data/blacklist.json"
 WATCHLIST_FILE=ROOT/"data/watchlist.json"
 API_URL="https://www.alphavantage.co/query"
-SCAN_ORDER_VERSION="watchlist-first-v2"
+SCAN_ORDER_VERSION="wishlist-nasdaq-sp500-v3"
 
 class InsufficientHistory(Exception):
     def __init__(self, weeks, latest):
@@ -49,12 +51,16 @@ def resolve_watchlist(values, valid_symbols, symbol_names):
             seen.add(symbol)
     return resolved
 
-def build_scan_order(symbols, watchlist):
-    watched=set(watchlist)
-    by_symbol={symbol:name for symbol,name in symbols}
-    return [(symbol,by_symbol.get(symbol,symbol)) for symbol in watchlist]+[
-        (symbol,name) for symbol,name in symbols if symbol not in watched
-    ]
+def build_scan_order(nasdaq, sp500, wishlist):
+    names={symbol:name for symbol,name in [*sp500,*nasdaq]}
+    seen=set()
+    order=[]
+    for group in ([(symbol,names.get(symbol,symbol)) for symbol in wishlist],nasdaq,sp500):
+        for symbol,name in group:
+            if symbol not in seen:
+                order.append((symbol,name))
+                seen.add(symbol)
+    return order
 
 def fetch(symbol, key):
     params=urllib.parse.urlencode({"function":"TIME_SERIES_WEEKLY_ADJUSTED","symbol":symbol,"apikey":key})
@@ -73,15 +79,20 @@ def fetch(symbol, key):
     return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0][0]}
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--rescan-wishlist",action="store_true",help="scan wishlist first, then resume the saved rotation")
+    args=parser.parse_args()
     raw_keys=os.environ.get("ALPHA_VANTAGE_API_KEYS") or os.environ.get("ALPHA_VANTAGE_API_KEY","")
     keys=[key.strip() for key in raw_keys.split(",") if key.strip()]
     if not keys: raise SystemExit("ALPHA_VANTAGE_API_KEYS or ALPHA_VANTAGE_API_KEY is required")
-    symbols=load(SYMBOLS_FILE,[])
+    nasdaq=load(SYMBOLS_FILE,[])
+    sp500=load(SP500_FILE,[])
+    symbols=build_scan_order(nasdaq,sp500,[])
     symbol_names={name.upper():symbol for symbol,name in symbols}
     valid_symbols={symbol for symbol,_ in symbols}
-    blacklist=set(resolve_symbols(load(BLACKLIST_FILE,[]),valid_symbols,symbol_names))
     watchlist=resolve_watchlist(load(WATCHLIST_FILE,[]),valid_symbols,symbol_names)
-    scan_order=build_scan_order(symbols,watchlist)
+    blacklist=set(resolve_watchlist(load(BLACKLIST_FILE,[]),valid_symbols|set(watchlist),symbol_names))
+    scan_order=build_scan_order(nasdaq,sp500,watchlist)
     old=load(OUTPUT_FILE,{"stocks":[]})
     cached={row["symbol"]:row for row in old.get("stocks",[])}
     insufficient={row["symbol"]:row for row in old.get("insufficient_history",[])}
@@ -91,14 +102,26 @@ def main():
     # Young listings are skipped until they can have 200 observations. Skips do
     # not consume one of the 25 daily request slots.
     batch=[]
+    batch_symbols=set()
     scanned=0
     today=dt.date.today()
+    # An explicit wishlist refresh is extra work ahead of the saved plan. It
+    # consumes request quota but never rewinds the normal rotation cursor.
+    if args.rescan_wishlist:
+        names={symbol:name for symbol,name in scan_order}
+        for symbol in watchlist:
+            known=insufficient.get(symbol)
+            if len(batch)>=limit: break
+            if symbol not in blacklist and (not known or dt.date.fromisoformat(known["retry_after"])<=today):
+                batch.append((symbol,names.get(symbol,symbol),0))
+                batch_symbols.add(symbol)
     while len(batch)<limit and scanned<len(scan_order):
         symbol,name=scan_order[(cursor+scanned)%len(scan_order)]
         known=insufficient.get(symbol)
         scanned+=1
-        if symbol not in blacklist and (not known or dt.date.fromisoformat(known["retry_after"])<=today):
+        if symbol not in batch_symbols and symbol not in blacklist and (not known or dt.date.fromisoformat(known["retry_after"])<=today):
             batch.append((symbol,name,scanned))
+            batch_symbols.add(symbol)
     failures=[]
     key_index=0
     key_requests=[0]*len(keys)
@@ -115,7 +138,7 @@ def main():
                 result.update({"symbol":symbol,"name":name})
                 result["distance"]=(result["price"]/result["sma200"]-1)*100
                 cached[symbol]=result
-                progress_scanned=scan_position
+                progress_scanned=max(progress_scanned,scan_position)
                 print(f"updated {symbol}: {result['distance']:+.2f}% (key {key_index+1})")
                 break
             except InsufficientHistory as exc:
@@ -123,7 +146,7 @@ def main():
                 retry_after=latest+dt.timedelta(weeks=200-exc.weeks)
                 insufficient[symbol]={"symbol":symbol,"name":name,"weeks":exc.weeks,"checked_at":today.isoformat(),"retry_after":retry_after.isoformat()}
                 cached.pop(symbol,None)
-                progress_scanned=scan_position
+                progress_scanned=max(progress_scanned,scan_position)
                 failures.append(f"{symbol}: {exc}; retry after {retry_after}")
                 print(f"recorded {symbol}: {exc.weeks}/200 weeks, retry after {retry_after}")
                 break
@@ -135,7 +158,7 @@ def main():
                     key_index+=1
                     continue
                 failures.append(f"{symbol}: {exc}")
-                progress_scanned=scan_position
+                progress_scanned=max(progress_scanned,scan_position)
                 print(f"failed {symbol}: {exc}")
                 break
         else:
@@ -144,7 +167,7 @@ def main():
             break
         if index<len(batch)-1: time.sleep(1)
     ordered=[cached[symbol] for symbol,_ in scan_order if symbol in cached and symbol not in blacklist]
-    young=[insufficient[symbol] for symbol,_ in symbols if symbol in insufficient]
+    young=[insufficient[symbol] for symbol,_ in scan_order if symbol in insufficient]
     OUTPUT_FILE.write_text(json.dumps({"generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"stocks":ordered,"insufficient_history":young},indent=2)+"\n")
     STATE_FILE.write_text(json.dumps({"cursor":(cursor+progress_scanned)%len(scan_order),"scan_order":SCAN_ORDER_VERSION})+"\n")
     eligible_total=sum(symbol not in blacklist for symbol,_ in scan_order)

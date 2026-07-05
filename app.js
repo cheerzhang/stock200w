@@ -1,135 +1,24 @@
-const state={stocks:[],insufficient:[],blacklist:[],watchlist:[],companies:new Map(),range:"below",query:""};
+const state={stocks:[],insufficient:[],blacklist:[],wishlist:[],nasdaq:[],sp500:[],companies:new Map(),tab:"wishlist",range:"below",query:""};
 const $=s=>document.querySelector(s);
 const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:2}).format(n);
+const poolConfig={wishlist:{label:"WISHLIST",eyebrow:"WISHLIST · WEEKLY SIGNAL",intro:"先看你真正关心的股票，再看它们离 200 周均线有多远。"},nasdaq:{label:"NASDAQ-100",eyebrow:"NASDAQ-100 · WEEKLY SIGNAL",intro:"查看纳指 100 成分股与长期趋势之间的距离。"},sp500:{label:"S&P 500",eyebrow:"S&P 500 · WEEKLY SIGNAL",intro:"从更广的标普 500 股票池里寻找长期趋势信号。"}};
 let deployedRevision=null;
-async function checkForUpdate(){
-  try{
-    const response=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});
-    if(!response.ok)return;
-    const {revision}=await response.json();
-    if(deployedRevision&&revision&&revision!==deployedRevision){location.reload();return}
-    deployedRevision=revision||deployedRevision;
-  }catch(e){}
-}
-function weekLabel(value){
-  if(!value)return "Unknown week"; const date=new Date(`${value.slice(0,10)}T12:00:00Z`);
-  const day=date.getUTCDay()||7; date.setUTCDate(date.getUTCDate()+4-day);
-  const year=date.getUTCFullYear(),start=new Date(Date.UTC(year,0,1));
-  const week=Math.ceil((((date-start)/86400000)+1)/7);
-  return `Week ${week}, ${year}`;
-}
-
-async function init(){
-  try{
-    const [res,blacklistRes,watchlistRes,companiesRes]=await Promise.all([fetch("data/stocks.json",{cache:"no-cache"}),fetch("data/blacklist.json",{cache:"no-cache"}),fetch("data/watchlist.json",{cache:"no-cache"}),fetch("data/nasdaq100.json",{cache:"no-cache"})]);
-    if(!res.ok) throw new Error("Market data is unavailable");
-    const data=await res.json(); state.stocks=data.stocks||[]; state.insufficient=data.insufficient_history||[];
-    if(blacklistRes.ok)state.blacklist=await blacklistRes.json();
-    if(watchlistRes.ok)state.watchlist=await watchlistRes.json();
-    if(companiesRes.ok)state.companies=new Map(await companiesRes.json());
-    const byName=new Map([...state.companies].map(([symbol,name])=>[name.toUpperCase(),symbol]));
-    state.blacklist=[...new Set(state.blacklist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())).filter(Boolean))];
-    state.watchlist=[...new Set(state.watchlist.map(value=>state.companies.has(value.toUpperCase())?value.toUpperCase():byName.get(value.toUpperCase())||value.toUpperCase()).filter(Boolean))];
-    const dates=state.stocks.map(x=>x.updated).filter(Boolean).sort();
-    $("#asof").textContent=dates.length?`Updated ${weekLabel(dates.at(-1))}`:"Awaiting first update";
-    render(); renderWatchlist(); renderAllWatchlist(); renderInsufficient(); renderBlacklist();
-  }catch(e){
-    $("#stock-list").innerHTML=`<div class="empty"><p>No market data yet</p><small>Run the local update script to populate this page.</small></div>`;
-    updateStats([]);
-  }
-}
-function filtered(){
-  return state.stocks.filter(s=>{
-    if(state.blacklist.includes(s.symbol)||state.watchlist.includes(s.symbol)||!Number.isFinite(s.distance))return false;
-    return inSelectedRange(s.distance)&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query));
-  }).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance));
-}
-function inSelectedRange(distance){
-  if(!Number.isFinite(distance))return false;
-  return state.range==="below"?distance<0:distance>=0&&distance<Number(state.range);
-}
-function render(){
-  if(state.query){renderSearch();return}
-  const rows=filtered(); updateStats(rows);
-  $("#results-title").textContent="Signals";
-  const rangeLabel=state.range==="below"?"below 200W":`0–${state.range}% above 200W`;
-  $("#result-label").textContent=`${rows.length} stocks · ${rangeLabel}`;
-  $("#stock-list").innerHTML=rows.length?rows.map(card).join(""):`<div class="empty"><p>No stocks in this range.</p><small>Try widening the near range.</small></div>`;
-  renderAbove();
-}
-function renderSearch(){
-  const matches=[...state.companies].filter(([symbol,name])=>`${symbol} ${name}`.toLowerCase().includes(state.query));
-  $("#watch-section").hidden=true;
-  $("#results-title").textContent="Search results"; $("#result-label").textContent=`${matches.length} stocks`;
-  $("#stock-list").innerHTML=matches.length?matches.map(([symbol,name])=>searchResult(symbol,name)).join(""):`<div class="empty"><p>No match in the Nasdaq-100.</p><small>Check the symbol or company name.</small></div>`;
-  $("#above-note").hidden=true; $("#watchlist-all-note").hidden=true; $("#history-note").hidden=true; $("#blacklist-note").hidden=true;
-}
-function searchResult(symbol,name){
-  const stock=state.stocks.find(s=>s.symbol===symbol),young=state.insufficient.find(s=>s.symbol===symbol);
-  const flags=[]; if(state.blacklist.includes(symbol))flags.push("Excluded"); if(state.watchlist.includes(symbol))flags.push("Watchlist");
-  if(stock)return card(stock,flags.join(" · "));
-  const status=young?`Limited history · ${young.weeks}/200 weeks`:"Awaiting scan";
-  return `<article class="stock-card status-card"><div class="identity"><div class="ticker">${symbol}</div><div class="company"><strong>${name}</strong><span>${[status,...flags].filter(Boolean).join(" · ")}</span></div></div></article>`;
-}
-function updateStats(rows){
-  $("#match-count").textContent=rows.length;
-  $("#below-count").textContent=rows.filter(x=>x.distance<0).length;
-  const eligible=new Set([...state.companies.keys(),...state.watchlist].filter(symbol=>!state.blacklist.includes(symbol)));
-  $("#coverage").textContent=`${state.stocks.filter(s=>!state.blacklist.includes(s.symbol)).length}/${eligible.size}`;
-}
-function renderInsufficient(){
-  const rows=state.insufficient.filter(s=>!state.blacklist.includes(s.symbol)); $("#history-note").hidden=!rows.length; if(!rows.length)return;
-  $("#history-note").hidden=false; $("#history-count").textContent=rows.length;
-  $("#history-list").innerHTML=rows.sort((a,b)=>b.weeks-a.weeks).map(s=>`<div class="history-row"><strong>${s.symbol}</strong><span>${s.name} · ${s.weeks}/200 weeks</span><small>Retry after ${weekLabel(s.retry_after)}</small></div>`).join("");
-}
-function renderBlacklist(){
-  $("#blacklist-count").textContent=state.blacklist.length;
-  $("#blacklist-list").innerHTML=state.blacklist.length?state.blacklist.map(symbol=>`<div class="blacklist-row"><strong>${symbol}</strong><span>${state.companies.get(symbol)||"Excluded from scanning"}</span><i>Not scanned</i></div>`).join(""):`<div class="blacklist-row empty-row"><span>No stocks are currently excluded</span></div>`;
-}
-function renderAbove(){
-  const threshold=state.range==="below"?0:Number(state.range);
-  const rows=state.stocks.filter(s=>!state.blacklist.includes(s.symbol)&&!state.watchlist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>=threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);
-  $("#above-note").hidden=!rows.length; $("#above-count").textContent=rows.length;
-  $("#above-list").innerHTML=rows.map(s=>`<div class="above-row"><strong>${s.symbol}</strong><span>${s.name}</span><b>+${s.distance.toFixed(2)}%</b></div>`).join("");
-}
-function card(s,flag="",extraClass=""){
-  const d=s.distance; const below=d<0;
-  const label=below?`${Math.abs(d).toFixed(1)}% below`:`${d.toFixed(1)}% above`;
-  const width=Math.max(3,Math.min(100,50+d*5));
-  return `<article class="stock-card ${extraClass}">
-    <div class="identity"><div class="ticker">${s.symbol}</div><div class="company"><strong>${s.name}</strong><span>200W · ${fmt(s.sma200)}${flag?` · ${flag}`:""}</span></div></div>
-    <div class="price"><strong>${fmt(s.price)}</strong><span class="distance ${below?"below":""}">${label}</span></div>
-    <div class="bar-wrap"><div class="bar"><i style="width:${width}%"></i></div><span>${weekLabel(s.updated)}</span></div>
-  </article>`;
-}
-function renderWatchlist(){
-  const rows=state.watchlist.map(symbol=>({symbol,stock:state.stocks.find(s=>s.symbol===symbol)}));
-  $("#watch-section").hidden=state.query||!rows.length;
-  if(state.query||!rows.length)return;
-  const matches=rows.filter(({stock})=>stock&&inSelectedRange(stock.distance));
-  const outside=rows.filter(({stock})=>!stock||!inSelectedRange(stock.distance));
-  $("#watch-count").textContent=`${matches.length} matches · ${rows.length} total`;
-  $("#watch-list").innerHTML=[...matches,...outside].map(({symbol,stock})=>{
-    if(!stock)return `<article class="stock-card status-card watch-outside"><div class="identity"><div class="ticker">${symbol}</div><div class="company"><strong>${state.companies.get(symbol)||symbol}</strong><span>Watchlist · Awaiting scan</span></div></div></article>`;
-    const excluded=state.blacklist.includes(symbol),matched=inSelectedRange(stock.distance);
-    const flag=excluded?"Excluded":matched?"Watchlist · In current range":"Watchlist · Outside current range";
-    return card(stock,flag,matched?"watch-match":"watch-outside");
-  }).join("");
-}
-function renderAllWatchlist(){
-  const rows=state.watchlist.map(symbol=>({symbol,stock:state.stocks.find(s=>s.symbol===symbol)}));
-  $("#watchlist-all-note").hidden=state.query||!rows.length;
-  if(state.query||!rows.length)return;
-  $("#watchlist-all-count").textContent=rows.length;
-  $("#watchlist-all-list").innerHTML=rows.map(({symbol,stock})=>{
-    const name=stock?.name||state.companies.get(symbol)||symbol;
-    if(!stock||!Number.isFinite(stock.distance))return `<div class="above-row"><strong>${symbol}</strong><span>${name}</span><b class="pending">Awaiting scan</b></div>`;
-    const below=stock.distance<0;
-    return `<div class="above-row"><strong>${symbol}</strong><span>${name}</span><b class="${below?"below":""}">${below?"":"+"}${stock.distance.toFixed(2)}%</b></div>`;
-  }).join("");
-}
-$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.remove("active"));e.target.classList.add("active");state.range=e.target.dataset.value;render();renderWatchlist()});
-$("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render();if(!state.query){renderWatchlist();renderAllWatchlist();renderInsufficient();renderBlacklist()}});
-init();
-checkForUpdate();
-setInterval(checkForUpdate,30000);
+async function checkForUpdate(){try{const r=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});if(!r.ok)return;const {revision}=await r.json();if(deployedRevision&&revision&&revision!==deployedRevision){location.reload();return}deployedRevision=revision||deployedRevision}catch(e){}}
+function weekLabel(value){if(!value)return "未知周";const date=new Date(`${value.slice(0,10)}T12:00:00Z`),day=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-day);const year=date.getUTCFullYear(),start=new Date(Date.UTC(year,0,1));return `${year} 年第 ${Math.ceil((((date-start)/86400000)+1)/7)} 周`}
+function normalize(values){const byName=new Map([...state.companies].map(([s,n])=>[n.toUpperCase(),s]));return [...new Set(values.map(v=>{const x=v.trim().toUpperCase();return state.companies.has(x)?x:byName.get(x)||x}).filter(Boolean))]}
+async function init(){try{const urls=["stocks.json","blacklist.json","watchlist.json","nasdaq100.json","sp500.json"].map(x=>fetch(`data/${x}`,{cache:"no-cache"}));const [dataRes,blackRes,wishRes,nasRes,spRes]=await Promise.all(urls);if(!dataRes.ok)throw new Error();const data=await dataRes.json();state.stocks=data.stocks||[];state.insufficient=data.insufficient_history||[];state.nasdaq=nasRes.ok?await nasRes.json():[];state.sp500=spRes.ok?await spRes.json():[];state.companies=new Map([...state.nasdaq,...state.sp500]);state.blacklist=normalize(blackRes.ok?await blackRes.json():[]);state.wishlist=normalize(wishRes.ok?await wishRes.json():[]);const dates=state.stocks.map(x=>x.updated).filter(Boolean).sort();$("#asof").textContent=dates.length?`更新于 ${weekLabel(dates.at(-1))}`:"等待首次扫描";render()}catch(e){$("#stock-list").innerHTML='<div class="empty"><p>暂无行情数据</p><small>请先运行本地更新脚本。</small></div>';updateStats([])}}
+function poolSymbols(){return state.tab==="wishlist"?state.wishlist:(state.tab==="nasdaq"?state.nasdaq:state.sp500).map(x=>x[0])}
+function belongs(symbol,pool){return (pool==="nasdaq"?state.nasdaq:state.sp500).some(x=>x[0]===symbol)}
+function inRange(d){return Number.isFinite(d)&&(state.range==="below"?d<0:d>=0&&d<Number(state.range))}
+function poolRows(){const symbols=poolSymbols(),rows=symbols.map(symbol=>state.stocks.find(s=>s.symbol===symbol)).filter(Boolean);return rows.filter(s=>!state.blacklist.includes(s.symbol)&&inRange(s.distance)&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance))}
+function tags(symbol){const out=[];if(state.tab==="wishlist"){if(belongs(symbol,"nasdaq"))out.push("纳指 100");if(belongs(symbol,"sp500"))out.push("标普 500")}return out}
+function render(){const cfg=poolConfig[state.tab];$("#eyebrow").textContent=cfg.eyebrow;$("#intro").textContent=cfg.intro;$("#pool-label").textContent=cfg.label;$("#results-title").textContent=state.query?"搜索结果":"信号";const rows=poolRows();updateStats(rows);const range=state.range==="below"?"低于 200W":`高于 200W 0–${state.range}%`;$("#result-label").textContent=`${rows.length} 只 · ${range}`;$("#stock-list").innerHTML=rows.length?rows.map(s=>card(s,tags(s.symbol))).join(""):`<div class="empty"><p>当前范围没有股票。</p><small>可以放宽距离范围，或等待后续扫描。</small></div>`;renderAbove();renderInsufficient();renderBlacklist()}
+function updateStats(rows){const symbols=poolSymbols().filter(s=>!state.blacklist.includes(s)),covered=new Set(state.stocks.map(s=>s.symbol));$("#match-count").textContent=rows.length;$("#below-count").textContent=rows.filter(s=>s.distance<0).length;$("#coverage").textContent=`${symbols.filter(s=>covered.has(s)).length}/${symbols.length}`}
+function card(s,labels=[]){const below=s.distance<0,label=below?`${Math.abs(s.distance).toFixed(1)}% 低于`:`${s.distance.toFixed(1)}% 高于`,width=Math.max(3,Math.min(100,50+s.distance*5));return `<article class="stock-card"><div class="identity"><div class="ticker">${s.symbol}</div><div class="company"><strong>${s.name}</strong><span>200W · ${fmt(s.sma200)}</span>${labels.length?`<div class="badges">${labels.map(x=>`<i>${x}</i>`).join("")}</div>`:""}</div></div><div class="price"><strong>${fmt(s.price)}</strong><span class="distance ${below?"below":""}">${label}</span></div><div class="bar-wrap"><div class="bar"><i style="width:${width}%"></i></div><span>${weekLabel(s.updated)}</span></div></article>`}
+function renderAbove(){const threshold=state.range==="below"?0:Number(state.range),symbols=new Set(poolSymbols()),rows=state.stocks.filter(s=>symbols.has(s.symbol)&&!state.blacklist.includes(s.symbol)&&Number.isFinite(s.distance)&&s.distance>=threshold&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>a.distance-b.distance);$("#above-note").hidden=!rows.length;$("#above-count").textContent=rows.length;$("#above-list").innerHTML=rows.map(s=>`<div class="above-row"><strong>${s.symbol}</strong><span>${s.name}</span><b>+${s.distance.toFixed(2)}%</b></div>`).join("")}
+function renderInsufficient(){const symbols=new Set(poolSymbols()),rows=state.insufficient.filter(s=>symbols.has(s.symbol)&&!state.blacklist.includes(s.symbol));$("#history-note").hidden=!rows.length;$("#history-count").textContent=rows.length;$("#history-list").innerHTML=rows.sort((a,b)=>b.weeks-a.weeks).map(s=>`<div class="history-row"><strong>${s.symbol}</strong><span>${s.name} · ${s.weeks}/200 周</span><small>${weekLabel(s.retry_after)} 后重试</small></div>`).join("")}
+function renderBlacklist(){$("#blacklist-count").textContent=state.blacklist.length;$("#blacklist-list").innerHTML=state.blacklist.length?state.blacklist.map(symbol=>`<div class="blacklist-row"><strong>${symbol}</strong><span>${state.companies.get(symbol)||"已排除"}</span><i>不扫描</i></div>`).join(""):'<div class="blacklist-row empty-row"><span>当前没有排除股票</span></div>'}
+$(".tabs").addEventListener("click",e=>{if(!e.target.dataset.tab)return;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("active",x===e.target));state.tab=e.target.dataset.tab;render()});
+$("#thresholds").addEventListener("click",e=>{if(!e.target.dataset.value)return;document.querySelectorAll("#thresholds button").forEach(x=>x.classList.toggle("active",x===e.target));state.range=e.target.dataset.value;render()});
+$("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLowerCase();render()});
+init();checkForUpdate();setInterval(checkForUpdate,30000);

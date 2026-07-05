@@ -1,7 +1,5 @@
----
----
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -9,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Find Nasdaq-100 stocks trading near or below their 200-week moving average">
-  <title>200W · Nasdaq Trend Watch</title>
+  <meta name="description" content="Track wishlist, Nasdaq-100 and S&P 500 stocks around their 200-week moving average">
+  <title>200W · Long-term Trend Watch</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -22,61 +20,41 @@
 <body>
   <main class="shell">
     <header class="hero">
-      <nav><span class="brand"><i></i> 200W</span><span class="asof" id="asof">Loading data</span></nav>
+      <nav><span class="brand"><i></i> 200W</span><span class="asof" id="asof">正在加载</span></nav>
       <div class="hero-copy">
-        <p class="eyebrow">NASDAQ-100 · WEEKLY SIGNAL</p>
-        <h1>How far from the<br><em>long-term trend?</em></h1>
-        <p class="intro">Find Nasdaq-100 stocks trading below or approaching their 200-week moving average. Sometimes the slower signal is the clearer one.</p>
+        <p class="eyebrow" id="eyebrow">WISHLIST · WEEKLY SIGNAL</p>
+        <h1>离长期趋势，<br><em>还有多远？</em></h1>
+        <p class="intro" id="intro">先看你真正关心的股票，再看它们离 200 周均线有多远。</p>
       </div>
       <div class="stats">
-        <div><strong id="match-count">—</strong><span>Matches</span></div>
-        <div><strong id="below-count">—</strong><span>Below average</span></div>
-        <div><strong id="coverage">—</strong><span>Coverage</span></div>
+        <div><strong id="match-count">—</strong><span>符合条件</span></div>
+        <div><strong id="below-count">—</strong><span>均线下方</span></div>
+        <div><strong id="coverage">—</strong><span>扫描覆盖</span></div>
       </div>
     </header>
 
-    <section class="controls" aria-label="Filters">
-      <div class="threshold">
-        <span>Near range</span>
-        <div class="segments" id="thresholds">
-          <button class="active" data-value="below">Below 200W</button><button data-value="3">3%</button><button data-value="5">5%</button><button data-value="10">10%</button>
-        </div>
-      </div>
-      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search symbol or company" autocomplete="off"></label>
-    </section>
+    <nav class="tabs" aria-label="股票池">
+      <button class="active" data-tab="wishlist">Wishlist</button>
+      <button data-tab="nasdaq">纳指 100</button>
+      <button data-tab="sp500">标普 500</button>
+    </nav>
 
-    <section class="watch-section" id="watch-section" hidden>
-      <div class="section-head"><div><small>PINNED</small><h2>Watchlist</h2></div><span id="watch-count">0 stocks</span></div>
-      <div id="watch-list" class="stock-list"></div>
+    <section class="controls" aria-label="筛选">
+      <div class="threshold"><span>距离范围</span><div class="segments" id="thresholds">
+        <button class="active" data-value="below">低于 200W</button><button data-value="3">3%</button><button data-value="5">5%</button><button data-value="10">10%</button>
+      </div></div>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索代码或公司" autocomplete="off"></label>
     </section>
 
     <section class="results">
-      <div class="section-head"><div><small>200W SCREEN</small><h2 id="results-title">Signals</h2></div><span id="result-label">Nearest first</span></div>
-      <div id="stock-list" class="stock-list" aria-live="polite">
-        <div class="empty"><span class="loader"></span><p>Loading data…</p></div>
-      </div>
-      <details class="above-note" id="above-note" hidden>
-        <summary><span>Above the near range</span><b id="above-count">0</b></summary>
-        <div id="above-list" class="above-list"></div>
-      </details>
-      <details class="above-note watchlist-all-note" id="watchlist-all-note" hidden>
-        <summary><span>All watchlist stocks</span><b id="watchlist-all-count">0</b></summary>
-        <div id="watchlist-all-list" class="above-list"></div>
-      </details>
-      <details class="history-note" id="history-note" hidden>
-        <summary><span>Less than 200 weeks of history</span><b id="history-count">0</b></summary>
-        <div id="history-list" class="history-list"></div>
-      </details>
-      <details class="blacklist-note" id="blacklist-note">
-        <summary><span>Excluded stocks</span><b id="blacklist-count">0</b></summary>
-        <div id="blacklist-list" class="blacklist-list"></div>
-      </details>
+      <div class="section-head"><div><small id="pool-label">WISHLIST</small><h2 id="results-title">信号</h2></div><span id="result-label">距离最近优先</span></div>
+      <div id="stock-list" class="stock-list" aria-live="polite"><div class="empty"><span class="loader"></span><p>正在加载…</p></div></div>
+      <details class="above-note" id="above-note" hidden><summary><span>高于当前范围</span><b id="above-count">0</b></summary><div id="above-list" class="above-list"></div></details>
+      <details class="history-note" id="history-note" hidden><summary><span>不足 200 周历史</span><b id="history-count">0</b></summary><div id="history-list" class="history-list"></div></details>
+      <details class="blacklist-note" id="blacklist-note"><summary><span>共享黑名单</span><b id="blacklist-count">0</b></summary><div id="blacklist-list" class="blacklist-list"></div></details>
     </section>
 
-    <footer>
-      <p>The 200-week average uses weekly adjusted closing prices. Market data is provided by Alpha Vantage and refreshed in rotating batches.</p>
-      <p>For research only. Not investment advice.</p>
-    </footer>
+    <footer><p>200 周均线使用每周复权收盘价。行情由 Alpha Vantage 提供，并按 Wishlist → 纳指 100 → 标普 500 去重轮转扫描。</p><p>仅供研究，不构成投资建议。</p></footer>
   </main>
   <script src="app.js?v={{ site.github.build_revision }}" defer></script>
 </body>
