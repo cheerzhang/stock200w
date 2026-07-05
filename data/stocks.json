@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T09:38:26.570821+00:00",
+  "generated_at": "2026-07-05T10:23:35.691076+00:00",
   "stocks": [
     {
       "price": 434.16,
@@ -248,6 +248,134 @@
       "symbol": "COST",
       "name": "Costco Wholesale",
       "distance": 24.207694184204122
+    },
+    {
+      "price": 30.01,
+      "sma200": 45.121825,
+      "updated": "2026-07-02",
+      "symbol": "CPRT",
+      "name": "Copart",
+      "distance": -33.49116530636781
+    },
+    {
+      "price": 193.98,
+      "sma200": 79.540419,
+      "updated": "2026-07-02",
+      "symbol": "CRWD",
+      "name": "CrowdStrike",
+      "distance": 143.876009755493
+    },
+    {
+      "price": 112.69,
+      "sma200": 57.576648500000005,
+      "updated": "2026-07-02",
+      "symbol": "CSCO",
+      "name": "Cisco Systems",
+      "distance": 95.72170825469286
+    },
+    {
+      "price": 30.0,
+      "sma200": 74.12010000000001,
+      "updated": "2026-07-02",
+      "symbol": "CSGP",
+      "name": "CoStar Group",
+      "distance": -59.52514904863864
+    },
+    {
+      "price": 48.89,
+      "sma200": 33.177721999999996,
+      "updated": "2026-07-02",
+      "symbol": "CSX",
+      "name": "CSX",
+      "distance": 47.35791685758295
+    },
+    {
+      "price": 181.37,
+      "sma200": 163.3893125,
+      "updated": "2026-07-02",
+      "symbol": "CTAS",
+      "name": "Cintas",
+      "distance": 11.004812508774098
+    },
+    {
+      "price": 192.01,
+      "sma200": 138.208525,
+      "updated": "2026-07-02",
+      "symbol": "DASH",
+      "name": "DoorDash",
+      "distance": 38.92775427564976
+    },
+    {
+      "price": 260.36,
+      "sma200": 118.98182500000001,
+      "updated": "2026-07-02",
+      "symbol": "DDOG",
+      "name": "Datadog",
+      "distance": 118.82333709371156
+    },
+    {
+      "price": 71.25,
+      "sma200": 93.38957500000001,
+      "updated": "2026-07-02",
+      "symbol": "DXCM",
+      "name": "DexCom",
+      "distance": -23.706687818206696
+    },
+    {
+      "price": 205.21,
+      "sma200": 148.5413595,
+      "updated": "2026-07-02",
+      "symbol": "EA",
+      "name": "Electronic Arts",
+      "distance": 38.15007529939835
+    },
+    {
+      "price": 47.88,
+      "sma200": 38.4523965,
+      "updated": "2026-07-02",
+      "symbol": "EXC",
+      "name": "Exelon",
+      "distance": 24.517596712080092
+    },
+    {
+      "price": 172.04,
+      "sma200": 151.0618995,
+      "updated": "2026-07-02",
+      "symbol": "FANG",
+      "name": "Diamondback Energy",
+      "distance": 13.887089047228596
+    },
+    {
+      "price": 48.6,
+      "sma200": 34.32143,
+      "updated": "2026-07-02",
+      "symbol": "FAST",
+      "name": "Fastenal",
+      "distance": 41.60249150457893
+    },
+    {
+      "price": 156.25,
+      "sma200": 76.7784,
+      "updated": "2026-07-02",
+      "symbol": "FTNT",
+      "name": "Fortinet",
+      "distance": 103.50775739009927
+    },
+    {
+      "price": 131.27,
+      "sma200": 89.63359399999999,
+      "updated": "2026-07-02",
+      "symbol": "GILD",
+      "name": "Gilead Sciences",
+      "distance": 46.45178681555493
+    },
+    {
+      "price": 356.18,
+      "sma200": 181.832533,
+      "updated": "2026-07-02",
+      "symbol": "GOOG",
+      "name": "Alphabet Class C",
+      "distance": 95.88353861847152
     }
   ],
   "insufficient_history": [
@@ -264,6 +392,27 @@
       "weeks": 146,
       "checked_at": "2026-07-03",
       "retry_after": "2027-07-15"
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CoreWeave",
+      "weeks": 66,
+      "checked_at": "2026-07-05",
+      "retry_after": "2029-01-25"
+    },
+    {
+      "symbol": "FER",
+      "name": "Ferrovial",
+      "weeks": 157,
+      "checked_at": "2026-07-05",
+      "retry_after": "2027-04-29"
+    },
+    {
+      "symbol": "GEHC",
+      "name": "GE HealthCare",
+      "weeks": 182,
+      "checked_at": "2026-07-05",
+      "retry_after": "2026-11-05"
     }
   ]
 }
