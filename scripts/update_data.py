@@ -17,7 +17,7 @@ STATE_FILE=ROOT/"data/update-state.json"
 BLACKLIST_FILE=ROOT/"data/blacklist.json"
 WATCHLIST_FILE=ROOT/"data/watchlist.json"
 API_URL="https://www.alphavantage.co/query"
-SCAN_ORDER_VERSION="wishlist-nasdaq-sp500-v3"
+SCAN_ORDER_VERSION="nasdaq-sp500-excluding-wishlist-v4"
 
 class InsufficientHistory(Exception):
     def __init__(self, weeks, latest):
@@ -92,23 +92,40 @@ def main():
     valid_symbols={symbol for symbol,_ in symbols}
     watchlist=resolve_watchlist(load(WATCHLIST_FILE,[]),valid_symbols,symbol_names)
     blacklist=set(resolve_watchlist(load(BLACKLIST_FILE,[]),valid_symbols|set(watchlist),symbol_names))
-    scan_order=build_scan_order(nasdaq,sp500,watchlist)
+    wishlist_set=set(watchlist)
+    # Wishlist symbols are never part of the normal rotation. They are scanned
+    # only when --rescan-wishlist is explicitly selected.
+    scan_order=[row for row in build_scan_order(nasdaq,sp500,[]) if row[0] not in wishlist_set]
+    names={symbol:name for symbol,name in build_scan_order(nasdaq,sp500,[])}
     old=load(OUTPUT_FILE,{"stocks":[]})
     cached={row["symbol"]:row for row in old.get("stocks",[])}
     insufficient={row["symbol"]:row for row in old.get("insufficient_history",[])}
-    state=load(STATE_FILE,{"cursor":0})
+    state=load(STATE_FILE,{})
     limit=min(int(os.environ.get("DAILY_LIMIT","25")),25)
-    cursor=state.get("cursor",0)%len(scan_order) if state.get("scan_order")==SCAN_ORDER_VERSION else 0
+    order_index={symbol:index for index,(symbol,_) in enumerate(scan_order)}
+    if state.get("next_symbol") in order_index:
+        cursor=order_index[state["next_symbol"]]
+    elif state.get("scan_order")==SCAN_ORDER_VERSION:
+        cursor=state.get("cursor",0)%len(scan_order)
+    else:
+        # On a queue migration, continue at the first symbol with no stored
+        # result instead of throwing away progress and restarting at index 0.
+        cursor=next((index for index,(symbol,_) in enumerate(scan_order)
+                     if symbol not in cached and symbol not in insufficient),0)
     # Young listings are skipped until they can have 200 observations. Skips do
     # not consume one of the 25 daily request slots.
     batch=[]
     batch_symbols=set()
     scanned=0
     today=dt.date.today()
+    # Finish initial coverage before refreshing cached symbols. Existing rows
+    # are skipped without using quota until every eligible symbol has either a
+    # market-data row or an insufficient-history record.
+    coverage_incomplete=any(symbol not in cached and symbol not in insufficient and symbol not in blacklist
+                            for symbol,_ in scan_order)
     # An explicit wishlist refresh is extra work ahead of the saved plan. It
     # consumes request quota but never rewinds the normal rotation cursor.
     if args.rescan_wishlist:
-        names={symbol:name for symbol,name in scan_order}
         for symbol in watchlist:
             known=insufficient.get(symbol)
             if len(batch)>=limit: break
@@ -119,6 +136,9 @@ def main():
         symbol,name=scan_order[(cursor+scanned)%len(scan_order)]
         known=insufficient.get(symbol)
         scanned+=1
+        already_recorded=symbol in cached or known is not None
+        if coverage_incomplete and already_recorded:
+            continue
         if symbol not in batch_symbols and symbol not in blacklist and (not known or dt.date.fromisoformat(known["retry_after"])<=today):
             batch.append((symbol,name,scanned))
             batch_symbols.add(symbol)
@@ -166,11 +186,13 @@ def main():
             print(f"all {len(keys)} key(s) have reached their daily limit; stopping before {symbol}")
             break
         if index<len(batch)-1: time.sleep(1)
-    ordered=[cached[symbol] for symbol,_ in scan_order if symbol in cached and symbol not in blacklist]
-    young=[insufficient[symbol] for symbol,_ in scan_order if symbol in insufficient]
+    storage_order=build_scan_order(nasdaq,sp500,watchlist)
+    ordered=[cached[symbol] for symbol,_ in storage_order if symbol in cached and symbol not in blacklist]
+    young=[insufficient[symbol] for symbol,_ in storage_order if symbol in insufficient]
     OUTPUT_FILE.write_text(json.dumps({"generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"stocks":ordered,"insufficient_history":young},indent=2)+"\n")
-    STATE_FILE.write_text(json.dumps({"cursor":(cursor+progress_scanned)%len(scan_order),"scan_order":SCAN_ORDER_VERSION})+"\n")
-    eligible_total=sum(symbol not in blacklist for symbol,_ in scan_order)
+    next_cursor=(cursor+progress_scanned)%len(scan_order)
+    STATE_FILE.write_text(json.dumps({"cursor":next_cursor,"next_symbol":scan_order[next_cursor][0],"scan_order":SCAN_ORDER_VERSION})+"\n")
+    eligible_total=sum(symbol not in blacklist for symbol,_ in storage_order)
     print(f"coverage: {len(ordered)}/{eligible_total}")
     print(f"requests used by key: {key_requests}; planned stocks: {len(batch)}")
     if failures: print("failures: " + " | ".join(failures))

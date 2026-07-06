@@ -6,9 +6,10 @@ A mobile-friendly static site for comparing Wishlist, Nasdaq-100, and S&P 500 st
 
 - Market data comes from Alpha Vantage `TIME_SERIES_WEEKLY_ADJUSTED`.
 - Distance is calculated as `(latest adjusted weekly close / 200-week average - 1) × 100%`.
-- The normal scan order is Wishlist → Nasdaq-100 → S&P 500. Symbols shared by multiple lists are scanned only once, and the scan cursor continues across batches.
+- The normal scan rotation is Nasdaq-100 → S&P 500, excluding every Wishlist symbol. Symbols shared by both indexes are scanned only once. The state stores both the cursor and the next symbol, so scanning continues where the previous batch stopped even if the queue definition changes.
 - `data/blacklist.json` is shared by all three stock universes. Blacklisted stocks are never scanned and do not consume request quota.
 - Stocks with less than 200 weeks of history are stored with an estimated retry date. They are skipped without consuming quota until that date, then automatically rejoin the scan plan.
+- Initial coverage always takes priority: while any eligible stock has no stored result, previously scanned stocks are skipped without consuming quota. Normal refresh rotation starts only after the first coverage pass is complete.
 
 ## Local setup
 
@@ -29,13 +30,13 @@ Run a scan:
 ./scripts/local_update.sh
 ```
 
-When run interactively, the script asks whether to rescan the Wishlist first. Choosing `y` scans the Wishlist before resuming the saved plan with any remaining quota. A symbol is never requested twice within the same batch. You can also pass the option directly:
+When run interactively, the script asks whether to scan the Wishlist in this run. Choosing `N` skips every Wishlist symbol and continues the normal Nasdaq-100 → S&P 500 rotation. Choosing `y` scans the Wishlist first, then resumes the saved normal plan with any remaining quota. A symbol is never requested twice within the same batch. You can also pass the option directly:
 
 ```bash
 ./scripts/local_update.sh --rescan-wishlist
 ```
 
-A non-interactive run resumes the normal plan without an extra Wishlist scan. One Alpha Vantage key uses at most 25 requests per batch; set `DAILY_LIMIT` to use a smaller batch.
+A non-interactive run skips the Wishlist and resumes the normal plan. One Alpha Vantage key uses at most 25 requests per batch; set `DAILY_LIMIT` to use a smaller batch.
 
 ## Local preview
 

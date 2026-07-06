@@ -14,7 +14,7 @@ set -a
 set +a
 
 if [ "$#" -eq 0 ] && [ -t 0 ]; then
-  printf "Rescan Wishlist before resuming the normal plan? [y/N] "
+  printf "Scan Wishlist first in this run? [y/N] "
   read -r RESCAN
   case "$RESCAN" in
     y|Y|yes|YES) set -- --rescan-wishlist ;;
