@@ -13,11 +13,10 @@ function inRange(d){return Number.isFinite(d)&&(state.range==="below"?d<0:d>=0&&
 function poolRows(){const symbols=poolSymbols(),rows=symbols.map(symbol=>state.stocks.find(s=>s.symbol===symbol)).filter(Boolean);return rows.filter(s=>!state.blacklist.includes(s.symbol)&&inRange(s.distance)&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance))}
 function tags(symbol){
   if(!state.wishlist.includes(symbol))return [];
-  return [
-    "Wishlist",
-    `Nasdaq-100 ${belongs(symbol,"nasdaq")?"✓":"—"}`,
-    `S&P 500 ${belongs(symbol,"sp500")?"✓":"—"}`
-  ];
+  const labels=["Wishlist"];
+  if(belongs(symbol,"nasdaq"))labels.push("Nasdaq-100");
+  if(belongs(symbol,"sp500"))labels.push("S&P 500");
+  return labels;
 }
 function badgeMarkup(symbol){const labels=tags(symbol);return labels.length?`<div class="badges">${labels.map(x=>`<i>${x}</i>`).join("")}</div>`:""}
 function render(){const cfg=poolConfig[state.tab];$("#eyebrow").textContent=cfg.eyebrow;$("#intro").textContent=cfg.intro;$("#pool-label").textContent=cfg.label;$("#results-title").textContent=state.query?"Search results":"Signals";const rows=poolRows();updateStats(rows);const range=state.range==="below"?"below 200W":`0–${state.range}% above 200W`;$("#result-label").textContent=`${rows.length} stocks · ${range}`;$("#stock-list").innerHTML=rows.length?rows.map(card).join(""):`<div class="empty"><p>No stocks in this range.</p><small>Try widening the range or wait for a later scan.</small></div>`;renderAbove();renderInsufficient();renderBlacklist()}
