@@ -11,7 +11,14 @@ function poolSymbols(){return state.tab==="wishlist"?state.wishlist:(state.tab==
 function belongs(symbol,pool){return (pool==="nasdaq"?state.nasdaq:state.sp500).some(x=>x[0]===symbol)}
 function inRange(d){return Number.isFinite(d)&&(state.range==="below"?d<0:d>=0&&d<Number(state.range))}
 function poolRows(){const symbols=poolSymbols(),rows=symbols.map(symbol=>state.stocks.find(s=>s.symbol===symbol)).filter(Boolean);return rows.filter(s=>!state.blacklist.includes(s.symbol)&&inRange(s.distance)&&(!state.query||`${s.symbol} ${s.name}`.toLowerCase().includes(state.query))).sort((a,b)=>Math.abs(a.distance)-Math.abs(b.distance))}
-function tags(symbol){const out=[];if(state.tab==="wishlist"){if(belongs(symbol,"nasdaq"))out.push("Nasdaq-100");if(belongs(symbol,"sp500"))out.push("S&P 500")}return out}
+function tags(symbol){
+  if(!state.wishlist.includes(symbol))return [];
+  return [
+    "Wishlist",
+    `Nasdaq-100 ${belongs(symbol,"nasdaq")?"✓":"—"}`,
+    `S&P 500 ${belongs(symbol,"sp500")?"✓":"—"}`
+  ];
+}
 function render(){const cfg=poolConfig[state.tab];$("#eyebrow").textContent=cfg.eyebrow;$("#intro").textContent=cfg.intro;$("#pool-label").textContent=cfg.label;$("#results-title").textContent=state.query?"Search results":"Signals";const rows=poolRows();updateStats(rows);const range=state.range==="below"?"below 200W":`0–${state.range}% above 200W`;$("#result-label").textContent=`${rows.length} stocks · ${range}`;$("#stock-list").innerHTML=rows.length?rows.map(s=>card(s,tags(s.symbol))).join(""):`<div class="empty"><p>No stocks in this range.</p><small>Try widening the range or wait for a later scan.</small></div>`;renderAbove();renderInsufficient();renderBlacklist()}
 function updateStats(rows){const symbols=poolSymbols().filter(s=>!state.blacklist.includes(s)),covered=new Set(state.stocks.map(s=>s.symbol));$("#match-count").textContent=rows.length;$("#below-count").textContent=rows.filter(s=>s.distance<0).length;$("#coverage").textContent=`${symbols.filter(s=>covered.has(s)).length}/${symbols.length}`}
 function card(s,labels=[]){const below=s.distance<0,label=below?`${Math.abs(s.distance).toFixed(1)}% below`:`${s.distance.toFixed(1)}% above`,width=Math.max(3,Math.min(100,50+s.distance*5));return `<article class="stock-card"><div class="identity"><div class="ticker">${s.symbol}</div><div class="company"><strong>${s.name}</strong><span>200W · ${fmt(s.sma200)}</span>${labels.length?`<div class="badges">${labels.map(x=>`<i>${x}</i>`).join("")}</div>`:""}</div></div><div class="price"><strong>${fmt(s.price)}</strong><span class="distance ${below?"below":""}">${label}</span></div><div class="bar-wrap"><div class="bar"><i style="width:${width}%"></i></div><span>${weekLabel(s.updated)}</span></div></article>`}
