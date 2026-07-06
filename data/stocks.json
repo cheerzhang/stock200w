@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T12:18:35.120599+00:00",
+  "generated_at": "2026-07-06T12:38:14.600806+00:00",
   "stocks": [
     {
       "price": 434.16,
@@ -376,6 +376,456 @@
       "symbol": "GOOG",
       "name": "Alphabet Class C",
       "distance": 95.88353861847152
+    },
+    {
+      "price": 359.91,
+      "sma200": 181.087165520446,
+      "updated": "2026-07-03",
+      "symbol": "GOOGL",
+      "name": "Alphabet Class A",
+      "source": "Tiingo",
+      "distance": 98.74959054420876
+    },
+    {
+      "price": 229.86,
+      "sma200": 199.278436618228,
+      "updated": "2026-07-03",
+      "symbol": "HON",
+      "name": "Honeywell",
+      "source": "Tiingo",
+      "distance": 15.346147782341003
+    },
+    {
+      "price": 557.8,
+      "sma200": 509.439,
+      "updated": "2026-07-03",
+      "symbol": "IDXX",
+      "name": "IDEXX Laboratories",
+      "source": "Tiingo",
+      "distance": 9.492991310048883
+    },
+    {
+      "price": 275.35,
+      "sma200": 544.6883237591679,
+      "updated": "2026-07-03",
+      "symbol": "INTU",
+      "name": "Intuit",
+      "source": "Tiingo",
+      "distance": -49.448154478570196
+    },
+    {
+      "price": 426.01,
+      "sma200": 409.979025,
+      "updated": "2026-07-03",
+      "symbol": "ISRG",
+      "name": "Intuitive Surgical",
+      "source": "Tiingo",
+      "distance": 3.910193942238882
+    },
+    {
+      "price": 33.3,
+      "sma200": 30.5202673679055,
+      "updated": "2026-07-03",
+      "symbol": "KDP",
+      "name": "Keurig Dr Pepper",
+      "source": "Tiingo",
+      "distance": 9.107825297158456
+    },
+    {
+      "price": 25.37,
+      "sma200": 28.5597399879395,
+      "updated": "2026-07-03",
+      "symbol": "KHC",
+      "name": "Kraft Heinz",
+      "source": "Tiingo",
+      "distance": -11.168659060924558
+    },
+    {
+      "price": 235.55,
+      "sma200": 78.997856278879,
+      "updated": "2026-07-03",
+      "symbol": "KLAC",
+      "name": "KLA",
+      "source": "Tiingo",
+      "distance": 198.17264808865082
+    },
+    {
+      "price": 546.64,
+      "sma200": 412.23518624812453,
+      "updated": "2026-07-03",
+      "symbol": "LIN",
+      "name": "Linde",
+      "source": "Tiingo",
+      "distance": 32.60391597697756
+    },
+    {
+      "price": 351.41,
+      "sma200": 103.38122565585651,
+      "updated": "2026-07-03",
+      "symbol": "LRCX",
+      "name": "Lam Research",
+      "source": "Tiingo",
+      "distance": 239.91665098825683
+    },
+    {
+      "price": 372.95,
+      "sma200": 239.2833030063475,
+      "updated": "2026-07-03",
+      "symbol": "MAR",
+      "name": "Marriott International",
+      "source": "Tiingo",
+      "distance": 55.86127210476808
+    },
+    {
+      "price": 84.64,
+      "sma200": 70.9362919425165,
+      "updated": "2026-07-03",
+      "symbol": "MCHP",
+      "name": "Microchip Technology",
+      "source": "Tiingo",
+      "distance": 19.318331536963274
+    },
+    {
+      "price": 60.91,
+      "sma200": 61.986323311003495,
+      "updated": "2026-07-03",
+      "symbol": "MDLZ",
+      "name": "Mondelez International",
+      "source": "Tiingo",
+      "distance": -1.7363883732920748
+    },
+    {
+      "price": 1763.36,
+      "sma200": 1684.2265,
+      "updated": "2026-07-03",
+      "symbol": "MELI",
+      "name": "MercadoLibre",
+      "source": "Tiingo",
+      "distance": 4.6985070000976625
+    },
+    {
+      "price": 582.9,
+      "sma200": 466.539825672772,
+      "updated": "2026-07-03",
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "source": "Tiingo",
+      "distance": 24.941102114794013
+    },
+    {
+      "price": 97.6,
+      "sma200": 59.2637,
+      "updated": "2026-07-03",
+      "symbol": "MNST",
+      "name": "Monster Beverage",
+      "source": "Tiingo",
+      "distance": 64.68765871857475
+    },
+    {
+      "price": 1288.16,
+      "sma200": 715.155358019751,
+      "updated": "2026-07-03",
+      "symbol": "MPWR",
+      "name": "Monolithic Power Systems",
+      "source": "Tiingo",
+      "distance": 80.1230999047376
+    },
+    {
+      "price": 100.77,
+      "sma200": 158.28780500000002,
+      "updated": "2026-07-03",
+      "symbol": "MSTR",
+      "name": "Strategy",
+      "source": "Tiingo",
+      "distance": -36.33748348459316
+    },
+    {
+      "price": 215.62,
+      "sma200": 47.531175000000005,
+      "updated": "2026-07-03",
+      "symbol": "NBIS",
+      "name": "Nebius Group",
+      "source": "Tiingo",
+      "distance": 353.63911159360146
+    },
+    {
+      "price": 77.65,
+      "sma200": 70.269395,
+      "updated": "2026-07-03",
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "source": "Tiingo",
+      "distance": 10.503299480520646
+    },
+    {
+      "price": 273.36,
+      "sma200": 207.408507499221,
+      "updated": "2026-07-03",
+      "symbol": "NXPI",
+      "name": "NXP Semiconductors",
+      "source": "Tiingo",
+      "distance": 31.797872370797876
+    },
+    {
+      "price": 217.65,
+      "sma200": 177.41609669788397,
+      "updated": "2026-07-03",
+      "symbol": "ODFL",
+      "name": "Old Dominion Freight Line",
+      "source": "Tiingo",
+      "distance": 22.677707407028013
+    },
+    {
+      "price": 90.25,
+      "sma200": 76.171023333335,
+      "updated": "2026-07-03",
+      "symbol": "ORLY",
+      "name": "O'Reilly Automotive",
+      "source": "Tiingo",
+      "distance": 18.48337602746053
+    },
+    {
+      "price": 348.06,
+      "sma200": 156.0238166666665,
+      "updated": "2026-07-03",
+      "symbol": "PANW",
+      "name": "Palo Alto Networks",
+      "source": "Tiingo",
+      "distance": 123.08132657952137
+    },
+    {
+      "price": 106.35,
+      "sma200": 114.7880448799975,
+      "updated": "2026-07-03",
+      "symbol": "PAYX",
+      "name": "Paychex",
+      "source": "Tiingo",
+      "distance": -7.35097883130501
+    },
+    {
+      "price": 119.5,
+      "sma200": 90.7303756604435,
+      "updated": "2026-07-03",
+      "symbol": "PCAR",
+      "name": "PACCAR",
+      "source": "Tiingo",
+      "distance": 31.70892232081812
+    },
+    {
+      "price": 82.39,
+      "sma200": 106.02355,
+      "updated": "2026-07-03",
+      "symbol": "PDD",
+      "name": "PDD Holdings",
+      "source": "Tiingo",
+      "distance": -22.290849532957534
+    },
+    {
+      "price": 144.22,
+      "sma200": 151.58457423117,
+      "updated": "2026-07-03",
+      "symbol": "PEP",
+      "name": "PepsiCo",
+      "source": "Tiingo",
+      "distance": -4.858392925878363
+    },
+    {
+      "price": 45.47,
+      "sma200": 66.3603007237335,
+      "updated": "2026-07-03",
+      "symbol": "PYPL",
+      "name": "PayPal",
+      "source": "Tiingo",
+      "distance": -31.48011762439492
+    },
+    {
+      "price": 176.25,
+      "sma200": 144.2756039499385,
+      "updated": "2026-07-03",
+      "symbol": "QCOM",
+      "name": "Qualcomm",
+      "source": "Tiingo",
+      "distance": 22.162025439280875
+    },
+    {
+      "price": 654.27,
+      "sma200": 771.6353100278955,
+      "updated": "2026-07-03",
+      "symbol": "REGN",
+      "name": "Regeneron Pharmaceuticals",
+      "source": "Tiingo",
+      "distance": -15.209945488841436
+    },
+    {
+      "price": 100.46,
+      "sma200": 25.5107,
+      "updated": "2026-07-03",
+      "symbol": "RKLB",
+      "name": "Rocket Lab",
+      "source": "Tiingo",
+      "distance": 293.7955446146127
+    },
+    {
+      "price": 364.2,
+      "sma200": 479.9368368188945,
+      "updated": "2026-07-03",
+      "symbol": "ROP",
+      "name": "Roper Technologies",
+      "source": "Tiingo",
+      "distance": -24.115014297718538
+    },
+    {
+      "price": 213.43,
+      "sma200": 140.28825643899899,
+      "updated": "2026-07-03",
+      "symbol": "ROST",
+      "name": "Ross Stores",
+      "source": "Tiingo",
+      "distance": 52.136754292619614
+    },
+    {
+      "price": 104.27,
+      "sma200": 89.758947368419,
+      "updated": "2026-07-03",
+      "symbol": "SBUX",
+      "name": "Starbucks",
+      "source": "Tiingo",
+      "distance": 16.166692075854925
+    },
+    {
+      "price": 119.46,
+      "sma200": 87.16125,
+      "updated": "2026-07-03",
+      "symbol": "SHOP",
+      "name": "Shopify",
+      "source": "Tiingo",
+      "distance": 37.056318031235215
+    },
+    {
+      "price": 437.16,
+      "sma200": 469.204975,
+      "updated": "2026-07-03",
+      "symbol": "SNPS",
+      "name": "Synopsys",
+      "source": "Tiingo",
+      "distance": -6.82963240106309
+    },
+    {
+      "price": 820.16,
+      "sma200": 162.1733063246685,
+      "updated": "2026-07-03",
+      "symbol": "STX",
+      "name": "Seagate Technology",
+      "source": "Tiingo",
+      "distance": 405.730578346878
+    },
+    {
+      "price": 83.84,
+      "sma200": 176.6764,
+      "updated": "2026-07-03",
+      "symbol": "TEAM",
+      "name": "Atlassian",
+      "source": "Tiingo",
+      "distance": -52.546010672619545
+    },
+    {
+      "price": 369.09,
+      "sma200": 138.857759715453,
+      "updated": "2026-07-03",
+      "symbol": "TER",
+      "name": "Teradyne",
+      "source": "Tiingo",
+      "distance": 165.80437474746702
+    },
+    {
+      "price": 177.52,
+      "sma200": 181.030166630397,
+      "updated": "2026-07-03",
+      "symbol": "TMUS",
+      "name": "T-Mobile US",
+      "source": "Tiingo",
+      "distance": -1.9389954148159028
+    },
+    {
+      "price": 89.21,
+      "sma200": 137.433503011782,
+      "updated": "2026-07-03",
+      "symbol": "TRI",
+      "name": "Thomson Reuters",
+      "source": "Tiingo",
+      "distance": -35.08860791218271
+    },
+    {
+      "price": 393.45,
+      "sma200": 281.4438,
+      "updated": "2026-07-03",
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "source": "Tiingo",
+      "distance": 39.79700387786123
+    },
+    {
+      "price": 254.99,
+      "sma200": 174.10585,
+      "updated": "2026-07-03",
+      "symbol": "TTWO",
+      "name": "Take-Two Interactive",
+      "source": "Tiingo",
+      "distance": 46.456882408029365
+    },
+    {
+      "price": 293.08,
+      "sma200": 177.815303442071,
+      "updated": "2026-07-03",
+      "symbol": "TXN",
+      "name": "Texas Instruments",
+      "source": "Tiingo",
+      "distance": 64.82270891575995
+    },
+    {
+      "price": 528.04,
+      "sma200": 407.89635000000004,
+      "updated": "2026-07-03",
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "source": "Tiingo",
+      "distance": 29.454455770442635
+    },
+    {
+      "price": 26.48,
+      "sma200": 13.910525,
+      "updated": "2026-07-03",
+      "symbol": "WBD",
+      "name": "Warner Bros. Discovery",
+      "source": "Tiingo",
+      "distance": 90.3594580362711
+    },
+    {
+      "price": 135.4,
+      "sma200": 216.58737499999998,
+      "updated": "2026-07-03",
+      "symbol": "WDAY",
+      "name": "Workday",
+      "source": "Tiingo",
+      "distance": -37.48481415410293
+    },
+    {
+      "price": 539.0,
+      "sma200": 94.963861934618,
+      "updated": "2026-07-03",
+      "symbol": "WDC",
+      "name": "Western Digital",
+      "source": "Tiingo",
+      "distance": 467.58433052259187
+    },
+    {
+      "price": 111.84,
+      "sma200": 76.63192970964501,
+      "updated": "2026-07-03",
+      "symbol": "WMT",
+      "name": "Walmart",
+      "source": "Tiingo",
+      "distance": 45.9443869203827
     }
   ],
   "insufficient_history": [

@@ -5,7 +5,7 @@ ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 ENV_FILE="$ROOT/.env.local"
 
 if [ ! -f "$ENV_FILE" ]; then
-  echo "Missing .env.local. Copy .env.local.example and add your Alpha Vantage API key."
+  echo "Missing .env.local. Copy .env.local.example and add an Alpha Vantage or Tiingo API key."
   exit 1
 fi
 

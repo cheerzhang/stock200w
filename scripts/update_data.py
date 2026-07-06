@@ -16,7 +16,8 @@ OUTPUT_FILE=ROOT/"data/stocks.json"
 STATE_FILE=ROOT/"data/update-state.json"
 BLACKLIST_FILE=ROOT/"data/blacklist.json"
 WATCHLIST_FILE=ROOT/"data/watchlist.json"
-API_URL="https://www.alphavantage.co/query"
+ALPHA_VANTAGE_API_URL="https://www.alphavantage.co/query"
+TIINGO_API_URL="https://api.tiingo.com/tiingo/daily"
 SCAN_ORDER_VERSION="nasdaq-sp500-excluding-wishlist-v4"
 
 class InsufficientHistory(Exception):
@@ -62,9 +63,9 @@ def build_scan_order(nasdaq, sp500, wishlist):
                 seen.add(symbol)
     return order
 
-def fetch(symbol, key):
+def fetch_alpha_vantage(symbol, key):
     params=urllib.parse.urlencode({"function":"TIME_SERIES_WEEKLY_ADJUSTED","symbol":symbol,"apikey":key})
-    req=urllib.request.Request(f"{API_URL}?{params}",headers={"User-Agent":"stock200w/1.0"})
+    req=urllib.request.Request(f"{ALPHA_VANTAGE_API_URL}?{params}",headers={"User-Agent":"stock200w/1.0"})
     with urllib.request.urlopen(req,timeout=30) as response:
         payload=json.load(response)
     series=payload.get("Weekly Adjusted Time Series")
@@ -78,13 +79,34 @@ def fetch(symbol, key):
     closes=[float(values["5. adjusted close"]) for _,values in points[:200]]
     return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0][0]}
 
+def fetch_tiingo(symbol, key):
+    start_date=(dt.date.today()-dt.timedelta(days=366*6)).isoformat()
+    params=urllib.parse.urlencode({"startDate":start_date,"resampleFreq":"weekly"})
+    encoded_symbol=urllib.parse.quote(symbol,safe="")
+    req=urllib.request.Request(
+        f"{TIINGO_API_URL}/{encoded_symbol}/prices?{params}",
+        headers={"Authorization":f"Token {key}","User-Agent":"stock200w/1.0"},
+    )
+    with urllib.request.urlopen(req,timeout=30) as response:
+        payload=json.load(response)
+    if not isinstance(payload,list):
+        raise RuntimeError(payload.get("detail") or payload.get("message") or "unknown Tiingo API response")
+    points=sorted(payload,key=lambda row:row["date"],reverse=True)
+    if len(points)<200:
+        latest=points[0]["date"][:10] if points else dt.date.today().isoformat()
+        raise InsufficientHistory(len(points),latest)
+    closes=[float(row["adjClose"]) for row in points[:200]]
+    return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0]["date"][:10]}
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--rescan-wishlist",action="store_true",help="scan wishlist first, then resume the saved rotation")
     args=parser.parse_args()
     raw_keys=os.environ.get("ALPHA_VANTAGE_API_KEYS") or os.environ.get("ALPHA_VANTAGE_API_KEY","")
     keys=[key.strip() for key in raw_keys.split(",") if key.strip()]
-    if not keys: raise SystemExit("ALPHA_VANTAGE_API_KEYS or ALPHA_VANTAGE_API_KEY is required")
+    tiingo_key=os.environ.get("TIINGO_API_KEY","").strip()
+    if not keys and not tiingo_key:
+        raise SystemExit("an Alpha Vantage or Tiingo API key is required")
     nasdaq=load(SYMBOLS_FILE,[])
     sp500=load(SP500_FILE,[])
     symbols=build_scan_order(nasdaq,sp500,[])
@@ -101,7 +123,9 @@ def main():
     cached={row["symbol"]:row for row in old.get("stocks",[])}
     insufficient={row["symbol"]:row for row in old.get("insufficient_history",[])}
     state=load(STATE_FILE,{})
-    limit=min(int(os.environ.get("DAILY_LIMIT","25")),25)
+    alpha_limit=min(int(os.environ.get("DAILY_LIMIT","25")),25*len(keys)) if keys else 0
+    tiingo_limit=max(0,int(os.environ.get("TIINGO_DAILY_LIMIT","50"))) if tiingo_key else 0
+    limit=alpha_limit+tiingo_limit
     order_index={symbol:index for index,(symbol,_) in enumerate(scan_order)}
     if state.get("next_symbol") in order_index:
         cursor=order_index[state["next_symbol"]]
@@ -145,30 +169,27 @@ def main():
     failures=[]
     key_index=0
     key_requests=[0]*len(keys)
+    alpha_requests=0
+    tiingo_requests=0
     progress_scanned=0
     quota_exhausted=False
     for index,(symbol,name,scan_position) in enumerate(batch):
-        while key_index<len(keys):
+        result=None
+        source=None
+        provider_errors=[]
+        insufficient_error=None
+        while key_index<len(keys) and alpha_requests<alpha_limit:
             if key_requests[key_index]>=25:
                 key_index+=1
                 continue
             try:
                 key_requests[key_index]+=1
-                result=fetch(symbol,keys[key_index])
-                result.update({"symbol":symbol,"name":name})
-                result["distance"]=(result["price"]/result["sma200"]-1)*100
-                cached[symbol]=result
-                progress_scanned=max(progress_scanned,scan_position)
-                print(f"updated {symbol}: {result['distance']:+.2f}% (key {key_index+1})")
+                alpha_requests+=1
+                result=fetch_alpha_vantage(symbol,keys[key_index])
+                source=f"Alpha Vantage key {key_index+1}"
                 break
             except InsufficientHistory as exc:
-                latest=dt.date.fromisoformat(exc.latest)
-                retry_after=latest+dt.timedelta(weeks=200-exc.weeks)
-                insufficient[symbol]={"symbol":symbol,"name":name,"weeks":exc.weeks,"checked_at":today.isoformat(),"retry_after":retry_after.isoformat()}
-                cached.pop(symbol,None)
-                progress_scanned=max(progress_scanned,scan_position)
-                failures.append(f"{symbol}: {exc}; retry after {retry_after}")
-                print(f"recorded {symbol}: {exc.weeks}/200 weeks, retry after {retry_after}")
+                insufficient_error=exc
                 break
             except Exception as exc:
                 message=str(exc)
@@ -177,14 +198,43 @@ def main():
                     key_requests[key_index]=25
                     key_index+=1
                     continue
-                failures.append(f"{symbol}: {exc}")
-                progress_scanned=max(progress_scanned,scan_position)
-                print(f"failed {symbol}: {exc}")
+                provider_errors.append(f"Alpha Vantage: {exc}")
                 break
-        else:
+        if result is None and insufficient_error is None and tiingo_key and tiingo_requests<tiingo_limit:
+            try:
+                tiingo_requests+=1
+                result=fetch_tiingo(symbol,tiingo_key)
+                source="Tiingo"
+            except InsufficientHistory as exc:
+                insufficient_error=exc
+            except Exception as exc:
+                provider_errors.append(f"Tiingo: {exc}")
+                if "rate limit" in str(exc).lower() or "429" in str(exc):
+                    tiingo_requests=tiingo_limit
+        if result is not None:
+            result.update({"symbol":symbol,"name":name,"source":source})
+            result["distance"]=(result["price"]/result["sma200"]-1)*100
+            cached[symbol]=result
+            insufficient.pop(symbol,None)
+            progress_scanned=max(progress_scanned,scan_position)
+            print(f"updated {symbol}: {result['distance']:+.2f}% ({source})")
+        elif insufficient_error is not None:
+            latest=dt.date.fromisoformat(insufficient_error.latest)
+            retry_after=latest+dt.timedelta(weeks=200-insufficient_error.weeks)
+            insufficient[symbol]={"symbol":symbol,"name":name,"weeks":insufficient_error.weeks,"checked_at":today.isoformat(),"retry_after":retry_after.isoformat()}
+            cached.pop(symbol,None)
+            progress_scanned=max(progress_scanned,scan_position)
+            failures.append(f"{symbol}: {insufficient_error}; retry after {retry_after}")
+            print(f"recorded {symbol}: {insufficient_error.weeks}/200 weeks, retry after {retry_after}")
+        elif (key_index>=len(keys) or alpha_requests>=alpha_limit) and (not tiingo_key or tiingo_requests>=tiingo_limit) and not provider_errors:
             quota_exhausted=True
-            print(f"all {len(keys)} key(s) have reached their daily limit; stopping before {symbol}")
+            print(f"all provider quotas are exhausted; stopping before {symbol}")
             break
+        else:
+            message=" | ".join(provider_errors) or "no market-data provider available"
+            failures.append(f"{symbol}: {message}")
+            progress_scanned=max(progress_scanned,scan_position)
+            print(f"failed {symbol}: {message}")
         if index<len(batch)-1: time.sleep(1)
     storage_order=build_scan_order(nasdaq,sp500,watchlist)
     ordered=[cached[symbol] for symbol,_ in storage_order if symbol in cached and symbol not in blacklist]
@@ -194,7 +244,7 @@ def main():
     STATE_FILE.write_text(json.dumps({"cursor":next_cursor,"next_symbol":scan_order[next_cursor][0],"scan_order":SCAN_ORDER_VERSION})+"\n")
     eligible_total=sum(symbol not in blacklist for symbol,_ in storage_order)
     print(f"coverage: {len(ordered)}/{eligible_total}")
-    print(f"requests used by key: {key_requests}; planned stocks: {len(batch)}")
+    print(f"requests used: Alpha Vantage {alpha_requests}/{alpha_limit} {key_requests}; Tiingo {tiingo_requests}/{tiingo_limit}; planned stocks: {len(batch)}")
     if failures: print("failures: " + " | ".join(failures))
 
 if __name__=="__main__": main()

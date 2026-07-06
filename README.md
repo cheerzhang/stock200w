@@ -13,7 +13,7 @@ A mobile-friendly static site for comparing Wishlist, Nasdaq-100, and S&P 500 st
 
 ## Local setup
 
-Copy the private environment file and add your Alpha Vantage key:
+Copy the private environment file and add one or both provider keys:
 
 ```bash
 cp .env.local.example .env.local
@@ -22,6 +22,8 @@ cp .env.local.example .env.local
 ```dotenv
 ALPHA_VANTAGE_API_KEY=your_key
 DAILY_LIMIT=25
+TIINGO_API_KEY=your_tiingo_key
+TIINGO_DAILY_LIMIT=50
 ```
 
 Run a scan:
@@ -36,7 +38,7 @@ When run interactively, the script asks whether to scan the Wishlist in this run
 ./scripts/local_update.sh --rescan-wishlist
 ```
 
-A non-interactive run skips the Wishlist and resumes the normal plan. One Alpha Vantage key uses at most 25 requests per batch; set `DAILY_LIMIT` to use a smaller batch.
+A non-interactive run skips the Wishlist and resumes the normal plan. The updater uses Alpha Vantage first and automatically continues with Tiingo. `DAILY_LIMIT` controls Alpha Vantage requests (up to 25 per key), while `TIINGO_DAILY_LIMIT` controls Tiingo requests. With the defaults and both providers configured, one run can scan up to 75 stocks. Either provider can also be used on its own.
 
 ## Local preview
 
