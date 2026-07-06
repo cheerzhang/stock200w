@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T10:23:35.691076+00:00",
+  "generated_at": "2026-07-06T12:18:35.120599+00:00",
   "stocks": [
     {
       "price": 434.16,
@@ -46,7 +46,7 @@
       "sma200": 56.327281,
       "updated": "2026-07-02",
       "symbol": "GLW",
-      "name": "GLW",
+      "name": "Corning Inc.",
       "distance": 249.36889639675664
     },
     {
@@ -70,7 +70,7 @@
       "sma200": 142.83720499999998,
       "updated": "2026-07-02",
       "symbol": "ORCL",
-      "name": "ORCL",
+      "name": "Oracle Corporation",
       "distance": -1.7972943393844587
     },
     {
