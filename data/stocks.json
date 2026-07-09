@@ -1,77 +1,86 @@
 {
-  "generated_at": "2026-07-08T10:37:12.873616+00:00",
+  "generated_at": "2026-07-09T09:42:21.415842+00:00",
   "stocks": [
     {
-      "price": 434.16,
-      "sma200": 179.35312150000001,
-      "updated": "2026-07-02",
+      "price": 436.98,
+      "sma200": 181.15516411874,
+      "updated": "2026-07-10",
       "symbol": "TSM",
       "name": "TSM",
-      "distance": 142.06994356660806
+      "source": "Tiingo",
+      "distance": 141.21862720599952
     },
     {
-      "price": 194.83,
-      "sma200": 104.63239449999999,
-      "updated": "2026-07-02",
+      "price": 204.12,
+      "sma200": 105.5812348381485,
+      "updated": "2026-07-10",
       "symbol": "NVDA",
       "name": "NVIDIA",
-      "distance": 86.20428303396996
+      "source": "Tiingo",
+      "distance": 93.32980932919301
     },
     {
-      "price": 975.56,
-      "sma200": 162.420996,
-      "updated": "2026-07-02",
+      "price": 948.8,
+      "sma200": 166.85861325542552,
+      "updated": "2026-07-10",
       "symbol": "MU",
       "name": "Micron Technology",
-      "distance": 500.63663197829425
+      "source": "Tiingo",
+      "distance": 468.62512608059745
     },
     {
-      "price": 245.29,
-      "sma200": 76.544758,
-      "updated": "2026-07-02",
+      "price": 231.71,
+      "sma200": 77.4581840663035,
+      "updated": "2026-07-10",
       "symbol": "MRVL",
       "name": "Marvell Technology",
-      "distance": 220.45303481134528
+      "source": "Tiingo",
+      "distance": 199.1420503760563
     },
     {
-      "price": 120.35,
-      "sma200": 35.870967,
-      "updated": "2026-07-02",
+      "price": 110.24,
+      "sma200": 36.272514111641,
+      "updated": "2026-07-10",
       "symbol": "INTC",
       "name": "Intel",
-      "distance": 235.50810046464593
+      "source": "Tiingo",
+      "distance": 203.92158553084823
     },
     {
-      "price": 196.79,
-      "sma200": 56.327281,
-      "updated": "2026-07-02",
+      "price": 184.03,
+      "sma200": 57.0944001269585,
+      "updated": "2026-07-10",
       "symbol": "GLW",
       "name": "Corning Inc.",
-      "distance": 249.36889639675664
+      "source": "Tiingo",
+      "distance": 222.32583158905248
     },
     {
-      "price": 129.3,
-      "sma200": 67.84445,
-      "updated": "2026-07-02",
+      "price": 132.22,
+      "sma200": 68.4666,
+      "updated": "2026-07-10",
       "symbol": "PLTR",
       "name": "Palantir Technologies",
-      "distance": 90.58301747600581
+      "source": "Tiingo",
+      "distance": 93.11605950930819
     },
     {
-      "price": 390.49,
-      "sma200": 382.5795005,
-      "updated": "2026-07-02",
+      "price": 383.34,
+      "sma200": 383.21406946441294,
+      "updated": "2026-07-10",
       "symbol": "MSFT",
       "name": "Microsoft",
-      "distance": 2.0676746897472675
+      "source": "Tiingo",
+      "distance": 0.03286166809142177
     },
     {
-      "price": 140.27,
-      "sma200": 142.83720499999998,
-      "updated": "2026-07-02",
+      "price": 140.49,
+      "sma200": 143.1801658344225,
+      "updated": "2026-07-10",
       "symbol": "ORCL",
       "name": "Oracle Corporation",
-      "distance": -1.7972943393844587
+      "source": "Tiingo",
+      "distance": -1.8788676621128264
     },
     {
       "price": 308.63,
@@ -1951,6 +1960,366 @@
       "name": "D. R. Horton",
       "source": "Tiingo",
       "distance": 17.278384085162557
+    },
+    {
+      "price": 151.39,
+      "sma200": 114.7453857695305,
+      "updated": "2026-07-10",
+      "symbol": "DTE",
+      "name": "DTE Energy",
+      "source": "Tiingo",
+      "distance": 31.935588507298473
+    },
+    {
+      "price": 126.79,
+      "sma200": 101.0971310446005,
+      "updated": "2026-07-10",
+      "symbol": "DUK",
+      "name": "Duke Energy",
+      "source": "Tiingo",
+      "distance": 25.414043593447477
+    },
+    {
+      "price": 136.97,
+      "sma200": 96.6476661464495,
+      "updated": "2026-07-10",
+      "symbol": "DD",
+      "name": "DuPont",
+      "source": "Tiingo",
+      "distance": 41.72095970993275
+    },
+    {
+      "price": 399.56,
+      "sma200": 279.2223389415875,
+      "updated": "2026-07-10",
+      "symbol": "ETN",
+      "name": "Eaton Corporation",
+      "source": "Tiingo",
+      "distance": 43.09743321919053
+    },
+    {
+      "price": 115.25,
+      "sma200": 61.642486526667,
+      "updated": "2026-07-10",
+      "symbol": "EBAY",
+      "name": "eBay Inc.",
+      "source": "Tiingo",
+      "distance": 86.96520288833902
+    },
+    {
+      "price": 96.28,
+      "sma200": 48.991800000000005,
+      "updated": "2026-07-10",
+      "symbol": "ECHO",
+      "name": "EchoStar",
+      "source": "Tiingo",
+      "distance": 96.52268338783223
+    },
+    {
+      "price": 274.12,
+      "sma200": 219.73526771416851,
+      "updated": "2026-07-10",
+      "symbol": "ECL",
+      "name": "Ecolab",
+      "source": "Tiingo",
+      "distance": 24.750115378190053
+    },
+    {
+      "price": 74.78,
+      "sma200": 60.530734595868,
+      "updated": "2026-07-10",
+      "symbol": "EIX",
+      "name": "Edison International",
+      "source": "Tiingo",
+      "distance": 23.540545971012715
+    },
+    {
+      "price": 93.64,
+      "sma200": 78.93745,
+      "updated": "2026-07-10",
+      "symbol": "EW",
+      "name": "Edwards Lifesciences",
+      "source": "Tiingo",
+      "distance": 18.62556999244338
+    },
+    {
+      "price": 416.08,
+      "sma200": 417.789125346995,
+      "updated": "2026-07-10",
+      "symbol": "ELV",
+      "name": "Elevance Health",
+      "source": "Tiingo",
+      "distance": -0.40908804066536186
+    },
+    {
+      "price": 768.98,
+      "sma200": 403.31770176407,
+      "updated": "2026-07-10",
+      "symbol": "EME",
+      "name": "Emcor",
+      "source": "Tiingo",
+      "distance": 90.66358769688532
+    },
+    {
+      "price": 136.48,
+      "sma200": 108.4781438702945,
+      "updated": "2026-07-10",
+      "symbol": "EMR",
+      "name": "Emerson Electric",
+      "source": "Tiingo",
+      "distance": 25.813362148956777
+    },
+    {
+      "price": 114.34,
+      "sma200": 66.9604020684315,
+      "updated": "2026-07-10",
+      "symbol": "ETR",
+      "name": "Entergy",
+      "source": "Tiingo",
+      "distance": 70.7576365553301
+    },
+    {
+      "price": 137.59,
+      "sma200": 115.497600767279,
+      "updated": "2026-07-10",
+      "symbol": "EOG",
+      "name": "EOG Resources",
+      "source": "Tiingo",
+      "distance": 19.12801572150049
+    },
+    {
+      "price": 51.16,
+      "sma200": 43.625347225036506,
+      "updated": "2026-07-10",
+      "symbol": "EQT",
+      "name": "EQT Corporation",
+      "source": "Tiingo",
+      "distance": 17.27127290493946
+    },
+    {
+      "price": 167.09,
+      "sma200": 221.815051476191,
+      "updated": "2026-07-10",
+      "symbol": "EFX",
+      "name": "Equifax",
+      "source": "Tiingo",
+      "distance": -24.671477932625784
+    },
+    {
+      "price": 1015.97,
+      "sma200": 783.2823133956931,
+      "updated": "2026-07-10",
+      "symbol": "EQIX",
+      "name": "Equinix",
+      "source": "Tiingo",
+      "distance": 29.706745910750488
+    },
+    {
+      "price": 68.31,
+      "sma200": 59.902243120729,
+      "updated": "2026-07-10",
+      "symbol": "EQR",
+      "name": "Equity Residential",
+      "source": "Tiingo",
+      "distance": 14.035796393009402
+    },
+    {
+      "price": 251.36,
+      "sma200": 310.514072362624,
+      "updated": "2026-07-10",
+      "symbol": "ERIE",
+      "name": "Erie Indemnity",
+      "source": "Tiingo",
+      "distance": -19.050367641162104
+    },
+    {
+      "price": 291.58,
+      "sma200": 237.283699349778,
+      "updated": "2026-07-10",
+      "symbol": "ESS",
+      "name": "Essex Property Trust",
+      "source": "Tiingo",
+      "distance": 22.882440217768284
+    },
+    {
+      "price": 81.8,
+      "sma200": 125.0180781933925,
+      "updated": "2026-07-10",
+      "symbol": "EL",
+      "name": "Est\u00e9e Lauder Companies (The)",
+      "source": "Tiingo",
+      "distance": -34.56946292722382
+    },
+    {
+      "price": 371.29,
+      "sma200": 339.21664559335096,
+      "updated": "2026-07-10",
+      "symbol": "EG",
+      "name": "Everest Group",
+      "source": "Tiingo",
+      "distance": 9.455123981474145
+    },
+    {
+      "price": 85.91,
+      "sma200": 59.617818677674,
+      "updated": "2026-07-10",
+      "symbol": "EVRG",
+      "name": "Evergy",
+      "source": "Tiingo",
+      "distance": 44.10121320351499
+    },
+    {
+      "price": 73.8,
+      "sma200": 61.259436666667,
+      "updated": "2026-07-10",
+      "symbol": "ES",
+      "name": "Eversource Energy",
+      "source": "Tiingo",
+      "distance": 20.471235152831024
+    },
+    {
+      "price": 90.1,
+      "sma200": 88.17547384889299,
+      "updated": "2026-07-10",
+      "symbol": "EXE",
+      "name": "Expand Energy",
+      "source": "Tiingo",
+      "distance": 2.1826093664153
+    },
+    {
+      "price": 260.31,
+      "sma200": 157.4133969112265,
+      "updated": "2026-07-10",
+      "symbol": "EXPE",
+      "name": "Expedia Group",
+      "source": "Tiingo",
+      "distance": 65.36711938616138
+    },
+    {
+      "price": 164.36,
+      "sma200": 119.735456448284,
+      "updated": "2026-07-10",
+      "symbol": "EXPD",
+      "name": "Expeditors International",
+      "source": "Tiingo",
+      "distance": 37.269280859166564
+    },
+    {
+      "price": 143.99,
+      "sma200": 135.94857382047,
+      "updated": "2026-07-10",
+      "symbol": "EXR",
+      "name": "Extra Space Storage",
+      "source": "Tiingo",
+      "distance": 5.915050046901782
+    },
+    {
+      "price": 141.13,
+      "sma200": 109.020383221508,
+      "updated": "2026-07-10",
+      "symbol": "XOM",
+      "name": "ExxonMobil",
+      "source": "Tiingo",
+      "distance": 29.45285627298848
+    },
+    {
+      "price": 419.14,
+      "sma200": 221.4485,
+      "updated": "2026-07-10",
+      "symbol": "FFIV",
+      "name": "F5, Inc.",
+      "source": "Tiingo",
+      "distance": 89.27199777826446
+    },
+    {
+      "price": 247.82,
+      "sma200": 384.521179420114,
+      "updated": "2026-07-10",
+      "symbol": "FDS",
+      "name": "FactSet",
+      "source": "Tiingo",
+      "distance": -35.5510142838606
+    },
+    {
+      "price": 1266.08,
+      "sma200": 1301.5078999999998,
+      "updated": "2026-07-10",
+      "symbol": "FICO",
+      "name": "Fair Isaac",
+      "source": "Tiingo",
+      "distance": -2.7220656901122076
+    },
+    {
+      "price": 120.43,
+      "sma200": 94.217457268881,
+      "updated": "2026-07-10",
+      "symbol": "FRT",
+      "name": "Federal Realty Investment Trust",
+      "source": "Tiingo",
+      "distance": 27.82132259875445
+    },
+    {
+      "price": 309.76,
+      "sma200": 165.39835180511102,
+      "updated": "2026-07-10",
+      "symbol": "FDX",
+      "name": "FedEx",
+      "source": "Tiingo",
+      "distance": 87.28118909249494
+    },
+    {
+      "price": 40.84,
+      "sma200": 63.036811898353,
+      "updated": "2026-07-10",
+      "symbol": "FIS",
+      "name": "Fidelity National Information Services",
+      "source": "Tiingo",
+      "distance": -35.212459561161516
+    },
+    {
+      "price": 55.76,
+      "sma200": 35.9203331956045,
+      "updated": "2026-07-10",
+      "symbol": "FITB",
+      "name": "Fifth Third Bancorp",
+      "source": "Tiingo",
+      "distance": 55.23241306353817
+    },
+    {
+      "price": 224.3,
+      "sma200": 191.372425,
+      "updated": "2026-07-10",
+      "symbol": "FSLR",
+      "name": "First Solar",
+      "source": "Tiingo",
+      "distance": 17.20601857869546
+    },
+    {
+      "price": 48.1,
+      "sma200": 38.4156378607665,
+      "updated": "2026-07-10",
+      "symbol": "FE",
+      "name": "FirstEnergy",
+      "source": "Tiingo",
+      "distance": 25.209426885825682
+    },
+    {
+      "price": 50.6,
+      "sma200": 130.931,
+      "updated": "2026-07-10",
+      "symbol": "FISV",
+      "name": "Fiserv",
+      "source": "Tiingo",
+      "distance": -61.35369011158549
+    },
+    {
+      "price": 133.37,
+      "sma200": 38.5023003728015,
+      "updated": "2026-07-10",
+      "symbol": "FLEX",
+      "name": "Flex Ltd.",
+      "source": "Tiingo",
+      "distance": 246.3948873408463
     }
   ],
   "insufficient_history": [
@@ -1988,6 +2357,13 @@
       "weeks": 182,
       "checked_at": "2026-07-05",
       "retry_after": "2026-11-05"
+    },
+    {
+      "symbol": "FDXF",
+      "name": "FedEx Freight",
+      "weeks": 7,
+      "checked_at": "2026-07-09",
+      "retry_after": "2030-03-22"
     }
   ]
 }
