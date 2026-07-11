@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T13:35:58.222847+00:00",
+  "generated_at": "2026-07-11T07:57:19.080025+00:00",
   "stocks": [
     {
       "price": 436.98,
@@ -3625,6 +3625,420 @@
       "name": "Ralph Lauren Corporation",
       "source": "Tiingo",
       "distance": 87.33263970749081
+    },
+    {
+      "price": 168.12,
+      "sma200": 127.660455969915,
+      "updated": "2026-07-10",
+      "symbol": "RJF",
+      "name": "Raymond James Financial",
+      "source": "Tiingo",
+      "distance": 31.693090646346956
+    },
+    {
+      "price": 195.93,
+      "sma200": 120.12151995972799,
+      "updated": "2026-07-10",
+      "symbol": "RTX",
+      "name": "RTX Corporation",
+      "source": "Tiingo",
+      "distance": 63.10982417279403
+    },
+    {
+      "price": 63.31,
+      "sma200": 52.7984748624115,
+      "updated": "2026-07-10",
+      "symbol": "O",
+      "name": "Realty Income",
+      "source": "Tiingo",
+      "distance": 19.908766616802232
+    },
+    {
+      "price": 79.62,
+      "sma200": 62.675054531729,
+      "updated": "2026-07-10",
+      "symbol": "REG",
+      "name": "Regency Centers",
+      "source": "Tiingo",
+      "distance": 27.036187834017266
+    },
+    {
+      "price": 31.02,
+      "sma200": 20.531339504052998,
+      "updated": "2026-07-10",
+      "symbol": "RF",
+      "name": "Regions Financial Corporation",
+      "source": "Tiingo",
+      "distance": 51.08609934523016
+    },
+    {
+      "price": 219.2,
+      "sma200": 184.72725161594298,
+      "updated": "2026-07-10",
+      "symbol": "RSG",
+      "name": "Republic Services",
+      "source": "Tiingo",
+      "distance": 18.6614308839107
+    },
+    {
+      "price": 203.87,
+      "sma200": 216.152820542179,
+      "updated": "2026-07-10",
+      "symbol": "RMD",
+      "name": "ResMed",
+      "source": "Tiingo",
+      "distance": -5.682470629515657
+    },
+    {
+      "price": 112.29,
+      "sma200": 109.1484145833195,
+      "updated": "2026-07-10",
+      "symbol": "RVTY",
+      "name": "Revvity",
+      "source": "Tiingo",
+      "distance": 2.8782693992154718
+    },
+    {
+      "price": 111.97,
+      "sma200": 43.8503,
+      "updated": "2026-07-10",
+      "symbol": "HOOD",
+      "name": "Robinhood Markets",
+      "source": "Tiingo",
+      "distance": 155.34602955966096
+    },
+    {
+      "price": 472.12,
+      "sma200": 301.069124981682,
+      "updated": "2026-07-10",
+      "symbol": "ROK",
+      "name": "Rockwell Automation",
+      "source": "Tiingo",
+      "distance": 56.814485719425825
+    },
+    {
+      "price": 44.47,
+      "sma200": 46.504737204164506,
+      "updated": "2026-07-10",
+      "symbol": "ROL",
+      "name": "Rollins, Inc.",
+      "source": "Tiingo",
+      "distance": -4.375333195049846
+    },
+    {
+      "price": 285.37,
+      "sma200": 177.2422392763675,
+      "updated": "2026-07-10",
+      "symbol": "RCL",
+      "name": "Royal Caribbean Group",
+      "source": "Tiingo",
+      "distance": 61.00563904241398
+    },
+    {
+      "price": 430.5,
+      "sma200": 412.3497409772845,
+      "updated": "2026-07-10",
+      "symbol": "SPGI",
+      "name": "S&P Global",
+      "source": "Tiingo",
+      "distance": 4.40166616321831
+    },
+    {
+      "price": 163.32,
+      "sma200": 232.273151483522,
+      "updated": "2026-07-10",
+      "symbol": "CRM",
+      "name": "Salesforce",
+      "source": "Tiingo",
+      "distance": -29.686234092541564
+    },
+    {
+      "price": 190.03,
+      "sma200": 215.2529613045085,
+      "updated": "2026-07-10",
+      "symbol": "SBAC",
+      "name": "SBA Communications",
+      "source": "Tiingo",
+      "distance": -11.717823137785654
+    },
+    {
+      "price": 47.76,
+      "sma200": 43.955535688482996,
+      "updated": "2026-07-10",
+      "symbol": "SLB",
+      "name": "Schlumberger",
+      "source": "Tiingo",
+      "distance": 8.655256390183919
+    },
+    {
+      "price": 94.2,
+      "sma200": 75.15637989927299,
+      "updated": "2026-07-10",
+      "symbol": "SRE",
+      "name": "Sempra",
+      "source": "Tiingo",
+      "distance": 25.338660704852845
+    },
+    {
+      "price": 107.71,
+      "sma200": 140.74499,
+      "updated": "2026-07-10",
+      "symbol": "NOW",
+      "name": "ServiceNow",
+      "source": "Tiingo",
+      "distance": -23.471521082206912
+    },
+    {
+      "price": 333.99,
+      "sma200": 303.139706731765,
+      "updated": "2026-07-10",
+      "symbol": "SHW",
+      "name": "Sherwin-Williams",
+      "source": "Tiingo",
+      "distance": 10.17692258161782
+    },
+    {
+      "price": 218.77,
+      "sma200": 140.399331009163,
+      "updated": "2026-07-10",
+      "symbol": "SPG",
+      "name": "Simon Property Group",
+      "source": "Tiingo",
+      "distance": 55.81983078375367
+    },
+    {
+      "price": 60.38,
+      "sma200": 81.86840361051101,
+      "updated": "2026-07-10",
+      "symbol": "SWKS",
+      "name": "Skyworks Solutions",
+      "source": "Tiingo",
+      "distance": -26.247493126581656
+    },
+    {
+      "price": 111.6,
+      "sma200": 112.62914727798851,
+      "updated": "2026-07-10",
+      "symbol": "SJM",
+      "name": "J.M. Smucker Company (The)",
+      "source": "Tiingo",
+      "distance": -0.9137486191282296
+    },
+    {
+      "price": 401.94,
+      "sma200": 287.647551745069,
+      "updated": "2026-07-10",
+      "symbol": "SNA",
+      "name": "Snap-on",
+      "source": "Tiingo",
+      "distance": 39.733502879323666
+    },
+    {
+      "price": 95.61,
+      "sma200": 75.61947578657849,
+      "updated": "2026-07-10",
+      "symbol": "SO",
+      "name": "Southern Company",
+      "source": "Tiingo",
+      "distance": 26.435682085182588
+    },
+    {
+      "price": 48.43,
+      "sma200": 31.893253814640502,
+      "updated": "2026-07-10",
+      "symbol": "LUV",
+      "name": "Southwest Airlines",
+      "source": "Tiingo",
+      "distance": 51.85029499175262
+    },
+    {
+      "price": 88.22,
+      "sma200": 76.639081426033,
+      "updated": "2026-07-10",
+      "symbol": "SWK",
+      "name": "Stanley Black & Decker",
+      "source": "Tiingo",
+      "distance": 15.110983010859979
+    },
+    {
+      "price": 180.22,
+      "sma200": 88.92723110437349,
+      "updated": "2026-07-10",
+      "symbol": "STT",
+      "name": "State Street Corporation",
+      "source": "Tiingo",
+      "distance": 102.66008258873663
+    },
+    {
+      "price": 228.42,
+      "sma200": 130.358689479971,
+      "updated": "2026-07-10",
+      "symbol": "STLD",
+      "name": "Steel Dynamics",
+      "source": "Tiingo",
+      "distance": 75.22422242139497
+    },
+    {
+      "price": 216.0,
+      "sma200": 215.901498708371,
+      "updated": "2026-07-10",
+      "symbol": "STE",
+      "name": "Steris",
+      "source": "Tiingo",
+      "distance": 0.04562325515027332
+    },
+    {
+      "price": 329.78,
+      "sma200": 320.6855462613105,
+      "updated": "2026-07-10",
+      "symbol": "SYK",
+      "name": "Stryker Corporation",
+      "source": "Tiingo",
+      "distance": 2.8359412654285654
+    },
+    {
+      "price": 28.31,
+      "sma200": 37.341120000000004,
+      "updated": "2026-07-10",
+      "symbol": "SMCI",
+      "name": "Supermicro",
+      "source": "Tiingo",
+      "distance": -24.185455604973825
+    },
+    {
+      "price": 72.44,
+      "sma200": 49.879582422461,
+      "updated": "2026-07-10",
+      "symbol": "SYF",
+      "name": "Synchrony Financial",
+      "source": "Tiingo",
+      "distance": 45.229764328139076
+    },
+    {
+      "price": 83.83,
+      "sma200": 71.924876622401,
+      "updated": "2026-07-10",
+      "symbol": "SYY",
+      "name": "Sysco",
+      "source": "Tiingo",
+      "distance": 16.552163780689956
+    },
+    {
+      "price": 118.55,
+      "sma200": 97.43877315820001,
+      "updated": "2026-07-10",
+      "symbol": "TROW",
+      "name": "T. Rowe Price",
+      "source": "Tiingo",
+      "distance": 21.666145988439478
+    },
+    {
+      "price": 140.73,
+      "sma200": 66.5201711207265,
+      "updated": "2026-07-10",
+      "symbol": "TPR",
+      "name": "Tapestry, Inc.",
+      "source": "Tiingo",
+      "distance": 111.55988872095826
+    },
+    {
+      "price": 273.35,
+      "sma200": 135.595740277711,
+      "updated": "2026-07-10",
+      "symbol": "TRGP",
+      "name": "Targa Resources",
+      "source": "Tiingo",
+      "distance": 101.5918785060336
+    },
+    {
+      "price": 135.14,
+      "sma200": 122.271752506628,
+      "updated": "2026-07-10",
+      "symbol": "TGT",
+      "name": "Target Corporation",
+      "source": "Tiingo",
+      "distance": 10.524301181235153
+    },
+    {
+      "price": 200.36,
+      "sma200": 154.78224065784352,
+      "updated": "2026-07-10",
+      "symbol": "TEL",
+      "name": "TE Connectivity",
+      "source": "Tiingo",
+      "distance": 29.446375209743337
+    },
+    {
+      "price": 634.6,
+      "sma200": 469.11480000000006,
+      "updated": "2026-07-10",
+      "symbol": "TDY",
+      "name": "Teledyne Technologies",
+      "source": "Tiingo",
+      "distance": 35.2760560954376
+    },
+    {
+      "price": 397.82,
+      "sma200": 288.211698081162,
+      "updated": "2026-07-10",
+      "symbol": "TPL",
+      "name": "Texas Pacific Land Corporation",
+      "source": "Tiingo",
+      "distance": 38.03048337336108
+    },
+    {
+      "price": 90.91,
+      "sma200": 79.8110670301295,
+      "updated": "2026-07-10",
+      "symbol": "TXT",
+      "name": "Textron",
+      "source": "Tiingo",
+      "distance": 13.90650868717309
+    },
+    {
+      "price": 527.05,
+      "sma200": 525.670868297482,
+      "updated": "2026-07-10",
+      "symbol": "TMO",
+      "name": "Thermo Fisher Scientific",
+      "source": "Tiingo",
+      "distance": 0.2623565020798413
+    },
+    {
+      "price": 151.34,
+      "sma200": 109.796016015497,
+      "updated": "2026-07-10",
+      "symbol": "TJX",
+      "name": "TJX Companies",
+      "source": "Tiingo",
+      "distance": 37.83742388124478
+    },
+    {
+      "price": 19.53,
+      "sma200": 67.82695,
+      "updated": "2026-07-10",
+      "symbol": "TTD",
+      "name": "Trade Desk (The)",
+      "source": "Tiingo",
+      "distance": -71.20613561423593
+    },
+    {
+      "price": 30.43,
+      "sma200": 46.942197836167,
+      "updated": "2026-07-10",
+      "symbol": "TSCO",
+      "name": "Tractor Supply",
+      "source": "Tiingo",
+      "distance": -35.175595939917926
+    },
+    {
+      "price": 479.7,
+      "sma200": 312.349980034332,
+      "updated": "2026-07-10",
+      "symbol": "TT",
+      "name": "Trane Technologies",
+      "source": "Tiingo",
+      "distance": 53.57772712112023
     }
   ],
   "insufficient_history": [
@@ -3704,6 +4118,34 @@
       "weeks": 36,
       "checked_at": "2026-07-10",
       "retry_after": "2029-08-31"
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk",
+      "weeks": 72,
+      "checked_at": "2026-07-11",
+      "retry_after": "2028-12-22"
+    },
+    {
+      "symbol": "SW",
+      "name": "Smurfit Westrock",
+      "weeks": 105,
+      "checked_at": "2026-07-11",
+      "retry_after": "2028-05-05"
+    },
+    {
+      "symbol": "SOLV",
+      "name": "Solventum",
+      "weeks": 120,
+      "checked_at": "2026-07-11",
+      "retry_after": "2028-01-21"
+    },
+    {
+      "symbol": "TKO",
+      "name": "TKO Group Holdings",
+      "weeks": 148,
+      "checked_at": "2026-07-11",
+      "retry_after": "2027-07-09"
     }
   ]
 }
