@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T08:28:41.652032+00:00",
+  "generated_at": "2026-07-24T17:09:43.521043+00:00",
   "stocks": [
     {
       "price": 398.37,
@@ -479,679 +479,679 @@
       "distance": -0.8807220762679147
     },
     {
-      "price": 25.37,
-      "sma200": 28.5597399879395,
-      "updated": "2026-07-03",
+      "price": 25.36,
+      "sma200": 28.5065085,
+      "updated": "2026-07-23",
       "symbol": "KHC",
       "name": "Kraft Heinz",
-      "source": "Tiingo",
-      "distance": -11.168659060924558
+      "source": "Alpha Vantage key 1",
+      "distance": -11.03786000309368
     },
     {
-      "price": 235.55,
-      "sma200": 78.997856278879,
-      "updated": "2026-07-03",
+      "price": 218.73,
+      "sma200": 81.829272,
+      "updated": "2026-07-23",
       "symbol": "KLAC",
       "name": "KLA",
-      "source": "Tiingo",
-      "distance": 198.17264808865082
+      "source": "Alpha Vantage key 1",
+      "distance": 167.30043498370603
     },
     {
-      "price": 546.64,
-      "sma200": 412.23518624812453,
-      "updated": "2026-07-03",
+      "price": 506.32,
+      "sma200": 415.9851865,
+      "updated": "2026-07-23",
       "symbol": "LIN",
       "name": "Linde",
-      "source": "Tiingo",
-      "distance": 32.60391597697756
+      "source": "Alpha Vantage key 1",
+      "distance": 21.71587268769244
     },
     {
-      "price": 351.41,
-      "sma200": 103.38122565585651,
-      "updated": "2026-07-03",
+      "price": 319.78,
+      "sma200": 107.70107,
+      "updated": "2026-07-23",
       "symbol": "LRCX",
       "name": "Lam Research",
-      "source": "Tiingo",
-      "distance": 239.91665098825683
+      "source": "Alpha Vantage key 1",
+      "distance": 196.91441319942317
     },
     {
-      "price": 372.95,
-      "sma200": 239.2833030063475,
-      "updated": "2026-07-03",
+      "price": 364.47,
+      "sma200": 242.624911,
+      "updated": "2026-07-23",
       "symbol": "MAR",
       "name": "Marriott International",
-      "source": "Tiingo",
-      "distance": 55.86127210476808
+      "source": "Alpha Vantage key 1",
+      "distance": 50.21952960139367
     },
     {
-      "price": 84.64,
-      "sma200": 70.9362919425165,
-      "updated": "2026-07-03",
+      "price": 81.35,
+      "sma200": 71.298732,
+      "updated": "2026-07-23",
       "symbol": "MCHP",
       "name": "Microchip Technology",
-      "source": "Tiingo",
-      "distance": 19.318331536963274
+      "source": "Alpha Vantage key 1",
+      "distance": 14.097400778459846
     },
     {
-      "price": 60.91,
-      "sma200": 61.986323311003495,
-      "updated": "2026-07-03",
+      "price": 60.05,
+      "sma200": 62.077143500000005,
+      "updated": "2026-07-23",
       "symbol": "MDLZ",
       "name": "Mondelez International",
-      "source": "Tiingo",
-      "distance": -1.7363883732920748
+      "source": "Alpha Vantage key 1",
+      "distance": -3.265523163126871
     },
     {
-      "price": 1763.36,
-      "sma200": 1684.2265,
-      "updated": "2026-07-03",
+      "price": 1798.7,
+      "sma200": 1698.0251,
+      "updated": "2026-07-23",
       "symbol": "MELI",
       "name": "MercadoLibre",
-      "source": "Tiingo",
-      "distance": 4.6985070000976625
+      "source": "Alpha Vantage key 1",
+      "distance": 5.928940626378254
     },
     {
-      "price": 582.9,
-      "sma200": 466.539825672772,
-      "updated": "2026-07-03",
+      "price": 606.1,
+      "sma200": 473.8867505,
+      "updated": "2026-07-23",
       "symbol": "META",
       "name": "Meta Platforms",
-      "source": "Tiingo",
-      "distance": 24.941102114794013
+      "source": "Alpha Vantage key 1",
+      "distance": 27.899756505220118
     },
     {
-      "price": 97.6,
-      "sma200": 59.2637,
-      "updated": "2026-07-03",
+      "price": 93.56,
+      "sma200": 60.039049999999996,
+      "updated": "2026-07-23",
       "symbol": "MNST",
       "name": "Monster Beverage",
-      "source": "Tiingo",
-      "distance": 64.68765871857475
+      "source": "Alpha Vantage key 1",
+      "distance": 55.831912730131485
     },
     {
-      "price": 1288.16,
-      "sma200": 715.155358019751,
-      "updated": "2026-07-03",
+      "price": 1397.15,
+      "sma200": 729.466547,
+      "updated": "2026-07-23",
       "symbol": "MPWR",
       "name": "Monolithic Power Systems",
-      "source": "Tiingo",
-      "distance": 80.1230999047376
+      "source": "Alpha Vantage key 1",
+      "distance": 91.53037322217328
     },
     {
-      "price": 100.77,
-      "sma200": 158.28780500000002,
-      "updated": "2026-07-03",
+      "price": 93.63,
+      "sma200": 159.373525,
+      "updated": "2026-07-23",
       "symbol": "MSTR",
       "name": "Strategy",
-      "source": "Tiingo",
-      "distance": -36.33748348459316
+      "source": "Alpha Vantage key 1",
+      "distance": -41.251220991692314
     },
     {
-      "price": 215.62,
-      "sma200": 47.531175000000005,
-      "updated": "2026-07-03",
+      "price": 220.97,
+      "sma200": 50.338725000000004,
+      "updated": "2026-07-23",
       "symbol": "NBIS",
       "name": "Nebius Group",
-      "source": "Tiingo",
-      "distance": 353.63911159360146
+      "source": "Alpha Vantage key 1",
+      "distance": 338.96622332011776
     },
     {
-      "price": 77.65,
-      "sma200": 70.269395,
-      "updated": "2026-07-03",
+      "price": 68.89,
+      "sma200": 70.97539,
+      "updated": "2026-07-23",
       "symbol": "NFLX",
       "name": "Netflix",
-      "source": "Tiingo",
-      "distance": 10.503299480520646
+      "source": "Alpha Vantage key 1",
+      "distance": -2.9381874477900083
     },
     {
-      "price": 273.36,
-      "sma200": 207.408507499221,
-      "updated": "2026-07-03",
+      "price": 277.29,
+      "sma200": 209.349391,
+      "updated": "2026-07-23",
       "symbol": "NXPI",
       "name": "NXP Semiconductors",
-      "source": "Tiingo",
-      "distance": 31.797872370797876
+      "source": "Alpha Vantage key 1",
+      "distance": 32.453215495620924
     },
     {
-      "price": 217.65,
-      "sma200": 177.41609669788397,
-      "updated": "2026-07-03",
+      "price": 230.71,
+      "sma200": 178.98867099999998,
+      "updated": "2026-07-23",
       "symbol": "ODFL",
       "name": "Old Dominion Freight Line",
-      "source": "Tiingo",
-      "distance": 22.677707407028013
+      "source": "Alpha Vantage key 1",
+      "distance": 28.896426076039216
     },
     {
-      "price": 90.25,
-      "sma200": 76.171023333335,
-      "updated": "2026-07-03",
+      "price": 86.11,
+      "sma200": 76.762305,
+      "updated": "2026-07-23",
       "symbol": "ORLY",
       "name": "O'Reilly Automotive",
-      "source": "Tiingo",
-      "distance": 18.48337602746053
+      "source": "Alpha Vantage key 1",
+      "distance": 12.177454806757048
     },
     {
-      "price": 348.06,
-      "sma200": 156.0238166666665,
-      "updated": "2026-07-03",
+      "price": 325.63,
+      "sma200": 159.765125,
+      "updated": "2026-07-23",
       "symbol": "PANW",
       "name": "Palo Alto Networks",
-      "source": "Tiingo",
-      "distance": 123.08132657952137
+      "source": "Alpha Vantage key 1",
+      "distance": 103.81794837890932
     },
     {
-      "price": 106.35,
-      "sma200": 114.7880448799975,
-      "updated": "2026-07-03",
+      "price": 110.66,
+      "sma200": 114.8473325,
+      "updated": "2026-07-23",
       "symbol": "PAYX",
       "name": "Paychex",
-      "source": "Tiingo",
-      "distance": -7.35097883130501
+      "source": "Alpha Vantage key 1",
+      "distance": -3.645998917737159
     },
     {
-      "price": 119.5,
-      "sma200": 90.7303756604435,
-      "updated": "2026-07-03",
+      "price": 130.75,
+      "sma200": 91.898178,
+      "updated": "2026-07-23",
       "symbol": "PCAR",
       "name": "PACCAR",
-      "source": "Tiingo",
-      "distance": 31.70892232081812
+      "source": "Alpha Vantage key 1",
+      "distance": 42.27703186890168
     },
     {
-      "price": 82.39,
-      "sma200": 106.02355,
-      "updated": "2026-07-03",
+      "price": 83.3,
+      "sma200": 106.309,
+      "updated": "2026-07-23",
       "symbol": "PDD",
       "name": "PDD Holdings",
-      "source": "Tiingo",
-      "distance": -22.290849532957534
+      "source": "Alpha Vantage key 1",
+      "distance": -21.6435108974781
     },
     {
-      "price": 144.22,
-      "sma200": 151.58457423117,
-      "updated": "2026-07-03",
+      "price": 134.95,
+      "sma200": 151.3854685,
+      "updated": "2026-07-23",
       "symbol": "PEP",
       "name": "PepsiCo",
-      "source": "Tiingo",
-      "distance": -4.858392925878363
+      "source": "Alpha Vantage key 1",
+      "distance": -10.856701546621705
     },
     {
-      "price": 45.47,
-      "sma200": 66.3603007237335,
-      "updated": "2026-07-03",
+      "price": 56.0,
+      "sma200": 65.78054900000001,
+      "updated": "2026-07-23",
       "symbol": "PYPL",
       "name": "PayPal",
-      "source": "Tiingo",
-      "distance": -31.48011762439492
+      "source": "Alpha Vantage key 1",
+      "distance": -14.868451462756882
     },
     {
-      "price": 176.25,
-      "sma200": 144.2756039499385,
-      "updated": "2026-07-03",
+      "price": 171.11,
+      "sma200": 145.19785,
+      "updated": "2026-07-23",
       "symbol": "QCOM",
       "name": "Qualcomm",
-      "source": "Tiingo",
-      "distance": 22.162025439280875
+      "source": "Alpha Vantage key 1",
+      "distance": 17.846097583400876
     },
     {
-      "price": 654.27,
-      "sma200": 771.6353100278955,
-      "updated": "2026-07-03",
+      "price": 651.91,
+      "sma200": 771.026838,
+      "updated": "2026-07-23",
       "symbol": "REGN",
       "name": "Regeneron Pharmaceuticals",
-      "source": "Tiingo",
-      "distance": -15.209945488841436
+      "source": "Alpha Vantage key 1",
+      "distance": -15.449116960569409
     },
     {
-      "price": 100.46,
-      "sma200": 25.5107,
-      "updated": "2026-07-03",
+      "price": 69.99,
+      "sma200": 26.53015,
+      "updated": "2026-07-24",
       "symbol": "RKLB",
       "name": "Rocket Lab",
       "source": "Tiingo",
-      "distance": 293.7955446146127
+      "distance": 163.8130579736639
     },
     {
-      "price": 364.2,
-      "sma200": 479.9368368188945,
-      "updated": "2026-07-03",
+      "price": 355.12,
+      "sma200": 478.38185203196554,
+      "updated": "2026-07-24",
       "symbol": "ROP",
       "name": "Roper Technologies",
       "source": "Tiingo",
-      "distance": -24.115014297718538
+      "distance": -25.76641473927175
     },
     {
-      "price": 213.43,
-      "sma200": 140.28825643899899,
-      "updated": "2026-07-03",
+      "price": 232.39,
+      "sma200": 142.442814895443,
+      "updated": "2026-07-24",
       "symbol": "ROST",
       "name": "Ross Stores",
       "source": "Tiingo",
-      "distance": 52.136754292619614
+      "distance": 63.14617214675287
     },
     {
-      "price": 104.27,
-      "sma200": 89.758947368419,
-      "updated": "2026-07-03",
+      "price": 103.21,
+      "sma200": 90.126537163864,
+      "updated": "2026-07-24",
       "symbol": "SBUX",
       "name": "Starbucks",
       "source": "Tiingo",
-      "distance": 16.166692075854925
+      "distance": 14.516770806747225
     },
     {
-      "price": 119.46,
-      "sma200": 87.16125,
-      "updated": "2026-07-03",
+      "price": 112.0,
+      "sma200": 88.47525,
+      "updated": "2026-07-24",
       "symbol": "SHOP",
       "name": "Shopify",
       "source": "Tiingo",
-      "distance": 37.056318031235215
+      "distance": 26.589074345650342
     },
     {
-      "price": 437.16,
-      "sma200": 469.204975,
-      "updated": "2026-07-03",
+      "price": 373.52,
+      "sma200": 470.43309999999997,
+      "updated": "2026-07-24",
       "symbol": "SNPS",
       "name": "Synopsys",
       "source": "Tiingo",
-      "distance": -6.82963240106309
+      "distance": -20.600825069494466
     },
     {
-      "price": 820.16,
-      "sma200": 162.1733063246685,
-      "updated": "2026-07-03",
+      "price": 913.36,
+      "sma200": 174.3851637128295,
+      "updated": "2026-07-24",
       "symbol": "STX",
       "name": "Seagate Technology",
       "source": "Tiingo",
-      "distance": 405.730578346878
+      "distance": 423.7601528442435
     },
     {
-      "price": 83.84,
-      "sma200": 176.6764,
-      "updated": "2026-07-03",
+      "price": 80.15,
+      "sma200": 174.39095,
+      "updated": "2026-07-24",
       "symbol": "TEAM",
       "name": "Atlassian",
       "source": "Tiingo",
-      "distance": -52.546010672619545
+      "distance": -54.040046229463165
     },
     {
-      "price": 369.09,
-      "sma200": 138.857759715453,
-      "updated": "2026-07-03",
+      "price": 373.75,
+      "sma200": 142.903918720199,
+      "updated": "2026-07-24",
       "symbol": "TER",
       "name": "Teradyne",
       "source": "Tiingo",
-      "distance": 165.80437474746702
+      "distance": 161.53936389371503
     },
     {
-      "price": 177.52,
-      "sma200": 181.030166630397,
-      "updated": "2026-07-03",
+      "price": 170.42,
+      "sma200": 181.78298789001448,
+      "updated": "2026-07-24",
       "symbol": "TMUS",
       "name": "T-Mobile US",
       "source": "Tiingo",
-      "distance": -1.9389954148159028
+      "distance": -6.250853295958326
     },
     {
-      "price": 89.21,
-      "sma200": 137.433503011782,
-      "updated": "2026-07-03",
+      "price": 85.69,
+      "sma200": 137.246431906994,
+      "updated": "2026-07-24",
       "symbol": "TRI",
       "name": "Thomson Reuters",
       "source": "Tiingo",
-      "distance": -35.08860791218271
+      "distance": -37.56486138884221
     },
     {
-      "price": 393.45,
-      "sma200": 281.4438,
-      "updated": "2026-07-03",
+      "price": 319.69,
+      "sma200": 282.59345,
+      "updated": "2026-07-24",
       "symbol": "TSLA",
       "name": "Tesla",
       "source": "Tiingo",
-      "distance": 39.79700387786123
+      "distance": 13.12717969931716
     },
     {
-      "price": 254.99,
-      "sma200": 174.10585,
-      "updated": "2026-07-03",
+      "price": 230.25,
+      "sma200": 175.84485,
+      "updated": "2026-07-24",
       "symbol": "TTWO",
       "name": "Take-Two Interactive",
       "source": "Tiingo",
-      "distance": 46.456882408029365
+      "distance": 30.939291085294784
     },
     {
-      "price": 293.08,
-      "sma200": 177.815303442071,
-      "updated": "2026-07-03",
+      "price": 284.99,
+      "sma200": 179.990517700497,
+      "updated": "2026-07-24",
       "symbol": "TXN",
       "name": "Texas Instruments",
       "source": "Tiingo",
-      "distance": 64.82270891575995
+      "distance": 58.336118836116356
     },
     {
-      "price": 528.04,
-      "sma200": 407.89635000000004,
-      "updated": "2026-07-03",
+      "price": 473.09,
+      "sma200": 410.79065,
+      "updated": "2026-07-24",
       "symbol": "VRTX",
       "name": "Vertex Pharmaceuticals",
       "source": "Tiingo",
-      "distance": 29.454455770442635
+      "distance": 15.165717622832918
     },
     {
-      "price": 26.48,
-      "sma200": 13.910525,
-      "updated": "2026-07-03",
+      "price": 25.95,
+      "sma200": 14.119774999999999,
+      "updated": "2026-07-24",
       "symbol": "WBD",
       "name": "Warner Bros. Discovery",
       "source": "Tiingo",
-      "distance": 90.3594580362711
+      "distance": 83.78479827051069
     },
     {
-      "price": 135.4,
-      "sma200": 216.58737499999998,
-      "updated": "2026-07-03",
+      "price": 127.87,
+      "sma200": 216.27792499999998,
+      "updated": "2026-07-24",
       "symbol": "WDAY",
       "name": "Workday",
       "source": "Tiingo",
-      "distance": -37.48481415410293
+      "distance": -40.87699888927637
     },
     {
-      "price": 539.0,
-      "sma200": 94.963861934618,
-      "updated": "2026-07-03",
+      "price": 558.3,
+      "sma200": 102.62224315054749,
+      "updated": "2026-07-24",
       "symbol": "WDC",
       "name": "Western Digital",
       "source": "Tiingo",
-      "distance": 467.58433052259187
+      "distance": 444.0341029975054
     },
     {
-      "price": 111.84,
-      "sma200": 76.63192970964501,
-      "updated": "2026-07-03",
+      "price": 108.4,
+      "sma200": 77.67668535572551,
+      "updated": "2026-07-24",
       "symbol": "WMT",
       "name": "Walmart",
       "source": "Tiingo",
-      "distance": 45.9443869203827
+      "distance": 39.55281369638142
     },
     {
-      "price": 80.06,
-      "sma200": 63.28550224565149,
-      "updated": "2026-07-10",
+      "price": 80.77,
+      "sma200": 63.1372775485915,
+      "updated": "2026-07-24",
       "symbol": "XEL",
       "name": "Xcel Energy",
       "source": "Tiingo",
-      "distance": 26.50606720198878
+      "distance": 27.92759386534851
     },
     {
-      "price": 157.7,
-      "sma200": 115.8888562690005,
-      "updated": "2026-07-17",
+      "price": 169.59,
+      "sma200": 116.32998594234799,
+      "updated": "2026-07-24",
       "symbol": "MMM",
       "name": "3M",
       "source": "Tiingo",
-      "distance": 36.07865767002456
+      "distance": 45.78356442340426
     },
     {
-      "price": 59.53,
-      "sma200": 68.156481050572,
-      "updated": "2026-07-17",
+      "price": 59.49,
+      "sma200": 68.219351654821,
+      "updated": "2026-07-24",
       "symbol": "AOS",
       "name": "A. O. Smith",
       "source": "Tiingo",
-      "distance": -12.656875644989885
+      "distance": -12.796005008945432
     },
     {
-      "price": 92.11,
-      "sma200": 108.40894692511351,
-      "updated": "2026-07-17",
+      "price": 100.75,
+      "sma200": 107.735124398986,
+      "updated": "2026-07-24",
       "symbol": "ABT",
       "name": "Abbott Laboratories",
       "source": "Tiingo",
-      "distance": -15.034687991547834
+      "distance": -6.483609164562997
     },
     {
-      "price": 248.0,
-      "sma200": 171.24072624320252,
-      "updated": "2026-07-17",
+      "price": 256.92,
+      "sma200": 170.74199605806302,
+      "updated": "2026-07-24",
       "symbol": "ABBV",
       "name": "AbbVie",
       "source": "Tiingo",
-      "distance": 44.82536102292691
+      "distance": 50.47264640893096
     },
     {
-      "price": 138.52,
-      "sma200": 276.9216464439085,
-      "updated": "2026-07-17",
+      "price": 138.74,
+      "sma200": 276.4449309784335,
+      "updated": "2026-07-24",
       "symbol": "ACN",
       "name": "Accenture",
       "source": "Tiingo",
-      "distance": -49.97863049754121
+      "distance": -49.81278929262637
     },
     {
-      "price": 14.76,
-      "sma200": 15.55032074916,
-      "updated": "2026-07-17",
+      "price": 14.83,
+      "sma200": 15.521263574693,
+      "updated": "2026-07-24",
       "symbol": "AES",
       "name": "AES Corporation",
       "source": "Tiingo",
-      "distance": -5.08234371437446
+      "distance": -4.4536552798451705
     },
     {
-      "price": 123.3,
-      "sma200": 89.53252735692149,
-      "updated": "2026-07-17",
+      "price": 124.34,
+      "sma200": 89.89527872316098,
+      "updated": "2026-07-24",
       "symbol": "AFL",
       "name": "Aflac",
       "source": "Tiingo",
-      "distance": 37.715312680121784
+      "distance": 38.31649644572997
     },
     {
-      "price": 134.04,
-      "sma200": 129.0314455242675,
-      "updated": "2026-07-17",
+      "price": 139.74,
+      "sma200": 129.1177158118615,
+      "updated": "2026-07-24",
       "symbol": "A",
       "name": "Agilent Technologies",
       "source": "Tiingo",
-      "distance": 3.8816541621945255
+      "distance": 8.226821642055949
     },
     {
-      "price": 301.96,
-      "sma200": 266.7710603519045,
-      "updated": "2026-07-17",
+      "price": 294.29,
+      "sma200": 267.139886391392,
+      "updated": "2026-07-24",
       "symbol": "APD",
       "name": "Air Products",
       "source": "Tiingo",
-      "distance": 13.190688525838157
+      "distance": 10.163257151659423
     },
     {
-      "price": 125.13,
-      "sma200": 95.00102500000001,
-      "updated": "2026-07-17",
+      "price": 117.37,
+      "sma200": 95.15762500000001,
+      "updated": "2026-07-24",
       "symbol": "AKAM",
       "name": "Akamai Technologies",
       "source": "Tiingo",
-      "distance": 31.7143683449731
+      "distance": 23.34271688684957
     },
     {
-      "price": 125.79,
-      "sma200": 139.8643459853825,
-      "updated": "2026-07-17",
+      "price": 116.91,
+      "sma200": 139.14398955958148,
+      "updated": "2026-07-24",
       "symbol": "ALB",
       "name": "Albemarle Corporation",
       "source": "Tiingo",
-      "distance": -10.062854751312699
+      "distance": -15.979123230515746
     },
     {
-      "price": 48.08,
-      "sma200": 89.139018702092,
-      "updated": "2026-07-17",
+      "price": 50.12,
+      "sma200": 88.812545103263,
+      "updated": "2026-07-24",
       "symbol": "ARE",
       "name": "Alexandria Real Estate Equities",
       "source": "Tiingo",
-      "distance": -46.06178001500525
+      "distance": -43.566531122686435
     },
     {
-      "price": 180.59,
-      "sma200": 229.09055,
-      "updated": "2026-07-17",
+      "price": 168.24,
+      "sma200": 228.80044999999998,
+      "updated": "2026-07-24",
       "symbol": "ALGN",
       "name": "Align Technology",
       "source": "Tiingo",
-      "distance": -21.170908184558467
+      "distance": -26.468676088705234
     },
     {
-      "price": 136.36,
-      "sma200": 127.434513379077,
-      "updated": "2026-07-17",
+      "price": 154.57,
+      "sma200": 127.776810371482,
+      "updated": "2026-07-24",
       "symbol": "ALLE",
       "name": "Allegion",
       "source": "Tiingo",
-      "distance": 7.003979051085274
+      "distance": 20.968741942002534
     },
     {
-      "price": 76.63,
-      "sma200": 55.468678509067004,
-      "updated": "2026-07-17",
+      "price": 74.42,
+      "sma200": 55.569316229810504,
+      "updated": "2026-07-24",
       "symbol": "LNT",
       "name": "Alliant Energy",
       "source": "Tiingo",
-      "distance": 38.1500372096911
+      "distance": 33.92282836850335
     },
     {
-      "price": 256.45,
-      "sma200": 163.4599873500795,
-      "updated": "2026-07-17",
+      "price": 254.52,
+      "sma200": 164.1157402464535,
+      "updated": "2026-07-24",
       "symbol": "ALL",
       "name": "Allstate",
       "source": "Tiingo",
-      "distance": 56.888547562875644
+      "distance": 55.08567284148733
     },
     {
-      "price": 71.87,
-      "sma200": 46.236355973321494,
-      "updated": "2026-07-17",
+      "price": 72.08,
+      "sma200": 46.453015804891,
+      "updated": "2026-07-24",
       "symbol": "MO",
       "name": "Altria",
       "source": "Tiingo",
-      "distance": 55.44045045736128
+      "distance": 55.16753595233907
     },
     {
-      "price": 42.43,
-      "sma200": 43.580426363658,
-      "updated": "2026-07-17",
+      "price": 42.63,
+      "sma200": 43.575445839606,
+      "updated": "2026-07-24",
       "symbol": "AMCR",
       "name": "Amcor",
       "source": "Tiingo",
-      "distance": -2.6397776700444298
+      "distance": -2.1696756542343265
     },
     {
-      "price": 113.43,
-      "sma200": 84.99947346882551,
-      "updated": "2026-07-17",
+      "price": 113.27,
+      "sma200": 85.1592604834655,
+      "updated": "2026-07-24",
       "symbol": "AEE",
       "name": "Ameren",
       "source": "Tiingo",
-      "distance": 33.44788546437491
+      "distance": 33.00960970884954
     },
     {
-      "price": 354.43,
-      "sma200": 241.9775017479535,
-      "updated": "2026-07-17",
+      "price": 340.84,
+      "sma200": 243.01876137086,
+      "updated": "2026-07-24",
       "symbol": "AXP",
       "name": "American Express",
       "source": "Tiingo",
-      "distance": 46.472294919871636
+      "distance": 40.25254596695906
     },
     {
-      "price": 79.9,
-      "sma200": 68.136901888064,
-      "updated": "2026-07-17",
+      "price": 78.16,
+      "sma200": 68.301889015176,
+      "updated": "2026-07-24",
       "symbol": "AIG",
       "name": "American International Group",
       "source": "Tiingo",
-      "distance": 17.26391688788631
+      "distance": 14.433145447314955
     },
     {
-      "price": 169.5,
-      "sma200": 184.302157519158,
-      "updated": "2026-07-17",
+      "price": 164.65,
+      "sma200": 184.12918242969351,
+      "updated": "2026-07-24",
       "symbol": "AMT",
       "name": "American Tower",
       "source": "Tiingo",
-      "distance": -8.031461876738643
+      "distance": -10.579084842855524
     },
     {
-      "price": 131.53,
-      "sma200": 130.366955407589,
-      "updated": "2026-07-17",
+      "price": 134.41,
+      "sma200": 130.4098680804135,
+      "updated": "2026-07-24",
       "symbol": "AWK",
       "name": "American Water Works",
       "source": "Tiingo",
-      "distance": 0.8921314368160127
+      "distance": 3.0673537044910715
     },
     {
-      "price": 518.23,
-      "sma200": 415.1132180380975,
-      "updated": "2026-07-17",
+      "price": 520.11,
+      "sma200": 416.541672811026,
+      "updated": "2026-07-24",
       "symbol": "AMP",
       "name": "Ameriprise Financial",
       "source": "Tiingo",
-      "distance": 24.840640452079967
+      "distance": 24.8638573158946
     },
     {
-      "price": 232.1,
-      "sma200": 172.24844047627602,
-      "updated": "2026-07-17",
+      "price": 241.14,
+      "sma200": 172.920260718094,
+      "updated": "2026-07-24",
       "symbol": "AME",
       "name": "Ametek",
       "source": "Tiingo",
-      "distance": 34.747228687952855
+      "distance": 39.45155934799469
     },
     {
-      "price": 155.99,
-      "sma200": 75.4850077447515,
-      "updated": "2026-07-17",
+      "price": 157.43,
+      "sma200": 76.0820204361,
+      "updated": "2026-07-24",
       "symbol": "APH",
       "name": "Amphenol",
       "source": "Tiingo",
-      "distance": 106.65030667741577
+      "distance": 106.92142387599026
     },
     {
-      "price": 367.35,
-      "sma200": 327.67521007470646,
-      "updated": "2026-07-17",
+      "price": 355.78,
+      "sma200": 328.12544781558347,
+      "updated": "2026-07-24",
       "symbol": "AON",
       "name": "Aon plc",
       "source": "Tiingo",
-      "distance": 12.107962001839612
+      "distance": 8.428042496709743
     },
     {
-      "price": 34.67,
-      "sma200": 28.827013701249,
-      "updated": "2026-07-17",
+      "price": 36.42,
+      "sma200": 28.6708443402015,
+      "updated": "2026-07-24",
       "symbol": "APA",
       "name": "APA Corporation",
       "source": "Tiingo",
-      "distance": 20.269134913887534
+      "distance": 27.027999482152822
     },
     {
-      "price": 118.83,
-      "sma200": 108.1665166008095,
-      "updated": "2026-07-17",
+      "price": 119.0,
+      "sma200": 107.7993775866975,
+      "updated": "2026-07-24",
       "symbol": "APO",
       "name": "Apollo Global Management",
       "source": "Tiingo",
-      "distance": 9.858395864354463
+      "distance": 10.390247758429227
     },
     {
-      "price": 59.23,
-      "sma200": 79.7387,
-      "updated": "2026-07-17",
+      "price": 56.1,
+      "sma200": 79.59265,
+      "updated": "2026-07-24",
       "symbol": "APTV",
       "name": "Aptiv",
       "source": "Tiingo",
-      "distance": -25.719882566432606
+      "distance": -29.516104816211055
     },
     {
       "price": 103.06,
