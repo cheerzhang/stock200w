@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T07:56:02.503727+00:00",
+  "generated_at": "2026-08-09T09:55:02.821747+00:00",
   "stocks": [
     {
       "price": 418.2,
@@ -3782,229 +3782,229 @@
       "distance": -21.00772000686805
     },
     {
-      "price": 286.96,
-      "sma200": 178.431838,
-      "updated": "2026-07-17",
+      "price": 320.0,
+      "sma200": 182.478913,
+      "updated": "2026-08-07",
       "symbol": "RCL",
       "name": "Royal Caribbean Group",
       "source": "Alpha Vantage key 1",
-      "distance": 60.82331674462716
+      "distance": 75.3627280758736
     },
     {
-      "price": 450.84,
-      "sma200": 413.01212,
-      "updated": "2026-07-17",
+      "price": 408.19,
+      "sma200": 436.3455785,
+      "updated": "2026-08-07",
       "symbol": "SPGI",
       "name": "S&P Global",
       "source": "Alpha Vantage key 1",
-      "distance": 9.159024195222166
+      "distance": -6.452587097774387
     },
     {
-      "price": 170.77,
-      "sma200": 232.382545094507,
-      "updated": "2026-07-17",
+      "price": 192.74,
+      "sma200": 232.91707,
+      "updated": "2026-08-07",
       "symbol": "CRM",
       "name": "Salesforce",
-      "source": "Tiingo",
-      "distance": -26.513413505067675
+      "source": "Alpha Vantage key 1",
+      "distance": -17.249517177938046
     },
     {
-      "price": 185.69,
-      "sma200": 214.726657885506,
-      "updated": "2026-07-17",
+      "price": 184.03,
+      "sma200": 213.49128100000001,
+      "updated": "2026-08-07",
       "symbol": "SBAC",
       "name": "SBA Communications",
-      "source": "Tiingo",
-      "distance": -13.522614365370778
+      "source": "Alpha Vantage key 1",
+      "distance": -13.79975840793236
     },
     {
-      "price": 46.99,
-      "sma200": 44.0150772473235,
-      "updated": "2026-07-17",
+      "price": 50.53,
+      "sma200": 44.258957,
+      "updated": "2026-08-07",
       "symbol": "SLB",
       "name": "Schlumberger",
-      "source": "Tiingo",
-      "distance": 6.758872047321929
+      "source": "Alpha Vantage key 1",
+      "distance": 14.168980529749042
     },
     {
-      "price": 92.25,
-      "sma200": 75.247388326468,
-      "updated": "2026-07-17",
+      "price": 83.88,
+      "sma200": 75.8401895,
+      "updated": "2026-08-07",
       "symbol": "SRE",
       "name": "Sempra",
-      "source": "Tiingo",
-      "distance": 22.59561700635315
+      "source": "Alpha Vantage key 1",
+      "distance": 10.600989466145784
     },
     {
-      "price": 103.24,
-      "sma200": 140.83539000000002,
-      "updated": "2026-07-17",
+      "price": 124.88,
+      "sma200": 141.35397999999998,
+      "updated": "2026-08-07",
       "symbol": "NOW",
       "name": "ServiceNow",
-      "source": "Tiingo",
-      "distance": -26.69456164391636
+      "source": "Alpha Vantage key 1",
+      "distance": -11.654415390355465
     },
     {
-      "price": 331.32,
-      "sma200": 303.7260729377015,
-      "updated": "2026-07-17",
+      "price": 369.73,
+      "sma200": 305.864061,
+      "updated": "2026-08-07",
       "symbol": "SHW",
       "name": "Sherwin-Williams",
-      "source": "Tiingo",
-      "distance": 9.085136088385282
+      "source": "Alpha Vantage key 1",
+      "distance": 20.88049795428566
     },
     {
-      "price": 228.7,
-      "sma200": 141.1345474196375,
-      "updated": "2026-07-17",
+      "price": 222.91,
+      "sma200": 143.4290505,
+      "updated": "2026-08-07",
       "symbol": "SPG",
       "name": "Simon Property Group",
-      "source": "Tiingo",
-      "distance": 62.043953221462345
+      "source": "Alpha Vantage key 1",
+      "distance": 55.414819538249695
     },
     {
-      "price": 59.35,
-      "sma200": 81.72271110281851,
-      "updated": "2026-07-17",
+      "price": 70.62,
+      "sma200": 81.506366,
+      "updated": "2026-08-07",
       "symbol": "SWKS",
       "name": "Skyworks Solutions",
-      "source": "Tiingo",
-      "distance": -27.376369189062434
+      "source": "Alpha Vantage key 1",
+      "distance": -13.356461015572696
     },
     {
-      "price": 112.01,
-      "sma200": 112.582295707525,
-      "updated": "2026-07-17",
+      "price": 120.16,
+      "sma200": 112.5546175,
+      "updated": "2026-08-07",
       "symbol": "SJM",
       "name": "J.M. Smucker Company (The)",
-      "source": "Tiingo",
-      "distance": -0.5083354393587425
+      "source": "Alpha Vantage key 1",
+      "distance": 6.7570595226801755
     },
     {
-      "price": 410.99,
-      "sma200": 288.7259348361385,
-      "updated": "2026-07-17",
+      "price": 416.35,
+      "sma200": 292.08221399999996,
+      "updated": "2026-08-07",
       "symbol": "SNA",
       "name": "Snap-on",
-      "source": "Tiingo",
-      "distance": 42.34606261929687
+      "source": "Alpha Vantage key 1",
+      "distance": 42.54548207444089
     },
     {
-      "price": 95.3,
-      "sma200": 75.5556174717245,
-      "updated": "2026-07-17",
+      "price": 92.69,
+      "sma200": 76.8371845,
+      "updated": "2026-08-07",
       "symbol": "SO",
       "name": "Southern Company",
-      "source": "Tiingo",
-      "distance": 26.132249578483723
+      "source": "Alpha Vantage key 1",
+      "distance": 20.63169753441445
     },
     {
-      "price": 48.08,
-      "sma200": 31.973487468817996,
-      "updated": "2026-07-17",
+      "price": 47.05,
+      "sma200": 32.221976500000004,
+      "updated": "2026-08-07",
       "symbol": "LUV",
       "name": "Southwest Airlines",
-      "source": "Tiingo",
-      "distance": 50.37458784216082
+      "source": "Alpha Vantage key 1",
+      "distance": 46.01835489514428
     },
     {
-      "price": 90.17,
-      "sma200": 76.7221078984735,
-      "updated": "2026-07-17",
+      "price": 103.89,
+      "sma200": 77.1733495,
+      "updated": "2026-08-07",
       "symbol": "SWK",
       "name": "Stanley Black & Decker",
-      "source": "Tiingo",
-      "distance": 17.528053477521933
+      "source": "Alpha Vantage key 1",
+      "distance": 34.61901119116257
     },
     {
-      "price": 182.5,
-      "sma200": 89.53195727875651,
-      "updated": "2026-07-17",
+      "price": 184.68,
+      "sma200": 91.47852,
+      "updated": "2026-08-07",
       "symbol": "STT",
       "name": "State Street Corporation",
-      "source": "Tiingo",
-      "distance": 103.83783125816043
+      "source": "Alpha Vantage key 1",
+      "distance": 101.88345854305472
     },
     {
-      "price": 235.51,
-      "sma200": 131.1821013517995,
-      "updated": "2026-07-17",
+      "price": 262.45,
+      "sma200": 133.95836,
+      "updated": "2026-08-07",
       "symbol": "STLD",
       "name": "Steel Dynamics",
-      "source": "Tiingo",
-      "distance": 79.52906499676938
+      "source": "Alpha Vantage key 1",
+      "distance": 95.9190900814253
     },
     {
-      "price": 217.84,
-      "sma200": 216.05767192184803,
-      "updated": "2026-07-17",
+      "price": 237.47,
+      "sma200": 217.0310805,
+      "updated": "2026-08-07",
       "symbol": "STE",
       "name": "Steris",
-      "source": "Tiingo",
-      "distance": 0.8249316315861677
+      "source": "Alpha Vantage key 1",
+      "distance": 9.417508060556322
     },
     {
-      "price": 319.87,
-      "sma200": 321.2227850343765,
-      "updated": "2026-07-17",
+      "price": 339.03,
+      "sma200": 323.224344,
+      "updated": "2026-08-07",
       "symbol": "SYK",
       "name": "Stryker Corporation",
-      "source": "Tiingo",
-      "distance": -0.42113607670505315
+      "source": "Alpha Vantage key 1",
+      "distance": 4.889995538207348
     },
     {
-      "price": 24.18,
-      "sma200": 37.43087,
-      "updated": "2026-07-17",
+      "price": 31.13,
+      "sma200": 37.795305,
+      "updated": "2026-08-07",
       "symbol": "SMCI",
       "name": "Supermicro",
-      "source": "Tiingo",
-      "distance": -35.400913737778474
+      "source": "Alpha Vantage key 1",
+      "distance": -17.635272423386983
     },
     {
-      "price": 73.62,
-      "sma200": 50.09827304147699,
-      "updated": "2026-07-17",
+      "price": 78.59,
+      "sma200": 50.6134065,
+      "updated": "2026-08-07",
       "symbol": "SYF",
       "name": "Synchrony Financial",
-      "source": "Tiingo",
-      "distance": 46.95117322517102
+      "source": "Alpha Vantage key 1",
+      "distance": 55.27506531298185
     },
     {
-      "price": 81.69,
-      "sma200": 71.9830636702885,
-      "updated": "2026-07-17",
+      "price": 84.29,
+      "sma200": 72.26834600000001,
+      "updated": "2026-08-07",
       "symbol": "SYY",
       "name": "Sysco",
-      "source": "Tiingo",
-      "distance": 13.485028053506
+      "source": "Alpha Vantage key 1",
+      "distance": 16.634743515508156
     },
     {
-      "price": 117.35,
-      "sma200": 97.56427470184049,
-      "updated": "2026-07-17",
+      "price": 114.02,
+      "sma200": 97.9415075,
+      "updated": "2026-08-07",
       "symbol": "TROW",
       "name": "T. Rowe Price",
-      "source": "Tiingo",
-      "distance": 20.279682659073007
+      "source": "Alpha Vantage key 1",
+      "distance": 16.41642334328988
     },
     {
-      "price": 141.46,
-      "sma200": 67.0795107735005,
-      "updated": "2026-07-17",
+      "price": 162.36,
+      "sma200": 68.95900950000001,
+      "updated": "2026-08-07",
       "symbol": "TPR",
       "name": "Tapestry, Inc.",
-      "source": "Tiingo",
-      "distance": 110.88406633979689
+      "source": "Alpha Vantage key 1",
+      "distance": 135.44421704606995
     },
     {
-      "price": 282.91,
-      "sma200": 136.6938885173905,
-      "updated": "2026-07-17",
+      "price": 256.87,
+      "sma200": 139.25880999999998,
+      "updated": "2026-08-07",
       "symbol": "TRGP",
       "name": "Targa Resources",
-      "source": "Tiingo",
-      "distance": 106.96609268234228
+      "source": "Alpha Vantage key 1",
+      "distance": 84.4551163405748
     },
     {
       "price": 139.6,
