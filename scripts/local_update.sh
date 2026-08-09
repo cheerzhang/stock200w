@@ -4,14 +4,19 @@ set -eu
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 ENV_FILE="$ROOT/.env.local"
 
-if [ ! -f "$ENV_FILE" ]; then
-  echo "Missing .env.local. Copy .env.local.example and add an Alpha Vantage or Tiingo API key."
-  exit 1
-fi
+if [ -z "${ALPHA_VANTAGE_API_KEY:-}" ] && \
+   [ -z "${ALPHA_VANTAGE_API_KEYS:-}" ] && \
+   [ -z "${TIINGO_API_KEY:-}" ]; then
+  if [ ! -f "$ENV_FILE" ]; then
+    echo "Missing API key environment variables and .env.local."
+    echo "Copy .env.local.example and add an Alpha Vantage or Tiingo API key."
+    exit 1
+  fi
 
-set -a
-. "$ENV_FILE"
-set +a
+  set -a
+  . "$ENV_FILE"
+  set +a
+fi
 
 if [ "$#" -eq 0 ] && [ -t 0 ]; then
   printf "Scan Wishlist first in this run? [y/N] "
