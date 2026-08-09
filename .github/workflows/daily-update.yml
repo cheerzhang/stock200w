@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 10 * * *"
       timezone: "Europe/Amsterdam"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily-update.yml"
+      - "scripts/local_update.sh"
   workflow_dispatch:
 
 permissions:
