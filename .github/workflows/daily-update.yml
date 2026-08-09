@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: "0 10 * * *"
       timezone: "Europe/Amsterdam"
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/daily-update.yml"
-      - "scripts/local_update.sh"
   workflow_dispatch:
 
 permissions:
@@ -34,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Update stock data
-        run: ./scripts/local_update.sh
+        run: ./scripts/local_update.sh --rescan-wishlist
 
       - name: Commit and push changed data
         run: |
