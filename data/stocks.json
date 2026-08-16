@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T08:25:19.387558+00:00",
+  "generated_at": "2026-08-16T08:26:58.651770+00:00",
   "stocks": [
     {
       "price": 426.35,
@@ -3314,94 +3314,94 @@
       "distance": 82.9801252569508
     },
     {
-      "price": 29.67,
-      "sma200": 24.1474645,
-      "updated": "2026-08-06",
+      "price": 29.16,
+      "sma200": 24.211820499999998,
+      "updated": "2026-08-14",
       "symbol": "NWSA",
       "name": "News Corp (Class A)",
       "source": "Alpha Vantage key 1",
-      "distance": 22.870042939704916
+      "distance": 20.437040246519267
     },
     {
-      "price": 33.87,
-      "sma200": 26.22366,
-      "updated": "2026-08-06",
+      "price": 33.17,
+      "sma200": 26.3048335,
+      "updated": "2026-08-14",
       "symbol": "NWS",
       "name": "News Corp (Class B)",
       "source": "Alpha Vantage key 1",
-      "distance": 29.15817242902019
+      "distance": 26.09849820946406
     },
     {
-      "price": 84.6,
-      "sma200": 71.446253425048,
-      "updated": "2026-08-07",
+      "price": 86.19,
+      "sma200": 71.554806,
+      "updated": "2026-08-14",
       "symbol": "NEE",
       "name": "NextEra Energy",
-      "source": "Tiingo",
-      "distance": 18.410687676927907
+      "source": "Alpha Vantage key 1",
+      "distance": 20.45312511922679
     },
     {
-      "price": 42.0,
-      "sma200": 80.1437253401765,
-      "updated": "2026-08-07",
+      "price": 40.73,
+      "sma200": 79.9383045,
+      "updated": "2026-08-14",
       "symbol": "NKE",
       "name": "Nike, Inc.",
-      "source": "Tiingo",
-      "distance": -47.594150606641236
+      "source": "Alpha Vantage key 1",
+      "distance": -49.04820629514353
     },
     {
-      "price": 43.38,
-      "sma200": 32.7459766908675,
-      "updated": "2026-08-07",
+      "price": 42.5,
+      "sma200": 32.846989,
+      "updated": "2026-08-14",
       "symbol": "NI",
       "name": "NiSource",
-      "source": "Tiingo",
-      "distance": 32.47428961890826
+      "source": "Alpha Vantage key 1",
+      "distance": 29.387810858401654
     },
     {
-      "price": 308.98,
-      "sma200": 235.082441493504,
-      "updated": "2026-08-07",
+      "price": 308.72,
+      "sma200": 235.62696400000002,
+      "updated": "2026-08-14",
       "symbol": "NDSN",
       "name": "Nordson Corporation",
-      "source": "Tiingo",
-      "distance": 31.434741802499964
+      "source": "Alpha Vantage key 1",
+      "distance": 31.020658569449644
     },
     {
-      "price": 342.46,
-      "sma200": 243.43439419966901,
-      "updated": "2026-08-07",
+      "price": 334.41,
+      "sma200": 243.114405,
+      "updated": "2026-08-14",
       "symbol": "NSC",
       "name": "Norfolk Southern",
-      "source": "Tiingo",
-      "distance": 40.67855987478437
+      "source": "Alpha Vantage key 1",
+      "distance": 37.55252388273745
     },
     {
-      "price": 184.14,
-      "sma200": 100.588959016483,
-      "updated": "2026-08-07",
+      "price": 191.41,
+      "sma200": 101.179065,
+      "updated": "2026-08-14",
       "symbol": "NTRS",
       "name": "Northern Trust",
-      "source": "Tiingo",
-      "distance": 83.06184078296894
+      "source": "Alpha Vantage key 1",
+      "distance": 89.17945130250018
     },
     {
-      "price": 567.74,
-      "sma200": 496.1050403766255,
-      "updated": "2026-08-07",
+      "price": 585.87,
+      "sma200": 496.8702545,
+      "updated": "2026-08-14",
       "symbol": "NOC",
       "name": "Northrop Grumman",
-      "source": "Tiingo",
-      "distance": 14.439474263150354
+      "source": "Alpha Vantage key 1",
+      "distance": 17.9120695380649
     },
     {
-      "price": 19.37,
-      "sma200": 19.16715,
-      "updated": "2026-08-07",
+      "price": 19.01,
+      "sma200": 19.19645,
+      "updated": "2026-08-14",
       "symbol": "NCLH",
       "name": "Norwegian Cruise Line Holdings",
-      "source": "Tiingo",
-      "distance": 1.0583211379886936
+      "source": "Alpha Vantage key 1",
+      "distance": -0.9712733343925417
     },
     {
       "price": 119.05,
