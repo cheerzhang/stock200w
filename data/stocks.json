@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T08:26:58.651770+00:00",
+  "generated_at": "2026-08-17T08:40:50.220673+00:00",
   "stocks": [
     {
       "price": 426.35,
@@ -3854,94 +3854,94 @@
       "distance": 20.88049795428566
     },
     {
-      "price": 222.91,
-      "sma200": 143.4290505,
-      "updated": "2026-08-07",
+      "price": 219.58,
+      "sma200": 144.13439200000002,
+      "updated": "2026-08-14",
       "symbol": "SPG",
       "name": "Simon Property Group",
       "source": "Alpha Vantage key 1",
-      "distance": 55.414819538249695
+      "distance": 52.343931904884975
     },
     {
-      "price": 70.62,
-      "sma200": 81.506366,
-      "updated": "2026-08-07",
+      "price": 69.62,
+      "sma200": 81.4972515,
+      "updated": "2026-08-14",
       "symbol": "SWKS",
       "name": "Skyworks Solutions",
       "source": "Alpha Vantage key 1",
-      "distance": -13.356461015572696
+      "distance": -14.57380620989408
     },
     {
-      "price": 120.16,
-      "sma200": 112.5546175,
-      "updated": "2026-08-07",
+      "price": 121.39,
+      "sma200": 111.5219165,
+      "updated": "2026-08-14",
       "symbol": "SJM",
       "name": "J.M. Smucker Company (The)",
       "source": "Alpha Vantage key 1",
-      "distance": 6.7570595226801755
+      "distance": 8.848559825458157
     },
     {
-      "price": 416.35,
-      "sma200": 292.08221399999996,
-      "updated": "2026-08-07",
+      "price": 403.56,
+      "sma200": 293.1500075,
+      "updated": "2026-08-14",
       "symbol": "SNA",
       "name": "Snap-on",
       "source": "Alpha Vantage key 1",
-      "distance": 42.54548207444089
+      "distance": 37.66330877545687
     },
     {
-      "price": 92.69,
-      "sma200": 76.8371845,
-      "updated": "2026-08-07",
+      "price": 92.8,
+      "sma200": 77.0236935,
+      "updated": "2026-08-14",
       "symbol": "SO",
       "name": "Southern Company",
       "source": "Alpha Vantage key 1",
-      "distance": 20.63169753441445
+      "distance": 20.482407143978378
     },
     {
-      "price": 47.05,
-      "sma200": 32.221976500000004,
-      "updated": "2026-08-07",
+      "price": 44.26,
+      "sma200": 32.2921955,
+      "updated": "2026-08-14",
       "symbol": "LUV",
       "name": "Southwest Airlines",
       "source": "Alpha Vantage key 1",
-      "distance": 46.01835489514428
+      "distance": 37.060981189711924
     },
     {
-      "price": 103.89,
-      "sma200": 77.1733495,
-      "updated": "2026-08-07",
+      "price": 102.07,
+      "sma200": 77.3542725,
+      "updated": "2026-08-14",
       "symbol": "SWK",
       "name": "Stanley Black & Decker",
       "source": "Alpha Vantage key 1",
-      "distance": 34.61901119116257
+      "distance": 31.95134114925584
     },
     {
-      "price": 184.68,
-      "sma200": 91.47852,
-      "updated": "2026-08-07",
+      "price": 191.74,
+      "sma200": 92.16613699999999,
+      "updated": "2026-08-14",
       "symbol": "STT",
       "name": "State Street Corporation",
       "source": "Alpha Vantage key 1",
-      "distance": 101.88345854305472
+      "distance": 108.0373619217653
     },
     {
-      "price": 262.45,
-      "sma200": 133.95836,
-      "updated": "2026-08-07",
+      "price": 255.77,
+      "sma200": 134.8669495,
+      "updated": "2026-08-14",
       "symbol": "STLD",
       "name": "Steel Dynamics",
       "source": "Alpha Vantage key 1",
-      "distance": 95.9190900814253
+      "distance": 89.64616679492703
     },
     {
-      "price": 237.47,
-      "sma200": 217.0310805,
-      "updated": "2026-08-07",
+      "price": 233.28,
+      "sma200": 217.398734,
+      "updated": "2026-08-14",
       "symbol": "STE",
       "name": "Steris",
       "source": "Alpha Vantage key 1",
-      "distance": 9.417508060556322
+      "distance": 7.305132696862904
     },
     {
       "price": 339.03,
