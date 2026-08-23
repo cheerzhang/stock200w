@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T08:26:56.016718+00:00",
+  "generated_at": "2026-08-23T08:26:52.011356+00:00",
   "stocks": [
     {
       "price": 418.95,
@@ -2549,94 +2549,94 @@
       "distance": 93.35977898317849
     },
     {
-      "price": 32.36,
-      "sma200": 30.92129867826,
-      "updated": "2026-08-07",
+      "price": 35.34,
+      "sma200": 30.975974500000003,
+      "updated": "2026-08-21",
       "symbol": "HAL",
       "name": "Halliburton",
-      "source": "Tiingo",
-      "distance": 4.652784272452037
+      "source": "Alpha Vantage key 1",
+      "distance": 14.088420365919397
     },
     {
-      "price": 142.05,
-      "sma200": 101.857794743769,
-      "updated": "2026-08-07",
+      "price": 136.1,
+      "sma200": 102.62105600000001,
+      "updated": "2026-08-21",
       "symbol": "HIG",
       "name": "Hartford (The)",
-      "source": "Tiingo",
-      "distance": 39.459135510775134
+      "source": "Alpha Vantage key 1",
+      "distance": 32.62385450408929
     },
     {
-      "price": 91.51,
-      "sma200": 62.919149284250494,
-      "updated": "2026-08-07",
+      "price": 93.54,
+      "sma200": 62.850838,
+      "updated": "2026-08-21",
       "symbol": "HAS",
       "name": "Hasbro",
-      "source": "Tiingo",
-      "distance": 45.44061870033291
+      "source": "Alpha Vantage key 1",
+      "distance": 48.82856454515372
     },
     {
-      "price": 400.73,
-      "sma200": 336.9757880729695,
-      "updated": "2026-08-07",
+      "price": 429.19,
+      "sma200": 339.2763195,
+      "updated": "2026-08-21",
       "symbol": "HCA",
       "name": "HCA Healthcare",
-      "source": "Tiingo",
-      "distance": 18.919523058797626
+      "source": "Alpha Vantage key 1",
+      "distance": 26.501608079369653
     },
     {
-      "price": 21.62,
-      "sma200": 17.6169551572115,
-      "updated": "2026-08-07",
+      "price": 21.4,
+      "sma200": 17.5640065,
+      "updated": "2026-08-21",
       "symbol": "DOC",
       "name": "Healthpeak Properties",
-      "source": "Tiingo",
-      "distance": 22.72268281928307
+      "source": "Alpha Vantage key 1",
+      "distance": 21.84008244360418
     },
     {
-      "price": 89.11,
-      "sma200": 74.18282500000001,
-      "updated": "2026-08-07",
+      "price": 88.5,
+      "sma200": 74.383625,
+      "updated": "2026-08-21",
       "symbol": "HSIC",
       "name": "Henry Schein",
-      "source": "Tiingo",
-      "distance": 20.122144175555444
+      "source": "Alpha Vantage key 1",
+      "distance": 18.977799213200484
     },
     {
-      "price": 179.04,
-      "sma200": 187.93849100913002,
-      "updated": "2026-08-07",
+      "price": 186.46,
+      "sma200": 186.314693,
+      "updated": "2026-08-21",
       "symbol": "HSY",
       "name": "Hershey Company (The)",
-      "source": "Tiingo",
-      "distance": -4.734789005354811
+      "source": "Alpha Vantage key 1",
+      "distance": 0.07799009174225269
     },
     {
-      "price": 52.39,
-      "sma200": 19.749709600858502,
-      "updated": "2026-08-07",
+      "price": 53.45,
+      "sma200": 20.196666,
+      "updated": "2026-08-21",
       "symbol": "HPE",
       "name": "Hewlett Packard Enterprise",
-      "source": "Tiingo",
-      "distance": 165.26972324556434
+      "source": "Alpha Vantage key 1",
+      "distance": 164.64764035806704
     },
     {
-      "price": 312.07,
-      "sma200": 220.14199725241897,
-      "updated": "2026-08-07",
+      "price": 326.63,
+      "sma200": 222.082592,
+      "updated": "2026-08-21",
       "symbol": "HLT",
       "name": "Hilton Worldwide",
-      "source": "Tiingo",
-      "distance": 41.75850310023972
+      "source": "Alpha Vantage key 1",
+      "distance": 47.07591309092789
     },
     {
-      "price": 348.24,
-      "sma200": 333.0127541412835,
-      "updated": "2026-08-07",
+      "price": 335.61,
+      "sma200": 333.91659549999997,
+      "updated": "2026-08-21",
       "symbol": "HD",
       "name": "Home Depot (The)",
-      "source": "Tiingo",
-      "distance": 4.572571371322387
+      "source": "Alpha Vantage key 1",
+      "distance": 0.5071339738189407
     },
     {
       "price": 25.34,
