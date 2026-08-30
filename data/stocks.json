@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T13:37:48.081257+00:00",
+  "generated_at": "2026-08-30T13:32:39.422024+00:00",
   "stocks": [
     {
       "price": 417.52,
@@ -1910,94 +1910,94 @@
       "distance": -13.152178767439848
     },
     {
-      "price": 605.06,
-      "sma200": 436.5872853448465,
-      "updated": "2026-08-07",
+      "price": 630.33,
+      "sma200": 440.69182650000005,
+      "updated": "2026-08-28",
       "symbol": "DE",
       "name": "Deere & Company",
-      "source": "Tiingo",
-      "distance": 38.58855269275241
+      "source": "Alpha Vantage key 1",
+      "distance": 43.031924373573545
     },
     {
-      "price": 429.02,
-      "sma200": 115.9884800416735,
-      "updated": "2026-08-07",
+      "price": 456.24,
+      "sma200": 122.5462755,
+      "updated": "2026-08-28",
       "symbol": "DELL",
       "name": "Dell Technologies",
-      "source": "Tiingo",
-      "distance": 269.8815605186458
+      "source": "Alpha Vantage key 1",
+      "distance": 272.30017651576856
     },
     {
-      "price": 91.59,
-      "sma200": 50.223651878968504,
-      "updated": "2026-08-07",
+      "price": 80.07,
+      "sma200": 51.006946500000005,
+      "updated": "2026-08-28",
       "symbol": "DAL",
       "name": "Delta Air Lines",
-      "source": "Tiingo",
-      "distance": 82.36427773256756
+      "source": "Alpha Vantage key 1",
+      "distance": 56.97861858874455
     },
     {
-      "price": 44.57,
-      "sma200": 41.930658519256006,
-      "updated": "2026-08-07",
+      "price": 47.35,
+      "sma200": 41.6848145,
+      "updated": "2026-08-28",
       "symbol": "DVN",
       "name": "Devon Energy",
-      "source": "Tiingo",
-      "distance": 6.2945385881118865
+      "source": "Alpha Vantage key 1",
+      "distance": 13.590525873636782
     },
     {
-      "price": 191.22,
-      "sma200": 140.972857917693,
-      "updated": "2026-08-07",
+      "price": 185.47,
+      "sma200": 142.5943735,
+      "updated": "2026-08-28",
       "symbol": "DLR",
       "name": "Digital Realty",
-      "source": "Tiingo",
-      "distance": 35.64313217771593
+      "source": "Alpha Vantage key 1",
+      "distance": 30.068245645049952
     },
     {
-      "price": 127.72,
-      "sma200": 130.09686956103252,
-      "updated": "2026-08-07",
+      "price": 122.89,
+      "sma200": 128.519181,
+      "updated": "2026-08-28",
       "symbol": "DG",
       "name": "Dollar General",
-      "source": "Tiingo",
-      "distance": -1.826999811027319
+      "source": "Alpha Vantage key 1",
+      "distance": -4.380031802412432
     },
     {
-      "price": 129.35,
-      "sma200": 113.99040000000001,
-      "updated": "2026-08-07",
+      "price": 128.26,
+      "sma200": 113.7526,
+      "updated": "2026-08-28",
       "symbol": "DLTR",
       "name": "Dollar Tree",
-      "source": "Tiingo",
-      "distance": 13.474468025377572
+      "source": "Alpha Vantage key 1",
+      "distance": 12.753466733947171
     },
     {
-      "price": 68.75,
-      "sma200": 51.7580495587975,
-      "updated": "2026-08-07",
+      "price": 65.55,
+      "sma200": 51.924496,
+      "updated": "2026-08-28",
       "symbol": "D",
       "name": "Dominion Energy",
-      "source": "Tiingo",
-      "distance": 32.82958029919487
+      "source": "Alpha Vantage key 1",
+      "distance": 26.240994231316183
     },
     {
-      "price": 364.41,
-      "sma200": 391.9823376331185,
-      "updated": "2026-08-07",
+      "price": 350.0,
+      "sma200": 392.50791449999997,
+      "updated": "2026-08-28",
       "symbol": "DPZ",
       "name": "Domino's",
-      "source": "Tiingo",
-      "distance": -7.034076535082356
+      "source": "Alpha Vantage key 1",
+      "distance": -10.829823534679317
     },
     {
-      "price": 205.72,
-      "sma200": 170.5036494297525,
-      "updated": "2026-08-07",
+      "price": 198.68,
+      "sma200": 171.76986349999999,
+      "updated": "2026-08-28",
       "symbol": "DOV",
       "name": "Dover Corporation",
-      "source": "Tiingo",
-      "distance": 20.654308976979774
+      "source": "Alpha Vantage key 1",
+      "distance": 15.666389872866148
     },
     {
       "price": 29.89,
