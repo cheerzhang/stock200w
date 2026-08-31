@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T13:32:39.422024+00:00",
+  "generated_at": "2026-08-31T15:50:54.613187+00:00",
   "stocks": [
     {
       "price": 417.52,
@@ -2450,94 +2450,94 @@
       "distance": -47.641920788220325
     },
     {
-      "price": 377.28,
-      "sma200": 179.848976,
-      "updated": "2026-08-04",
+      "price": 342.58,
+      "sma200": 184.4411575,
+      "updated": "2026-08-28",
       "symbol": "GE",
       "name": "GE Aerospace",
       "source": "Alpha Vantage key 1",
-      "distance": 109.77600673133661
+      "distance": 85.73945460085284
     },
     {
-      "price": 28.27,
-      "sma200": 23.075911,
-      "updated": "2026-08-04",
+      "price": 31.02,
+      "sma200": 23.1175875,
+      "updated": "2026-08-28",
       "symbol": "GEN",
       "name": "Gen Digital",
       "source": "Alpha Vantage key 1",
-      "distance": 22.50870615682301
+      "distance": 34.183551808768975
     },
     {
-      "price": 218.63,
-      "sma200": 148.311,
-      "updated": "2026-08-04",
+      "price": 183.8,
+      "sma200": 149.50875,
+      "updated": "2026-08-28",
       "symbol": "GNRC",
       "name": "Generac",
       "source": "Alpha Vantage key 1",
-      "distance": 47.413206033267926
+      "distance": 22.935948564883347
     },
     {
-      "price": 385.76,
-      "sma200": 272.9096995,
-      "updated": "2026-08-04",
+      "price": 379.32,
+      "sma200": 275.429313,
+      "updated": "2026-08-28",
       "symbol": "GD",
       "name": "General Dynamics",
       "source": "Alpha Vantage key 1",
-      "distance": 41.35078405302337
+      "distance": 37.71954621257034
     },
     {
-      "price": 36.19,
-      "sma200": 55.9817245,
-      "updated": "2026-08-04",
+      "price": 41.55,
+      "sma200": 55.5790985,
+      "updated": "2026-08-28",
       "symbol": "GIS",
       "name": "General Mills",
       "source": "Alpha Vantage key 1",
-      "distance": -35.35390286163835
+      "distance": -25.24168055730519
     },
     {
-      "price": 88.31,
-      "sma200": 49.642434377496,
-      "updated": "2026-08-07",
+      "price": 86.27,
+      "sma200": 50.429775,
+      "updated": "2026-08-28",
       "symbol": "GM",
       "name": "General Motors",
-      "source": "Tiingo",
-      "distance": 77.8921624360002
+      "source": "Alpha Vantage key 1",
+      "distance": 71.06957149818733
     },
     {
-      "price": 132.55,
-      "sma200": 130.371185501456,
-      "updated": "2026-08-07",
+      "price": 137.51,
+      "sma200": 130.2,
+      "updated": "2026-08-28",
       "symbol": "GPC",
       "name": "Genuine Parts Company",
-      "source": "Tiingo",
-      "distance": 1.6712393081059096
+      "source": "Alpha Vantage key 1",
+      "distance": 5.614439324116738
     },
     {
-      "price": 88.25,
-      "sma200": 96.83067198556701,
-      "updated": "2026-08-07",
+      "price": 91.82,
+      "sma200": 96.5314625,
+      "updated": "2026-08-28",
       "symbol": "GPN",
       "name": "Global Payments",
-      "source": "Tiingo",
-      "distance": -8.861522707232671
+      "source": "Alpha Vantage key 1",
+      "distance": -4.8807532570015795
     },
     {
-      "price": 183.9,
-      "sma200": 119.206197664327,
-      "updated": "2026-08-07",
+      "price": 172.79,
+      "sma200": 120.2013555,
+      "updated": "2026-08-28",
       "symbol": "GL",
       "name": "Globe Life",
-      "source": "Tiingo",
-      "distance": 54.27050237592886
+      "source": "Alpha Vantage key 1",
+      "distance": 43.75045878746349
     },
     {
-      "price": 89.09,
-      "sma200": 119.46035,
-      "updated": "2026-08-07",
+      "price": 97.7,
+      "sma200": 119.77035,
+      "updated": "2026-08-28",
       "symbol": "GDDY",
       "name": "GoDaddy",
-      "source": "Tiingo",
-      "distance": -25.422954143362208
+      "source": "Alpha Vantage key 1",
+      "distance": -18.427223432176653
     },
     {
       "price": 1052.98,
