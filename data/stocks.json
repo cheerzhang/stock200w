@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T11:38:40.931926+00:00",
+  "generated_at": "2026-09-06T11:57:56.756138+00:00",
   "stocks": [
     {
       "price": 428.91,
@@ -1307,94 +1307,94 @@
       "distance": 21.229213126331594
     },
     {
-      "price": 86.26,
-      "sma200": 69.710483757275,
-      "updated": "2026-07-31",
+      "price": 90.27,
+      "sma200": 70.4785205,
+      "updated": "2026-09-04",
       "symbol": "BBY",
       "name": "Best Buy",
-      "source": "Tiingo",
-      "distance": 23.740354894607798
+      "source": "Alpha Vantage key 1",
+      "distance": 28.08157628677803
     },
     {
-      "price": 72.09,
-      "sma200": 67.524843060305,
-      "updated": "2026-07-31",
+      "price": 72.43,
+      "sma200": 67.4691265,
+      "updated": "2026-09-04",
       "symbol": "TECH",
       "name": "Bio-Techne",
-      "source": "Tiingo",
-      "distance": 6.760707219442108
+      "source": "Alpha Vantage key 1",
+      "distance": 7.352805286429787
     },
     {
-      "price": 202.95,
-      "sma200": 209.158875,
-      "updated": "2026-07-31",
+      "price": 220.83,
+      "sma200": 207.74705000000003,
+      "updated": "2026-09-04",
       "symbol": "BIIB",
       "name": "Biogen",
-      "source": "Tiingo",
-      "distance": -2.968497033654449
+      "source": "Alpha Vantage key 1",
+      "distance": 6.297538280326953
     },
     {
-      "price": 1090.39,
-      "sma200": 848.280002947377,
-      "updated": "2026-07-31",
+      "price": 1122.29,
+      "sma200": 863.2646325000001,
+      "updated": "2026-09-04",
       "symbol": "BLK",
       "name": "BlackRock",
-      "source": "Tiingo",
-      "distance": 28.541283091833325
+      "source": "Alpha Vantage key 1",
+      "distance": 30.005326031933777
     },
     {
-      "price": 127.75,
-      "sma200": 120.87125197244201,
-      "updated": "2026-07-31",
+      "price": 136.15,
+      "sma200": 121.303803,
+      "updated": "2026-09-04",
       "symbol": "BX",
       "name": "Blackstone Inc.",
-      "source": "Tiingo",
-      "distance": 5.69097110794079
+      "source": "Alpha Vantage key 1",
+      "distance": 12.238855363833888
     },
     {
-      "price": 81.24,
-      "sma200": 67.8549,
-      "updated": "2026-07-31",
+      "price": 82.76,
+      "sma200": 68.4752,
+      "updated": "2026-09-04",
       "symbol": "XYZ",
       "name": "Block, Inc.",
-      "source": "Tiingo",
-      "distance": 19.7260625245929
+      "source": "Alpha Vantage key 1",
+      "distance": 20.861275323036676
     },
     {
-      "price": 156.33,
-      "sma200": 73.9839331478075,
-      "updated": "2026-07-31",
+      "price": 164.84,
+      "sma200": 77.1024245,
+      "updated": "2026-09-04",
       "symbol": "BNY",
       "name": "BNY Mellon",
-      "source": "Tiingo",
-      "distance": 111.30263470540132
+      "source": "Alpha Vantage key 1",
+      "distance": 113.79353641466881
     },
     {
-      "price": 216.14,
-      "sma200": 198.57045000000002,
-      "updated": "2026-07-31",
+      "price": 212.25,
+      "sma200": 200.54170000000002,
+      "updated": "2026-09-04",
       "symbol": "BA",
       "name": "Boeing",
-      "source": "Tiingo",
-      "distance": 8.848018423687897
+      "source": "Alpha Vantage key 1",
+      "distance": 5.838336864602223
     },
     {
-      "price": 46.73,
-      "sma200": 72.1278,
-      "updated": "2026-07-31",
+      "price": 47.8,
+      "sma200": 72.33324999999999,
+      "updated": "2026-09-04",
       "symbol": "BSX",
       "name": "Boston Scientific",
-      "source": "Tiingo",
-      "distance": -35.21222053078008
+      "source": "Alpha Vantage key 1",
+      "distance": -33.916974558726444
     },
     {
-      "price": 65.31,
-      "sma200": 51.264275925858,
-      "updated": "2026-07-31",
+      "price": 66.82,
+      "sma200": 51.3496,
+      "updated": "2026-09-04",
       "symbol": "BMY",
       "name": "Bristol Myers Squibb",
-      "source": "Tiingo",
-      "distance": 27.398658852523173
+      "source": "Alpha Vantage key 1",
+      "distance": 30.12759593064014
     },
     {
       "price": 183.64,
