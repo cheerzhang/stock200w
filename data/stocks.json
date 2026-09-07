@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T11:57:56.756138+00:00",
+  "generated_at": "2026-09-07T13:59:36.741310+00:00",
   "stocks": [
     {
       "price": 428.91,
@@ -1847,94 +1847,94 @@
       "distance": 21.756361260447953
     },
     {
-      "price": 76.74,
-      "sma200": 94.284059,
-      "updated": "2026-08-03",
+      "price": 75.83,
+      "sma200": 93.68876700000001,
+      "updated": "2026-09-04",
       "symbol": "CCI",
       "name": "Crown Castle",
       "source": "Alpha Vantage key 1",
-      "distance": -18.60766198027177
+      "distance": -19.061801720584082
     },
     {
-      "price": 648.85,
-      "sma200": 340.399873,
-      "updated": "2026-08-03",
+      "price": 560.75,
+      "sma200": 346.5350615,
+      "updated": "2026-09-04",
       "symbol": "CMI",
       "name": "Cummins",
       "source": "Alpha Vantage key 1",
-      "distance": 90.61405466505565
+      "distance": 61.81623803743162
     },
     {
-      "price": 105.37,
-      "sma200": 68.197724,
-      "updated": "2026-08-03",
+      "price": 96.74,
+      "sma200": 68.4131945,
+      "updated": "2026-09-04",
       "symbol": "CVS",
       "name": "CVS Health",
       "source": "Alpha Vantage key 1",
-      "distance": 54.50662253772576
+      "distance": 41.405471133203676
     },
     {
-      "price": 197.5,
-      "sma200": 218.93524850000003,
-      "updated": "2026-08-03",
+      "price": 207.66,
+      "sma200": 218.88050800000002,
+      "updated": "2026-09-04",
       "symbol": "DHR",
       "name": "Danaher Corporation",
       "source": "Alpha Vantage key 1",
-      "distance": -9.7906795031226
+      "distance": -5.126316684169985
     },
     {
-      "price": 206.24,
-      "sma200": 163.9030255,
-      "updated": "2026-08-03",
+      "price": 216.88,
+      "sma200": 165.916721,
+      "updated": "2026-09-04",
       "symbol": "DRI",
       "name": "Darden Restaurants",
       "source": "Alpha Vantage key 1",
-      "distance": 25.83050213432454
+      "distance": 30.71618019741362
     },
     {
-      "price": 233.68,
-      "sma200": 128.9032,
-      "updated": "2026-08-03",
+      "price": 183.99,
+      "sma200": 130.6449,
+      "updated": "2026-09-04",
       "symbol": "DVA",
       "name": "DaVita",
       "source": "Alpha Vantage key 1",
-      "distance": 81.28331957624016
+      "distance": 40.83213351611887
     },
     {
-      "price": 99.5,
-      "sma200": 114.568216666668,
-      "updated": "2026-08-07",
+      "price": 85.81,
+      "sma200": 115.180293,
+      "updated": "2026-09-04",
       "symbol": "DECK",
       "name": "Deckers Brands",
-      "source": "Tiingo",
-      "distance": -13.152178767439848
+      "source": "Alpha Vantage key 1",
+      "distance": -25.499408132257486
     },
     {
-      "price": 630.33,
-      "sma200": 440.69182650000005,
-      "updated": "2026-08-28",
+      "price": 693.53,
+      "sma200": 442.28051500000004,
+      "updated": "2026-09-04",
       "symbol": "DE",
       "name": "Deere & Company",
       "source": "Alpha Vantage key 1",
-      "distance": 43.031924373573545
+      "distance": 56.80772190472825
     },
     {
-      "price": 456.24,
-      "sma200": 122.5462755,
-      "updated": "2026-08-28",
+      "price": 524.14,
+      "sma200": 124.985499,
+      "updated": "2026-09-04",
       "symbol": "DELL",
       "name": "Dell Technologies",
       "source": "Alpha Vantage key 1",
-      "distance": 272.30017651576856
+      "distance": 319.3606491901912
     },
     {
-      "price": 80.07,
-      "sma200": 51.006946500000005,
-      "updated": "2026-08-28",
+      "price": 80.17,
+      "sma200": 51.249674999999996,
+      "updated": "2026-09-04",
       "symbol": "DAL",
       "name": "Delta Air Lines",
       "source": "Alpha Vantage key 1",
-      "distance": 56.97861858874455
+      "distance": 56.430260289455504
     },
     {
       "price": 47.35,
