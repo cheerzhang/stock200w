@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T13:59:36.741310+00:00",
+  "generated_at": "2026-09-08T12:38:03.604080+00:00",
   "stocks": [
     {
       "price": 428.91,
@@ -2387,94 +2387,94 @@
       "distance": 34.557447029462466
     },
     {
-      "price": 60.51,
-      "sma200": 54.357847,
-      "updated": "2026-08-04",
+      "price": 56.94,
+      "sma200": 54.565898,
+      "updated": "2026-09-04",
       "symbol": "FTV",
       "name": "Fortive",
       "source": "Alpha Vantage key 1",
-      "distance": 11.317874675941454
+      "distance": 4.350889634401334
     },
     {
-      "price": 59.08,
-      "sma200": 43.849284,
-      "updated": "2026-08-04",
+      "price": 65.42,
+      "sma200": 44.4693995,
+      "updated": "2026-09-04",
       "symbol": "FOXA",
       "name": "Fox Corporation (Class A)",
       "source": "Alpha Vantage key 1",
-      "distance": 34.73424104256755
+      "distance": 47.11239804351304
     },
     {
-      "price": 52.82,
-      "sma200": 40.214131,
-      "updated": "2026-08-04",
+      "price": 58.42,
+      "sma200": 40.719098,
+      "updated": "2026-09-04",
       "symbol": "FOX",
       "name": "Fox Corporation (Class B)",
       "source": "Alpha Vantage key 1",
-      "distance": 31.34686411599943
+      "distance": 43.470761557635676
     },
     {
-      "price": 35.77,
-      "sma200": 22.591682000000002,
-      "updated": "2026-08-04",
+      "price": 34.73,
+      "sma200": 22.893247000000002,
+      "updated": "2026-09-04",
       "symbol": "BEN",
       "name": "Franklin Resources",
       "source": "Alpha Vantage key 1",
-      "distance": 58.33261109110865
+      "distance": 51.70412480151896
     },
     {
-      "price": 67.3,
-      "sma200": 43.629902,
-      "updated": "2026-08-04",
+      "price": 72.73,
+      "sma200": 44.497897,
+      "updated": "2026-09-04",
       "symbol": "FCX",
       "name": "Freeport-McMoRan",
       "source": "Alpha Vantage key 1",
-      "distance": 54.25200817549394
+      "distance": 63.44592644456883
     },
     {
-      "price": 307.36,
-      "sma200": 165.389243,
-      "updated": "2026-08-04",
+      "price": 277.03,
+      "sma200": 169.6808595,
+      "updated": "2026-09-04",
       "symbol": "GRMN",
       "name": "Garmin",
       "source": "Alpha Vantage key 1",
-      "distance": 85.84038140860227
+      "distance": 63.265321036401254
     },
     {
-      "price": 185.79,
-      "sma200": 354.84495000000004,
-      "updated": "2026-08-04",
+      "price": 186.42,
+      "sma200": 352.70504999999997,
+      "updated": "2026-09-04",
       "symbol": "IT",
       "name": "Gartner",
       "source": "Alpha Vantage key 1",
-      "distance": -47.641920788220325
+      "distance": -47.14563911120637
     },
     {
-      "price": 342.58,
-      "sma200": 184.4411575,
-      "updated": "2026-08-28",
+      "price": 337.12,
+      "sma200": 185.878985,
+      "updated": "2026-09-04",
       "symbol": "GE",
       "name": "GE Aerospace",
       "source": "Alpha Vantage key 1",
-      "distance": 85.73945460085284
+      "distance": 81.36531141484338
     },
     {
-      "price": 31.02,
-      "sma200": 23.1175875,
-      "updated": "2026-08-28",
+      "price": 30.65,
+      "sma200": 23.168934,
+      "updated": "2026-09-04",
       "symbol": "GEN",
       "name": "Gen Digital",
       "source": "Alpha Vantage key 1",
-      "distance": 34.183551808768975
+      "distance": 32.289211061674216
     },
     {
-      "price": 183.8,
-      "sma200": 149.50875,
-      "updated": "2026-08-28",
+      "price": 187.35,
+      "sma200": 149.93925,
+      "updated": "2026-09-04",
       "symbol": "GNRC",
       "name": "Generac",
       "source": "Alpha Vantage key 1",
-      "distance": 22.935948564883347
+      "distance": 24.950604995022996
     },
     {
       "price": 379.32,
