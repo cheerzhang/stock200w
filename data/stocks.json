@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T13:06:59.016977+00:00",
+  "generated_at": "2026-09-14T14:44:06.550902+00:00",
   "stocks": [
     {
       "price": 433.24,
@@ -1145,94 +1145,94 @@
       "distance": 27.027999482152822
     },
     {
-      "price": 119.0,
-      "sma200": 107.7993775866975,
-      "updated": "2026-07-24",
+      "price": 128.98,
+      "sma200": 110.9560455,
+      "updated": "2026-09-11",
       "symbol": "APO",
       "name": "Apollo Global Management",
-      "source": "Tiingo",
-      "distance": 10.390247758429227
+      "source": "Alpha Vantage key 1",
+      "distance": 16.24422934214971
     },
     {
-      "price": 49.62,
-      "sma200": 79.14915,
-      "updated": "2026-08-11",
+      "price": 45.54,
+      "sma200": 78.15185000000001,
+      "updated": "2026-09-11",
       "symbol": "APTV",
       "name": "Aptiv",
       "source": "Alpha Vantage key 1",
-      "distance": -37.308233885013294
+      "distance": -41.72882663686145
     },
     {
-      "price": 98.26,
-      "sma200": 85.219835,
-      "updated": "2026-08-11",
+      "price": 96.09,
+      "sma200": 86.1450595,
+      "updated": "2026-09-11",
       "symbol": "ACGL",
       "name": "Arch Capital Group",
       "source": "Alpha Vantage key 1",
-      "distance": 15.301795644171335
+      "distance": 11.544411899790962
     },
     {
-      "price": 80.46,
-      "sma200": 62.790915000000005,
-      "updated": "2026-08-11",
+      "price": 86.72,
+      "sma200": 62.4051555,
+      "updated": "2026-09-11",
       "symbol": "ADM",
       "name": "Archer Daniels Midland",
       "source": "Alpha Vantage key 1",
-      "distance": 28.139556494757212
+      "distance": 38.96287783466865
     },
     {
-      "price": 143.11,
-      "sma200": 123.48010749999999,
-      "updated": "2026-08-11",
+      "price": 131.64,
+      "sma200": 124.8988175,
+      "updated": "2026-09-11",
       "symbol": "ARES",
       "name": "Ares Management",
       "source": "Alpha Vantage key 1",
-      "distance": 15.89721040694756
+      "distance": 5.397314910527462
     },
     {
-      "price": 197.85,
-      "sma200": 89.143025,
-      "updated": "2026-08-11",
+      "price": 199.59,
+      "sma200": 92.4203625,
+      "updated": "2026-09-11",
       "symbol": "ANET",
       "name": "Arista Networks",
       "source": "Alpha Vantage key 1",
-      "distance": 121.9466974561386
+      "distance": 115.95890191406686
     },
     {
-      "price": 253.51,
-      "sma200": 247.54620200000002,
-      "updated": "2026-08-11",
+      "price": 240.32,
+      "sma200": 248.460056,
+      "updated": "2026-09-11",
       "symbol": "AJG",
       "name": "Arthur J. Gallagher & Co.",
       "source": "Alpha Vantage key 1",
-      "distance": 2.4091656231510106
+      "distance": -3.27620307708536
     },
     {
-      "price": 281.41,
-      "sma200": 180.638583,
-      "updated": "2026-08-11",
+      "price": 282.46,
+      "sma200": 183.280455,
+      "updated": "2026-09-11",
       "symbol": "AIZ",
       "name": "Assurant",
       "source": "Alpha Vantage key 1",
-      "distance": 55.78620875253435
+      "distance": 54.11354145754386
     },
     {
-      "price": 24.5,
-      "sma200": 19.692786,
-      "updated": "2026-08-11",
+      "price": 26.06,
+      "sma200": 19.9125835,
+      "updated": "2026-09-11",
       "symbol": "T",
       "name": "AT&T",
       "source": "Alpha Vantage key 1",
-      "distance": 24.411040672457407
+      "distance": 30.872018691095505
     },
     {
-      "price": 169.21,
-      "sma200": 134.041075,
-      "updated": "2026-08-11",
+      "price": 163.19,
+      "sma200": 134.6374285,
+      "updated": "2026-09-11",
       "symbol": "ATO",
       "name": "Atmos Energy",
       "source": "Alpha Vantage key 1",
-      "distance": 26.237423864289354
+      "distance": 21.20700894105385
     },
     {
       "price": 3042.65,
