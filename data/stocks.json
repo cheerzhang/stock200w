@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T12:17:11.080215+00:00",
+  "generated_at": "2026-09-20T12:52:31.249839+00:00",
   "stocks": [
     {
       "price": 434.67,
@@ -4385,94 +4385,94 @@
       "distance": 20.149688642629382
     },
     {
-      "price": 367.55,
-      "sma200": 327.47175,
-      "updated": "2026-07-21",
+      "price": 421.63,
+      "sma200": 332.00730000000004,
+      "updated": "2026-09-18",
       "symbol": "WAT",
       "name": "Waters Corporation",
       "source": "Alpha Vantage key 1",
-      "distance": 12.238689291519055
+      "distance": 26.99419560955436
     },
     {
-      "price": 110.49,
-      "sma200": 91.235777,
-      "updated": "2026-08-17",
+      "price": 103.17,
+      "sma200": 91.69474249999999,
+      "updated": "2026-09-18",
       "symbol": "WEC",
       "name": "WEC Energy Group",
       "source": "Alpha Vantage key 1",
-      "distance": 21.10380777488199
+      "distance": 12.514629723727078
     },
     {
-      "price": 87.54,
-      "sma200": 61.0017,
-      "updated": "2026-08-17",
+      "price": 86.12,
+      "sma200": 61.898815000000006,
+      "updated": "2026-09-18",
       "symbol": "WFC",
       "name": "Wells Fargo",
       "source": "Alpha Vantage key 1",
-      "distance": 43.50419742400622
+      "distance": 39.13028868161692
     },
     {
-      "price": 235.3,
-      "sma200": 126.74570100000001,
-      "updated": "2026-08-17",
+      "price": 228.87,
+      "sma200": 130.2603425,
+      "updated": "2026-09-18",
       "symbol": "WELL",
       "name": "Welltower",
       "source": "Alpha Vantage key 1",
-      "distance": 85.64732227091474
+      "distance": 75.70197928813214
     },
     {
-      "price": 346.61,
-      "sma200": 302.8474785,
-      "updated": "2026-08-17",
+      "price": 362.31,
+      "sma200": 305.2734245,
+      "updated": "2026-09-18",
       "symbol": "WST",
       "name": "West Pharmaceutical Services",
       "source": "Alpha Vantage key 1",
-      "distance": 14.450350294067249
+      "distance": 18.683767050282498
     },
     {
-      "price": 24.08,
-      "sma200": 27.266594,
-      "updated": "2026-08-17",
+      "price": 21.22,
+      "sma200": 26.922394,
+      "updated": "2026-09-18",
       "symbol": "WY",
       "name": "Weyerhaeuser",
       "source": "Alpha Vantage key 1",
-      "distance": -11.686806206891854
+      "distance": -21.180857839016852
     },
     {
-      "price": 240.42,
-      "sma200": 137.37257,
-      "updated": "2026-08-17",
+      "price": 224.2,
+      "sma200": 140.756022,
+      "updated": "2026-09-18",
       "symbol": "WSM",
       "name": "Williams-Sonoma, Inc.",
       "source": "Alpha Vantage key 1",
-      "distance": 75.01310487239192
+      "distance": 59.282705503001495
     },
     {
-      "price": 72.85,
-      "sma200": 46.778025500000005,
-      "updated": "2026-09-11",
+      "price": 72.05,
+      "sma200": 46.997102500000004,
+      "updated": "2026-09-18",
       "symbol": "WMB",
       "name": "Williams Companies",
       "source": "Alpha Vantage key 1",
-      "distance": 55.73551731036615
+      "distance": 53.30732357383094
     },
     {
-      "price": 315.61,
-      "sma200": 273.08283800000004,
-      "updated": "2026-09-11",
+      "price": 309.98,
+      "sma200": 273.5242055,
+      "updated": "2026-09-18",
       "symbol": "WTW",
       "name": "Willis Towers Watson",
       "source": "Alpha Vantage key 1",
-      "distance": 15.572989614235656
+      "distance": 13.328178554932336
     },
     {
-      "price": 87.7,
-      "sma200": 96.86518,
-      "updated": "2026-09-11",
+      "price": 81.68,
+      "sma200": 96.906999,
+      "updated": "2026-09-18",
       "symbol": "WYNN",
       "name": "Wynn Resorts",
       "source": "Alpha Vantage key 1",
-      "distance": -9.461790088037825
+      "distance": -15.713002318852109
     },
     {
       "price": 106.96,
