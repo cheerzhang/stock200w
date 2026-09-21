@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T12:52:31.249839+00:00",
+  "generated_at": "2026-09-21T14:51:11.126830+00:00",
   "stocks": [
     {
       "price": 434.67,
@@ -542,94 +542,94 @@
       "distance": 196.91441319942317
     },
     {
-      "price": 364.47,
-      "sma200": 242.624911,
-      "updated": "2026-07-23",
+      "price": 338.92,
+      "sma200": 250.338101,
+      "updated": "2026-09-18",
       "symbol": "MAR",
       "name": "Marriott International",
       "source": "Alpha Vantage key 1",
-      "distance": 50.21952960139367
+      "distance": 35.38490491305597
     },
     {
-      "price": 78.19,
-      "sma200": 71.7507985,
-      "updated": "2026-08-18",
+      "price": 73.27,
+      "sma200": 71.5160595,
+      "updated": "2026-09-18",
       "symbol": "MCHP",
       "name": "Microchip Technology",
       "source": "Alpha Vantage key 1",
-      "distance": 8.974396988766609
+      "distance": 2.452512781412408
     },
     {
-      "price": 62.66,
-      "sma200": 62.3239125,
-      "updated": "2026-08-18",
+      "price": 60.85,
+      "sma200": 62.4192505,
+      "updated": "2026-09-18",
       "symbol": "MDLZ",
       "name": "Mondelez International",
       "source": "Alpha Vantage key 1",
-      "distance": 0.5392593091776643
+      "distance": -2.514048931106594
     },
     {
-      "price": 1779.14,
-      "sma200": 1718.09285,
-      "updated": "2026-08-18",
+      "price": 1787.39,
+      "sma200": 1738.1712,
+      "updated": "2026-09-18",
       "symbol": "MELI",
       "name": "MercadoLibre",
       "source": "Alpha Vantage key 1",
-      "distance": 3.553192715981557
+      "distance": 2.831642820914304
     },
     {
-      "price": 47.38,
-      "sma200": 30.5169,
-      "updated": "2026-08-18",
+      "price": 44.71,
+      "sma200": 30.926275,
+      "updated": "2026-09-18",
       "symbol": "MNST",
       "name": "Monster Beverage",
       "source": "Alpha Vantage key 1",
-      "distance": 55.25823396216523
+      "distance": 44.569625666201304
     },
     {
-      "price": 1333.18,
-      "sma200": 750.3131754999999,
-      "updated": "2026-08-18",
+      "price": 1217.8,
+      "sma200": 767.748184,
+      "updated": "2026-09-18",
       "symbol": "MPWR",
       "name": "Monolithic Power Systems",
       "source": "Alpha Vantage key 1",
-      "distance": 77.68313865894525
+      "distance": 58.61971742547291
     },
     {
-      "price": 92.52,
-      "sma200": 160.82073,
-      "updated": "2026-08-18",
+      "price": 153.92,
+      "sma200": 163.278185,
+      "updated": "2026-09-18",
       "symbol": "MSTR",
       "name": "Strategy",
       "source": "Alpha Vantage key 1",
-      "distance": -42.47010320124775
+      "distance": -5.731436198901907
     },
     {
-      "price": 224.55,
-      "sma200": 57.186375,
-      "updated": "2026-09-11",
+      "price": 223.54,
+      "sma200": 58.209375,
+      "updated": "2026-09-18",
       "symbol": "NBIS",
       "name": "Nebius Group",
       "source": "Alpha Vantage key 1",
-      "distance": 292.66346223204397
+      "distance": 284.02748698126373
     },
     {
-      "price": 77.4,
-      "sma200": 72.77304,
-      "updated": "2026-09-11",
+      "price": 71.79,
+      "sma200": 72.988,
+      "updated": "2026-09-18",
       "symbol": "NFLX",
       "name": "Netflix",
       "source": "Alpha Vantage key 1",
-      "distance": 6.358068867261846
+      "distance": -1.6413657039513252
     },
     {
-      "price": 236.62,
-      "sma200": 212.47289700000002,
-      "updated": "2026-09-11",
+      "price": 227.99,
+      "sma200": 211.835216,
+      "updated": "2026-09-18",
       "symbol": "NXPI",
       "name": "NXP Semiconductors",
       "source": "Alpha Vantage key 1",
-      "distance": 11.364792093929976
+      "distance": 7.62610877692782
     },
     {
       "price": 179.79,
