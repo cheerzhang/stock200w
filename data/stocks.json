@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T12:40:39.651457+00:00",
+  "generated_at": "2026-09-27T13:32:19.546309+00:00",
   "stocks": [
     {
       "price": 450.61,
@@ -3755,94 +3755,94 @@
       "distance": 4.944483173209568
     },
     {
-      "price": 90.71,
-      "sma200": 45.508050000000004,
-      "updated": "2026-08-07",
+      "price": 119.4,
+      "sma200": 49.0659,
+      "updated": "2026-09-25",
       "symbol": "HOOD",
       "name": "Robinhood Markets",
-      "source": "Tiingo",
-      "distance": 99.3273717507122
+      "source": "Alpha Vantage key 1",
+      "distance": 143.34619358862267
     },
     {
-      "price": 441.8,
-      "sma200": 306.0815065325825,
-      "updated": "2026-08-07",
+      "price": 434.15,
+      "sma200": 311.9996275,
+      "updated": "2026-09-25",
       "symbol": "ROK",
       "name": "Rockwell Automation",
-      "source": "Tiingo",
-      "distance": 44.34063821917648
+      "source": "Alpha Vantage key 1",
+      "distance": 39.15080715921688
     },
     {
-      "price": 36.83,
-      "sma200": 46.624809415809004,
-      "updated": "2026-08-07",
+      "price": 30.03,
+      "sma200": 46.289501,
+      "updated": "2026-09-25",
       "symbol": "ROL",
       "name": "Rollins, Inc.",
-      "source": "Tiingo",
-      "distance": -21.00772000686805
+      "source": "Alpha Vantage key 1",
+      "distance": -35.125677850793856
     },
     {
-      "price": 320.0,
-      "sma200": 182.478913,
-      "updated": "2026-08-07",
+      "price": 242.7,
+      "sma200": 188.97213250000001,
+      "updated": "2026-09-25",
       "symbol": "RCL",
       "name": "Royal Caribbean Group",
       "source": "Alpha Vantage key 1",
-      "distance": 75.3627280758736
+      "distance": 28.431635283578103
     },
     {
-      "price": 408.19,
-      "sma200": 436.3455785,
-      "updated": "2026-08-07",
+      "price": 403.3,
+      "sma200": 419.2012375,
+      "updated": "2026-09-25",
       "symbol": "SPGI",
       "name": "S&P Global",
       "source": "Alpha Vantage key 1",
-      "distance": -6.452587097774387
+      "distance": -3.793222938660812
     },
     {
-      "price": 192.74,
-      "sma200": 232.91707,
-      "updated": "2026-08-07",
+      "price": 234.02,
+      "sma200": 235.46654750000002,
+      "updated": "2026-09-25",
       "symbol": "CRM",
       "name": "Salesforce",
       "source": "Alpha Vantage key 1",
-      "distance": -17.249517177938046
+      "distance": -0.6143324881425105
     },
     {
-      "price": 184.03,
-      "sma200": 213.49128100000001,
-      "updated": "2026-08-07",
+      "price": 166.15,
+      "sma200": 209.514556,
+      "updated": "2026-09-25",
       "symbol": "SBAC",
       "name": "SBA Communications",
       "source": "Alpha Vantage key 1",
-      "distance": -13.79975840793236
+      "distance": -20.69763401068897
     },
     {
-      "price": 50.53,
-      "sma200": 44.258957,
-      "updated": "2026-08-07",
+      "price": 51.54,
+      "sma200": 44.3216785,
+      "updated": "2026-09-25",
       "symbol": "SLB",
       "name": "Schlumberger",
       "source": "Alpha Vantage key 1",
-      "distance": 14.168980529749042
+      "distance": 16.286209693073793
     },
     {
-      "price": 83.88,
-      "sma200": 75.8401895,
-      "updated": "2026-08-07",
+      "price": 77.93,
+      "sma200": 75.7332965,
+      "updated": "2026-09-25",
       "symbol": "SRE",
       "name": "Sempra",
       "source": "Alpha Vantage key 1",
-      "distance": 10.600989466145784
+      "distance": 2.9005782152900395
     },
     {
-      "price": 124.88,
-      "sma200": 141.35397999999998,
-      "updated": "2026-08-07",
+      "price": 135.62,
+      "sma200": 143.36325,
+      "updated": "2026-09-25",
       "symbol": "NOW",
       "name": "ServiceNow",
       "source": "Alpha Vantage key 1",
-      "distance": -11.654415390355465
+      "distance": -5.401140110872205
     },
     {
       "price": 320.73,
