@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T13:32:19.546309+00:00",
+  "generated_at": "2026-09-28T16:27:56.649026+00:00",
   "stocks": [
     {
       "price": 450.61,
@@ -4295,94 +4295,94 @@
       "distance": 189.7586696626603
     },
     {
-      "price": 17.59,
-      "sma200": 10.4353125,
-      "updated": "2026-07-21",
+      "price": 17.83,
+      "sma200": 10.732997000000001,
+      "updated": "2026-09-25",
       "symbol": "VTRS",
       "name": "Viatris",
       "source": "Alpha Vantage key 1",
-      "distance": 68.56227353038062
+      "distance": 66.12321796046339
     },
     {
-      "price": 26.58,
-      "sma200": 27.425857500000003,
-      "updated": "2026-07-21",
+      "price": 23.51,
+      "sma200": 26.922111,
+      "updated": "2026-09-25",
       "symbol": "VICI",
       "name": "Vici Properties",
       "source": "Alpha Vantage key 1",
-      "distance": -3.0841606319875536
+      "distance": -12.674009850119106
     },
     {
-      "price": 355.82,
-      "sma200": 282.625053,
-      "updated": "2026-07-21",
+      "price": 367.38,
+      "sma200": 290.140095,
+      "updated": "2026-09-25",
       "symbol": "V",
       "name": "Visa Inc.",
       "source": "Alpha Vantage key 1",
-      "distance": 25.89825149011118
+      "distance": 26.621589477317855
     },
     {
-      "price": 162.33,
-      "sma200": 99.457438,
-      "updated": "2026-07-21",
+      "price": 138.46,
+      "sma200": 104.765564,
+      "updated": "2026-09-25",
       "symbol": "VST",
       "name": "Vistra Corp.",
       "source": "Alpha Vantage key 1",
-      "distance": 63.21554552812834
+      "distance": 32.161747346675874
     },
     {
-      "price": 276.75,
-      "sma200": 242.0850345,
-      "updated": "2026-07-21",
+      "price": 245.0,
+      "sma200": 246.320799,
+      "updated": "2026-09-25",
       "symbol": "VMC",
       "name": "Vulcan Materials Company",
       "source": "Alpha Vantage key 1",
-      "distance": 14.319334349434975
+      "distance": -0.5362109108780544
     },
     {
-      "price": 72.16,
-      "sma200": 54.382238,
-      "updated": "2026-07-21",
+      "price": 66.82,
+      "sma200": 56.043468499999996,
+      "updated": "2026-09-25",
       "symbol": "WRB",
       "name": "W. R. Berkley Corporation",
       "source": "Alpha Vantage key 1",
-      "distance": 32.69038320931183
+      "distance": 19.22888034669017
     },
     {
-      "price": 1361.61,
-      "sma200": 910.938865,
-      "updated": "2026-07-21",
+      "price": 1243.07,
+      "sma200": 943.8556789999999,
+      "updated": "2026-09-25",
       "symbol": "GWW",
       "name": "W. W. Grainger",
       "source": "Alpha Vantage key 1",
-      "distance": 49.47325801056912
+      "distance": 31.70127887740346
     },
     {
-      "price": 263.53,
-      "sma200": 164.81233799999998,
-      "updated": "2026-07-21",
+      "price": 288.0,
+      "sma200": 173.8024785,
+      "updated": "2026-09-25",
       "symbol": "WAB",
       "name": "Wabtec",
       "source": "Alpha Vantage key 1",
-      "distance": 59.89700965227493
+      "distance": 65.70534694647637
     },
     {
-      "price": 96.14,
-      "sma200": 99.13851199999999,
-      "updated": "2026-07-21",
+      "price": 106.15,
+      "sma200": 99.59293149999999,
+      "updated": "2026-09-25",
       "symbol": "DIS",
       "name": "Walt Disney Company (The)",
       "source": "Alpha Vantage key 1",
-      "distance": -3.024568292895091
+      "distance": 6.583869358238559
     },
     {
-      "price": 233.18,
-      "sma200": 194.07457699999998,
-      "updated": "2026-07-21",
+      "price": 206.83,
+      "sma200": 196.3802005,
+      "updated": "2026-09-25",
       "symbol": "WM",
       "name": "Waste Management",
       "source": "Alpha Vantage key 1",
-      "distance": 20.149688642629382
+      "distance": 5.321208285455437
     },
     {
       "price": 421.63,
