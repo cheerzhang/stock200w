@@ -3,6 +3,7 @@
 import argparse
 import datetime as dt
 import json
+import math
 import os
 import time
 import urllib.parse
@@ -16,6 +17,7 @@ OUTPUT_FILE=ROOT/"data/stocks.json"
 STATE_FILE=ROOT/"data/update-state.json"
 BLACKLIST_FILE=ROOT/"data/blacklist.json"
 WATCHLIST_FILE=ROOT/"data/watchlist.json"
+EARNINGS_FILE=ROOT/"data/earnings.json"
 ALPHA_VANTAGE_API_URL="https://www.alphavantage.co/query"
 TIINGO_API_URL="https://api.tiingo.com/tiingo/daily"
 SCAN_ORDER_VERSION="nasdaq-sp500-excluding-wishlist-v4"
@@ -79,6 +81,80 @@ def fetch_alpha_vantage(symbol, key):
     closes=[float(values["5. adjusted close"]) for _,values in points[:200]]
     return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0][0]}
 
+def fetch_earnings(symbol, key):
+    params=urllib.parse.urlencode({"function":"EARNINGS","symbol":symbol,"apikey":key})
+    req=urllib.request.Request(f"{ALPHA_VANTAGE_API_URL}?{params}",headers={"User-Agent":"stock200w/1.0"})
+    with urllib.request.urlopen(req,timeout=30) as response:
+        payload=json.load(response)
+    if not isinstance(payload.get("quarterlyEarnings"),list) or not payload["quarterlyEarnings"]:
+        raise RuntimeError(payload.get("Note") or payload.get("Information") or payload.get("Error Message") or "No quarterly earnings available")
+    rows=[]
+    for row in payload["quarterlyEarnings"]:
+        try:
+            end=dt.date.fromisoformat(row["fiscalDateEnding"]).isoformat()
+            eps=float(row["reportedEPS"])
+            if not math.isfinite(eps): continue
+        except (KeyError, ValueError, TypeError):
+            continue
+        rows.append({"fiscal_date_ending":end,"reported_date":row.get("reportedDate"),"eps":eps})
+    if not rows: raise RuntimeError("No reported quarterly EPS available")
+    return sorted(rows,key=lambda row:row["fiscal_date_ending"])
+
+def append_earnings(record, rows, today):
+    # Start at the latest available quarter; never replace an archived EPS.
+    history=record.setdefault("quarters",[])
+    baseline=record.get("start_quarter") or (min(row["fiscal_date_ending"] for row in history) if history else rows[-1]["fiscal_date_ending"])
+    record["start_quarter"]=baseline
+    known={row["fiscal_date_ending"] for row in history}
+    for row in rows:
+        if row["fiscal_date_ending"]>=baseline and row["fiscal_date_ending"] not in known:
+            history.append({**row,"saved_at":today.isoformat()})
+            known.add(row["fiscal_date_ending"])
+    history.sort(key=lambda row:row["fiscal_date_ending"])
+
+
+def update_earnings(wishlist, blacklist, keys, limit, today):
+    archive=load(EARNINGS_FILE,{"source":"Alpha Vantage EARNINGS","stocks":{}})
+    records=archive["stocks"]
+    requests=[0]*len(keys)
+    used=0
+    key_index=0
+    budget=min(5,max(0,limit))
+    eligible=[symbol for symbol in wishlist if symbol not in blacklist]
+    eligible.sort(key=lambda symbol:records.get(symbol,{}).get("checked_at",""))
+    for symbol in eligible:
+        record=records.get(symbol,{})
+        checked=record.get("checked_at")
+        retry_days=1 if record.get("error") else 7
+        if checked and (today-dt.date.fromisoformat(checked)).days<retry_days: continue
+        if used>=budget: break
+        while key_index<len(keys) and used<budget:
+            used+=1
+            requests[key_index]+=1
+            try:
+                rows=fetch_earnings(symbol,keys[key_index])
+                append_earnings(record,rows,today)
+                record.pop("error",None)
+                print(f"EPS updated {symbol}: {len(record['quarters'])} saved quarters")
+            except Exception as exc:
+                message=str(exc)
+                if any(token in message.lower() for token in ("frequency","rate limit","25 requests","429")):
+                    requests[key_index]=25
+                    key_index+=1
+                    print("Alpha Vantage EPS quota exhausted; preserving archive")
+                    continue
+                record["error"]=message
+                print(f"EPS failed {symbol}: {message}")
+            record["checked_at"]=today.isoformat()
+            records[symbol]=record
+            break
+        if used<budget: time.sleep(1)
+    if used:
+        temporary=EARNINGS_FILE.with_suffix(".tmp")
+        temporary.write_text(json.dumps(archive,indent=2,allow_nan=False)+"\n")
+        temporary.replace(EARNINGS_FILE)
+    return sum(requests),requests,key_index
+
 def fetch_tiingo(symbol, key):
     start_date=(dt.date.today()-dt.timedelta(days=366*6)).isoformat()
     params=urllib.parse.urlencode({"startDate":start_date,"resampleFreq":"weekly"})
@@ -125,7 +201,9 @@ def main():
     state=load(STATE_FILE,{})
     alpha_limit=min(int(os.environ.get("DAILY_LIMIT","25")),25*len(keys)) if keys else 0
     tiingo_limit=max(0,int(os.environ.get("TIINGO_DAILY_LIMIT","50"))) if tiingo_key else 0
-    limit=alpha_limit+tiingo_limit
+    today=dt.date.today()
+    alpha_requests,key_requests,key_index=update_earnings(watchlist,blacklist,keys,alpha_limit,today)
+    limit=max(0,alpha_limit-alpha_requests)+tiingo_limit
     order_index={symbol:index for index,(symbol,_) in enumerate(scan_order)}
     if state.get("next_symbol") in order_index:
         cursor=order_index[state["next_symbol"]]
@@ -167,9 +245,6 @@ def main():
             batch.append((symbol,name,scanned))
             batch_symbols.add(symbol)
     failures=[]
-    key_index=0
-    key_requests=[0]*len(keys)
-    alpha_requests=0
     tiingo_requests=0
     progress_scanned=0
     quota_exhausted=False

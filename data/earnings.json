@@ -1,0 +1,65 @@
+{
+  "source": "Alpha Vantage EARNINGS",
+  "stocks": {
+    "TSM": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-16",
+          "eps": 4.31,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03"
+    },
+    "NVDA": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-07-31",
+          "reported_date": "2026-08-26",
+          "eps": 2.22,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-07-31",
+      "checked_at": "2026-10-03"
+    },
+    "MU": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-08-31",
+          "reported_date": "2026-09-30",
+          "eps": 33.19,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-08-31",
+      "checked_at": "2026-10-03"
+    },
+    "MRVL": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-07-31",
+          "reported_date": "2026-08-27",
+          "eps": 0.62,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-07-31",
+      "checked_at": "2026-10-03"
+    },
+    "INTC": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-23",
+          "eps": 0.3,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03"
+    }
+  }
+}

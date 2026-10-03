@@ -27,4 +27,4 @@ if [ "$#" -eq 0 ] && [ -t 0 ]; then
 fi
 
 python3 "$ROOT/scripts/update_data.py" "$@"
-echo "Done. Refresh the local page to view results. Commit data/stocks.json and data/update-state.json to publish."
+echo "Done. Refresh the local page to view results. Commit data/stocks.json, data/update-state.json and data/earnings.json to publish."
