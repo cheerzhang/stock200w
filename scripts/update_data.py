@@ -98,7 +98,13 @@ def fetch_earnings(symbol, key):
             continue
         rows.append({"fiscal_date_ending":end,"reported_date":row.get("reportedDate"),"eps":eps})
     if not rows: raise RuntimeError("No reported quarterly EPS available")
-    return sorted(rows,key=lambda row:row["fiscal_date_ending"])
+    rows.sort(key=lambda row:row["fiscal_date_ending"])
+    for index,row in enumerate(rows):
+        window=rows[max(0,index-3):index+1]
+        dates=[dt.date.fromisoformat(item["fiscal_date_ending"]) for item in window]
+        if len(window)==4 and all(60<=(b-a).days<=120 for a,b in zip(dates,dates[1:])):
+            row["eps_ttm"]=sum(item["eps"] for item in window)
+    return rows
 
 def append_earnings(record, rows, today):
     # Start at the latest available quarter; never replace an archived EPS.
@@ -107,10 +113,31 @@ def append_earnings(record, rows, today):
     record["start_quarter"]=baseline
     known={row["fiscal_date_ending"] for row in history}
     for row in rows:
+        if row["fiscal_date_ending"] in known and "eps_ttm" in row:
+            existing=next(item for item in history if item["fiscal_date_ending"]==row["fiscal_date_ending"])
+            existing.setdefault("eps_ttm",row["eps_ttm"])
         if row["fiscal_date_ending"]>=baseline and row["fiscal_date_ending"] not in known:
             history.append({**row,"saved_at":today.isoformat()})
             known.add(row["fiscal_date_ending"])
     history.sort(key=lambda row:row["fiscal_date_ending"])
+
+
+def append_valuation(record, stock, today):
+    quarters=record.get("quarters",[])
+    if not quarters: return False
+    latest=max(quarters,key=lambda row:row["fiscal_date_ending"])
+    price=stock.get("price")
+    price_date=stock.get("updated")
+    if not isinstance(price,(int,float)) or not math.isfinite(price) or price<=0 or not price_date: return False
+    if price_date<(latest.get("reported_date") or latest["fiscal_date_ending"]): return False
+    snapshots=record.setdefault("valuations",[])
+    if any(row["observed_at"]==today.isoformat() for row in snapshots): return False
+    ttm=latest.get("eps_ttm")
+    pe=price/ttm if isinstance(ttm,(int,float)) and math.isfinite(ttm) and ttm>0 else None
+    snapshots.append({"observed_at":today.isoformat(),"price":price,"price_date":price_date,
+                      "fiscal_date_ending":latest["fiscal_date_ending"],"eps":latest["eps"],"eps_ttm":ttm,"pe":pe})
+    snapshots.sort(key=lambda row:row["observed_at"])
+    return True
 
 
 def update_earnings(wishlist, blacklist, keys, limit, today):
@@ -126,9 +153,12 @@ def update_earnings(wishlist, blacklist, keys, limit, today):
         record=records.get(symbol,{})
         checked=record.get("checked_at")
         retry_days=1 if record.get("error") else 7
-        if checked and (today-dt.date.fromisoformat(checked)).days<retry_days: continue
+        if checked and record.get("quarters") and "eps_ttm" in record["quarters"][-1] and (today-dt.date.fromisoformat(checked)).days<retry_days: continue
         if used>=budget: break
         while key_index<len(keys) and used<budget:
+            if requests[key_index]>=25:
+                key_index+=1
+                continue
             used+=1
             requests[key_index]+=1
             try:
@@ -149,7 +179,12 @@ def update_earnings(wishlist, blacklist, keys, limit, today):
             records[symbol]=record
             break
         if used<budget: time.sleep(1)
-    if used:
+    prices={row["symbol"]:row for row in load(OUTPUT_FILE,{"stocks":[]}).get("stocks",[])}
+    changed=False
+    for symbol in eligible:
+        if symbol in records:
+            changed=append_valuation(records[symbol],prices.get(symbol,{}),today) or changed
+    if used or changed:
         temporary=EARNINGS_FILE.with_suffix(".tmp")
         temporary.write_text(json.dumps(archive,indent=2,allow_nan=False)+"\n")
         temporary.replace(EARNINGS_FILE)

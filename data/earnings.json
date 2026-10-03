@@ -7,11 +7,23 @@
           "fiscal_date_ending": "2026-06-30",
           "reported_date": "2026-07-16",
           "eps": 4.31,
-          "saved_at": "2026-10-03"
+          "saved_at": "2026-10-03",
+          "eps_ttm": 13.86
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-03"
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 459.2,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 4.31,
+          "eps_ttm": 13.86,
+          "pe": 33.131313131313135
+        }
+      ]
     },
     "NVDA": {
       "quarters": [
@@ -19,11 +31,23 @@
           "fiscal_date_ending": "2026-07-31",
           "reported_date": "2026-08-26",
           "eps": 2.22,
-          "saved_at": "2026-10-03"
+          "saved_at": "2026-10-03",
+          "eps_ttm": 7.010000000000001
         }
       ],
       "start_quarter": "2026-07-31",
-      "checked_at": "2026-10-03"
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 230.86,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-07-31",
+          "eps": 2.22,
+          "eps_ttm": 7.010000000000001,
+          "pe": 32.932952924393724
+        }
+      ]
     },
     "MU": {
       "quarters": [
@@ -31,11 +55,23 @@
           "fiscal_date_ending": "2026-08-31",
           "reported_date": "2026-09-30",
           "eps": 33.19,
-          "saved_at": "2026-10-03"
+          "saved_at": "2026-10-03",
+          "eps_ttm": 75.28
         }
       ],
       "start_quarter": "2026-08-31",
-      "checked_at": "2026-10-03"
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 1097.39,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-08-31",
+          "eps": 33.19,
+          "eps_ttm": 75.28,
+          "pe": 14.577444208289055
+        }
+      ]
     },
     "MRVL": {
       "quarters": [
@@ -43,11 +79,23 @@
           "fiscal_date_ending": "2026-07-31",
           "reported_date": "2026-08-27",
           "eps": 0.62,
-          "saved_at": "2026-10-03"
+          "saved_at": "2026-10-03",
+          "eps_ttm": 2.98
         }
       ],
       "start_quarter": "2026-07-31",
-      "checked_at": "2026-10-03"
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 268.08,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-07-31",
+          "eps": 0.62,
+          "eps_ttm": 2.98,
+          "pe": 89.95973154362416
+        }
+      ]
     },
     "INTC": {
       "quarters": [
@@ -55,11 +103,287 @@
           "fiscal_date_ending": "2026-06-30",
           "reported_date": "2026-07-23",
           "eps": 0.3,
+          "saved_at": "2026-10-03",
+          "eps_ttm": 0.97
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 120.0,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 0.3,
+          "eps_ttm": 0.97,
+          "pe": 123.71134020618557
+        }
+      ]
+    },
+    "GLW": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-28",
+          "eps": 0.78,
+          "eps_ttm": 2.87,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 160.42,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 0.78,
+          "eps_ttm": 2.87,
+          "pe": 55.89547038327525
+        }
+      ]
+    },
+    "PLTR": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-08-03",
+          "eps": 0.41,
+          "eps_ttm": 1.2,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 190.04,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 0.41,
+          "eps_ttm": 1.2,
+          "pe": 158.36666666666667
+        }
+      ]
+    },
+    "MSFT": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-29",
+          "eps": 4.74,
+          "eps_ttm": 17.89,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 512.8,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 4.74,
+          "eps_ttm": 17.89,
+          "pe": 28.664058133035212
+        }
+      ]
+    },
+    "ORCL": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-08-31",
+          "reported_date": "2026-09-10",
+          "eps": 1.63,
+          "eps_ttm": 7.47,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-08-31",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 138.07,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-08-31",
+          "eps": 1.63,
+          "eps_ttm": 7.47,
+          "pe": 18.48326639892905
+        }
+      ]
+    },
+    "UBER": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-08-05",
+          "eps": 1.17,
+          "eps_ttm": 4.55,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 67.88,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 1.17,
+          "eps_ttm": 4.55,
+          "pe": 14.918681318681319
+        }
+      ]
+    },
+    "SPCX": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-08-04",
+          "eps": -0.09,
           "saved_at": "2026-10-03"
         }
       ],
       "start_quarter": "2026-06-30",
       "checked_at": "2026-10-03"
+    },
+    "SKHY": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-28",
+          "eps": 8.76,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03"
+    },
+    "AMD": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-08-04",
+          "eps": 1.66,
+          "eps_ttm": 5.76,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 615.73,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 1.66,
+          "eps_ttm": 5.76,
+          "pe": 106.89756944444446
+        }
+      ]
+    },
+    "GOOGL": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-22",
+          "eps": 9.11,
+          "eps_ttm": 19.91,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 338.24,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 9.11,
+          "eps_ttm": 19.91,
+          "pe": 16.988448016072326
+        }
+      ]
+    },
+    "AMZN": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-30",
+          "eps": 1.88,
+          "eps_ttm": 8.559999999999999,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 248.23,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 1.88,
+          "eps_ttm": 8.559999999999999,
+          "pe": 28.99883177570094
+        }
+      ]
+    },
+    "TSLA": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-22",
+          "eps": 0.33,
+          "eps_ttm": 1.74,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 354.11,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 0.33,
+          "eps_ttm": 1.74,
+          "pe": 203.51149425287358
+        }
+      ]
+    },
+    "META": {
+      "quarters": [
+        {
+          "fiscal_date_ending": "2026-06-30",
+          "reported_date": "2026-07-29",
+          "eps": 6.18,
+          "eps_ttm": 29.62,
+          "saved_at": "2026-10-03"
+        }
+      ],
+      "start_quarter": "2026-06-30",
+      "checked_at": "2026-10-03",
+      "valuations": [
+        {
+          "observed_at": "2026-10-03",
+          "price": 725.93,
+          "price_date": "2026-10-01",
+          "fiscal_date_ending": "2026-06-30",
+          "eps": 6.18,
+          "eps_ttm": 29.62,
+          "pe": 24.50810263335584
+        }
+      ]
     }
   }
 }

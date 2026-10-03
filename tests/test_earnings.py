@@ -25,7 +25,7 @@ class EarningsTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'earnings.json'
             today = dt.date(2026, 10, 3)
-            with patch.object(u, 'EARNINGS_FILE', path), patch.object(u.time, 'sleep'), patch.object(u, 'fetch_earnings', return_value=[{'fiscal_date_ending': '2026-06-30', 'eps': 2}]) as fetch:
+            with patch.object(u, 'EARNINGS_FILE', path), patch.object(u.time, 'sleep'), patch.object(u, 'fetch_earnings', return_value=[{'fiscal_date_ending': '2026-06-30', 'eps': 2, 'eps_ttm': 8}]) as fetch:
                 used, counts, key = u.update_earnings(['A', 'B'], {'B'}, ['key'], 1, today)
                 self.assertEqual((used, counts, key), (1, [1], 0))
                 fetch.assert_called_once_with('A', 'key')
@@ -35,6 +35,26 @@ class EarningsTests(unittest.TestCase):
                 saved = json.loads(path.read_text())['stocks']['A']
                 self.assertEqual(saved['quarters'][0]['eps'], 2)
                 self.assertEqual(saved['error'], 'temporary failure')
+
+    def test_valuation_retains_history_and_handles_losses_and_stale_prices(self):
+        today=dt.date(2026,10,3)
+        record={"quarters":[{"fiscal_date_ending":"2026-06-30","reported_date":"2026-07-23","eps":2,"eps_ttm":8}]}
+        self.assertFalse(u.append_valuation(record,{"price":80,"updated":"2026-07-01"},today))
+        self.assertTrue(u.append_valuation(record,{"price":80,"updated":"2026-10-01"},today))
+        self.assertEqual(record["valuations"][0]["pe"],10)
+        self.assertFalse(u.append_valuation(record,{"price":160,"updated":"2026-10-02"},today))
+        self.assertEqual(record["valuations"][0]["price"],80)
+        record["quarters"][0]["eps_ttm"]=-2
+        self.assertTrue(u.append_valuation(record,{"price":80,"updated":"2026-10-08"},today+dt.timedelta(days=7)))
+        self.assertIsNone(record["valuations"][-1]["pe"])
+
+    def test_fetch_calculates_ttm_from_four_consecutive_quarters(self):
+        import io
+        payload={"quarterlyEarnings":[{"fiscalDateEnding":date,"reportedEPS":str(eps)} for date,eps in [("2026-06-30",4),("2026-03-31",3),("2025-12-31",2),("2025-09-30",1)]]}
+        with patch.object(u.urllib.request,"urlopen",return_value=io.StringIO(json.dumps(payload))):
+            rows=u.fetch_earnings("A","test-key")
+        self.assertEqual(rows[-1]["eps_ttm"],10)
+        self.assertNotIn("eps_ttm",rows[0])
 
     def test_earnings_only_leaves_prices_and_rotation_unchanged(self):
         prices=u.OUTPUT_FILE.read_bytes()
@@ -46,6 +66,13 @@ class EarningsTests(unittest.TestCase):
             tiingo_fetch.assert_not_called()
         self.assertEqual(u.OUTPUT_FILE.read_bytes(),prices)
         self.assertEqual(u.STATE_FILE.read_bytes(),rotation)
+
+    def test_per_key_request_cap(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(u,'EARNINGS_FILE',Path(folder)/'earnings.json'),patch.object(u.time,'sleep'),patch.object(u,'fetch_earnings',return_value=[{"fiscal_date_ending":"2026-06-30","eps":1,"eps_ttm":4}]) as fetch:
+                used,counts,_=u.update_earnings([f"A{i}" for i in range(26)],set(),['key1','key2'],50,dt.date(2026,10,3))
+                self.assertEqual((used,counts),(26,[25,1]))
+                self.assertEqual(fetch.call_args.args[1],'key2')
 
     def test_rate_limit_marks_key_unavailable_without_losing_history(self):
         with tempfile.TemporaryDirectory() as folder:

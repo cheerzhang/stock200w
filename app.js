@@ -31,14 +31,35 @@ $("#search").addEventListener("input",e=>{state.query=e.target.value.trim().toLo
 init();checkForUpdate();setInterval(checkForUpdate,30000);
 
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function trendChart(points){
+  const W=620,H=240,L=58,R=562,T=30,B=194;
+  const bounds=key=>{const values=points.map(p=>p[key]).filter(Number.isFinite);if(!values.length)return null;let lo=Math.min(...values),hi=Math.max(...values);const pad=(hi-lo||Math.abs(hi)*.2||1)*.15;return [lo-pad,hi+pad]};
+  const epsBounds=bounds("eps"),peBounds=bounds("pe");
+  const times=points.map(p=>Date.parse(p.observed_at)),start=Math.min(...times),end=Math.max(...times);
+  const x=i=>points.length===1?(L+R)/2:L+(times[i]-start)/(end-start||1)*(R-L);
+  const y=(value,range)=>B-(value-range[0])/(range[1]-range[0])*(B-T);
+  let markup=`<svg class="valuation-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Quarterly EPS and trailing PE over weekly observation dates"><text x="${L}" y="15" class="eps-axis">EPS · left axis</text><text x="${R}" y="15" text-anchor="end" class="pe-axis">PE × · right axis</text>`;
+  for(let i=0;i<4;i++){const yy=T+(B-T)*i/3;markup+=`<line x1="${L}" x2="${R}" y1="${yy}" y2="${yy}" class="chart-grid"/>`;for(const [range,xx,anchor,cls] of [[epsBounds,L-8,"end","eps-axis"],[peBounds,R+8,"start","pe-axis"]])if(range)markup+=`<text x="${xx}" y="${yy+4}" text-anchor="${anchor}" class="${cls}">${(range[1]-(range[1]-range[0])*i/3).toFixed(1)}</text>`}
+  for(const [key,range,cls] of [["eps",epsBounds,"eps-series"],["pe",peBounds,"pe-series"]]){
+    if(!range)continue;let segment=[];
+    const flush=()=>{if(segment.length>1)markup+=`<polyline points="${segment.join(" ")}" class="${cls}"/>`;segment=[]};
+    points.forEach((point,i)=>{if(!Number.isFinite(point[key])){flush();return}const xx=x(i),yy=y(point[key],range);segment.push(`${xx},${yy}`);markup+=`<circle cx="${xx}" cy="${yy}" r="4" class="${cls}"><title>${escapeHtml(point.observed_at)} · ${key.toUpperCase()}: ${point[key].toFixed(2)} · quarter ${escapeHtml(point.fiscal_date_ending)}</title></circle>`});flush();
+  }
+  const labels=points.length===1?[0]:[0,Math.floor((points.length-1)/2),points.length-1];
+  for(const i of new Set(labels))markup+=`<text x="${x(i)}" y="221" text-anchor="middle">${escapeHtml(points[i].observed_at)}</text>`;
+  return markup+"</svg>";
+}
 function renderEarnings(){
   $("#earnings-section").hidden=state.tab!=="wishlist";
   const symbols=state.wishlist.filter(s=>!state.blacklist.includes(s)&&(!state.query||`${s} ${state.companies.get(s)||""}`.toLowerCase().includes(state.query)));
   $("#earnings-list").innerHTML=symbols.map(symbol=>{
-    const record=state.earnings[symbol]||{},rows=(record.quarters||[]).filter(r=>Number.isFinite(r.eps)).slice().sort((a,b)=>a.fiscal_date_ending.localeCompare(b.fiscal_date_ending));
-    const latest=rows.at(-1),previous=rows.at(-2),change=previous?latest.eps-previous.eps:null;
-    let graph="";
-    if(rows.length>1){const values=rows.map(r=>r.eps),lo=Math.min(...values),hi=Math.max(...values),span=hi-lo||1;const points=values.map((v,i)=>`${10+i*280/(values.length-1)},${70-(v-lo)*60/span}`).join(" ");graph=`<svg viewBox="0 0 300 80" role="img" aria-label="Quarterly EPS trend"><polyline points="${points}" fill="none" stroke="currentColor" stroke-width="2"/></svg>`}
-    return `<article class="eps-card"><div class="eps-heading"><strong>${escapeHtml(symbol)}</strong><span>${latest?`EPS ${latest.eps.toFixed(2)}`:"Awaiting quarterly EPS"}</span></div>${change!==null?`<p>Quarter change: ${change>=0?"+":""}${change.toFixed(2)}</p>`:""}${graph}${rows.length?`<details><summary>${rows.length} saved quarter${rows.length===1?"":"s"} · latest ${escapeHtml(latest.fiscal_date_ending)}</summary><table><thead><tr><th>Fiscal period end</th><th>EPS</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.fiscal_date_ending)}</td><td>${r.eps.toFixed(2)}</td></tr>`).join("")}</tbody></table></details>`:"<p>Collected by the update script after earnings are reported.</p>"}${record.error?"<p>Latest fetch unavailable; saved history is retained.</p>":""}</article>`;
+    const record=state.earnings[symbol]||{},quarters=(record.quarters||[]).slice().sort((a,b)=>a.fiscal_date_ending.localeCompare(b.fiscal_date_ending));
+    const latest=quarters.at(-1),stock=state.stocks.find(s=>s.symbol===symbol),ttm=latest?.eps_ttm;
+    const usable=stock&&latest&&stock.updated>=(latest.reported_date||latest.fiscal_date_ending);
+    const pe=usable&&ttm>0?stock.price/ttm:null;
+    const points=(record.valuations||[]).slice().sort((a,b)=>a.observed_at.localeCompare(b.observed_at));
+    if(!points.length&&latest)points.push({observed_at:record.checked_at||latest.saved_at,eps:latest.eps,pe,fiscal_date_ending:latest.fiscal_date_ending});
+    return `<article class="eps-card"><div class="eps-heading"><div><strong>${escapeHtml(symbol)}</strong><span class="eps-company">${escapeHtml(state.companies.get(symbol)||symbol)}</span></div><span class="eps-period">${latest?`Quarter ended ${escapeHtml(latest.fiscal_date_ending)}`:"Awaiting earnings"}</span></div><div class="valuation-metrics"><div><span>Quarterly EPS</span><strong class="eps-axis">${latest?latest.eps.toFixed(2):"—"}</strong></div><div><span>PE · trailing 12 months</span><strong class="pe-axis">${Number.isFinite(pe)?`${pe.toFixed(1)}×`:"N/A"}</strong></div><div><span>Latest stored price</span><strong>${stock?fmt(stock.price):"—"}</strong><small>${stock?escapeHtml(stock.updated):"Awaiting price"}</small></div></div>${points.length?trendChart(points):'<div class="chart-empty">The chart starts after the first reported EPS is saved.</div>'}<div class="chart-legend"><span class="eps-key">Quarterly EPS</span><span class="pe-key">PE (TTM)</span><small>Weekly snapshots · separate scales</small></div>${points.length===1?'<p class="eps-hint">First observation saved. Lines appear after the next weekly snapshot.</p>':""}${!Number.isFinite(pe)?`<p class="eps-hint">${ttm<=0?"PE is unavailable when trailing earnings are zero or negative.":"PE needs four consecutive reported quarters and a price dated after the report."}</p>`:""}<details><summary>Saved history · ${quarters.length} quarter${quarters.length===1?"":"s"}</summary><div class="eps-table-wrap"><table><thead><tr><th>Observed</th><th>Quarter ended</th><th>EPS</th><th>Price</th><th>PE (TTM)</th></tr></thead><tbody>${points.map(r=>`<tr><td>${escapeHtml(r.observed_at)}</td><td>${escapeHtml(r.fiscal_date_ending)}</td><td>${r.eps.toFixed(2)}</td><td>${Number.isFinite(r.price)?fmt(r.price):"—"}</td><td>${Number.isFinite(r.pe)?r.pe.toFixed(2)+"×":"N/A"}</td></tr>`).join("")}</tbody></table></div></details>${record.error?'<p class="eps-hint">Latest fetch unavailable; saved history is retained.</p>':""}</article>`;
   }).join("")||'<p>No Wishlist stocks match.</p>';
 }

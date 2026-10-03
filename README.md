@@ -84,3 +84,9 @@ Prices retain their daily 10:00 schedule. On Saturdays, the daily workflow uses 
 `data/earnings.json` stores the first successful latest reported fiscal quarter for each symbol, then appends subsequent quarters, including missed quarters since that baseline. Existing quarter values are never overwritten, including provider revisions, and removing a symbol from the Wishlist does not delete its archive. The current unreported quarter has no actual EPS yet. The Wishlist EPS section shows saved values, a trend line after two quarters, and the absolute quarter-to-quarter change, independently of the price range filter.
 
 Commit `data/earnings.json` along with other generated data to publish it. The daily workflow includes this file automatically.
+
+### EPS and PE chart
+
+The Wishlist chart shows green quarterly EPS and blue trailing PE on separate labeled axes over weekly observation dates. PE uses the stored adjusted weekly price divided by four consecutive reported quarterly EPS values (TTM). Those four values come from the same EARNINGS response; older quarters are used for the TTM calculation without backfilling the displayed EPS archive. Missing prices, prices predating the report, incomplete TTM, and nonpositive trailing earnings produce an unavailable PE. Values retain the provider's EPS/share units, so ADR and currency conventions should match the price instrument.
+
+Every EPS run appends an immutable weekly valuation snapshot (observation date, price date, price, quarter, EPS, EPS TTM and PE). A single observation is shown as a dot; lines develop with subsequent observations. Historical PE is never recalculated using today's price. Ordinary daily price runs do not add valuation observations.
