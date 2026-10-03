@@ -1,8 +1,10 @@
-name: Daily stock data update
+name: Stock prices and weekly Wishlist EPS
 
 on:
   schedule:
     - cron: "0 10 * * *"
+      timezone: "Europe/Amsterdam"
+    - cron: "0 12 * * 6"
       timezone: "Europe/Amsterdam"
   workflow_dispatch:
 
@@ -28,7 +30,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Update stock data
-        run: ./scripts/local_update.sh --rescan-wishlist
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$SCHEDULE" = "0 12 * * 6" ]; then
+            python3 scripts/update_data.py --earnings-only
+          else
+            # Reserve Saturday Alpha Vantage quota for the noon EPS run.
+            # Price data still updates through Tiingo that day.
+            if [ "$(TZ=Europe/Amsterdam date +%u)" = "6" ]; then
+              export DAILY_LIMIT=0
+            fi
+            ./scripts/local_update.sh --rescan-wishlist
+          fi
 
       - name: Commit and push changed data
         run: |

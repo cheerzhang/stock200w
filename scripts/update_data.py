@@ -119,7 +119,7 @@ def update_earnings(wishlist, blacklist, keys, limit, today):
     requests=[0]*len(keys)
     used=0
     key_index=0
-    budget=min(5,max(0,limit))
+    budget=max(0,limit)
     eligible=[symbol for symbol in wishlist if symbol not in blacklist]
     eligible.sort(key=lambda symbol:records.get(symbol,{}).get("checked_at",""))
     for symbol in eligible:
@@ -177,6 +177,7 @@ def fetch_tiingo(symbol, key):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--rescan-wishlist",action="store_true",help="scan wishlist first, then resume the saved rotation")
+    parser.add_argument("--earnings-only",action="store_true",help="update Wishlist quarterly EPS only; leave prices and rotation unchanged")
     args=parser.parse_args()
     raw_keys=os.environ.get("ALPHA_VANTAGE_API_KEYS") or os.environ.get("ALPHA_VANTAGE_API_KEY","")
     keys=[key.strip() for key in raw_keys.split(",") if key.strip()]
@@ -202,7 +203,12 @@ def main():
     alpha_limit=min(int(os.environ.get("DAILY_LIMIT","25")),25*len(keys)) if keys else 0
     tiingo_limit=max(0,int(os.environ.get("TIINGO_DAILY_LIMIT","50"))) if tiingo_key else 0
     today=dt.date.today()
-    alpha_requests,key_requests,key_index=update_earnings(watchlist,blacklist,keys,alpha_limit,today)
+    if args.earnings_only:
+        if not keys: raise SystemExit("an Alpha Vantage API key is required for EPS")
+        used,_,_=update_earnings(watchlist,blacklist,keys,alpha_limit,today)
+        print(f"EPS requests used/reserved: {used}/{alpha_limit}")
+        return
+    alpha_requests,key_requests,key_index=0,[0]*len(keys),0
     limit=max(0,alpha_limit-alpha_requests)+tiingo_limit
     order_index={symbol:index for index,(symbol,_) in enumerate(scan_order)}
     if state.get("next_symbol") in order_index:

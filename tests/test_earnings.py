@@ -1,6 +1,7 @@
 import datetime as dt
 import importlib.util
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -34,6 +35,17 @@ class EarningsTests(unittest.TestCase):
                 saved = json.loads(path.read_text())['stocks']['A']
                 self.assertEqual(saved['quarters'][0]['eps'], 2)
                 self.assertEqual(saved['error'], 'temporary failure')
+
+    def test_earnings_only_leaves_prices_and_rotation_unchanged(self):
+        prices=u.OUTPUT_FILE.read_bytes()
+        rotation=u.STATE_FILE.read_bytes()
+        with patch.dict(os.environ, {"ALPHA_VANTAGE_API_KEY":"test-key", "ALPHA_VANTAGE_API_KEYS":"", "DAILY_LIMIT":"25"}), patch('sys.argv', ['update_data.py', '--earnings-only']), patch.object(u, 'update_earnings', return_value=(17,[17],0)) as update, patch.object(u, 'fetch_alpha_vantage') as prices_fetch, patch.object(u, 'fetch_tiingo') as tiingo_fetch:
+            u.main()
+            self.assertEqual(update.call_args.args[3],25)
+            prices_fetch.assert_not_called()
+            tiingo_fetch.assert_not_called()
+        self.assertEqual(u.OUTPUT_FILE.read_bytes(),prices)
+        self.assertEqual(u.STATE_FILE.read_bytes(),rotation)
 
     def test_rate_limit_marks_key_unavailable_without_losing_history(self):
         with tempfile.TemporaryDirectory() as folder:

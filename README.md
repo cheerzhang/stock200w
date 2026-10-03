@@ -77,7 +77,9 @@ For research only. Not investment advice.
 
 ## Wishlist quarterly EPS
 
-Every updater run checks Wishlist earnings through Alpha Vantage `EARNINGS` (Alpha Vantage key required). Up to 5 requests per run share the existing Alpha Vantage quota; remaining quota is used for prices. Successful checks are cached for 7 days; failures retry after 1 day. Oldest checks run first so larger wishlists progress across runs. Blacklisted stocks are skipped.
+Wishlist EPS is scheduled every Saturday at 12:00 in `Europe/Amsterdam`, including daylight-saving changes. It uses Alpha Vantage `EARNINGS` and checks only Wishlist symbols, excluding blacklisted stocks. The EPS-only run uses up to `DAILY_LIMIT` requests (default 25). Successful checks are cached for 7 days; failures are eligible at the next scheduled run. Oldest checks run first if the list exceeds quota.
+
+Prices retain their daily 10:00 schedule. On Saturdays, the daily workflow uses Tiingo for prices and reserves Alpha Vantage quota for the noon EPS run. Without a Tiingo key, Saturday prices wait for the next daily run. EPS scheduling is handled exclusively by GitHub Actions; no local cron or launchd task is installed. Normal local scans update prices only. EPS-only runs leave price data and the scan cursor unchanged. GitHub scheduled runs may start later than their scheduled time.
 
 `data/earnings.json` stores the first successful latest reported fiscal quarter for each symbol, then appends subsequent quarters, including missed quarters since that baseline. Existing quarter values are never overwritten, including provider revisions, and removing a symbol from the Wishlist does not delete its archive. The current unreported quarter has no actual EPS yet. The Wishlist EPS section shows saved values, a trend line after two quarters, and the absolute quarter-to-quarter change, independently of the price range filter.
 
