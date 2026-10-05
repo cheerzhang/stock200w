@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T13:41:24.341157+00:00",
+  "generated_at": "2026-10-05T16:48:01.327247+00:00",
   "stocks": [
     {
       "price": 472.78,
@@ -3467,94 +3467,94 @@
       "distance": 23.62007508878834
     },
     {
-      "price": 73.83,
-      "sma200": 85.625763307627,
-      "updated": "2026-08-07",
+      "price": 64.05,
+      "sma200": 85.1321205,
+      "updated": "2026-10-02",
       "symbol": "OTIS",
       "name": "Otis Worldwide",
-      "source": "Tiingo",
-      "distance": -13.77595112962492
+      "source": "Alpha Vantage key 1",
+      "distance": -24.764002559997323
     },
     {
-      "price": 252.75,
-      "sma200": 177.231746212812,
-      "updated": "2026-08-07",
+      "price": 228.54,
+      "sma200": 181.171505,
+      "updated": "2026-10-02",
       "symbol": "PKG",
       "name": "Packaging Corporation of America",
-      "source": "Tiingo",
-      "distance": 42.609890948379544
+      "source": "Alpha Vantage key 1",
+      "distance": 26.145665125429083
     },
     {
-      "price": 1069.8,
-      "sma200": 589.5539491381475,
-      "updated": "2026-08-07",
+      "price": 972.55,
+      "sma200": 616.4875395,
+      "updated": "2026-10-02",
       "symbol": "PH",
       "name": "Parker Hannifin",
-      "source": "Tiingo",
-      "distance": 81.45922040958438
+      "source": "Alpha Vantage key 1",
+      "distance": 57.756635403982884
     },
     {
-      "price": 69.9,
-      "sma200": 78.991367048202,
-      "updated": "2026-08-07",
+      "price": 53.03,
+      "sma200": 79.6811065,
+      "updated": "2026-10-02",
       "symbol": "PNR",
       "name": "Pentair",
-      "source": "Tiingo",
-      "distance": -11.509317268372211
+      "source": "Alpha Vantage key 1",
+      "distance": -33.447209345668405
     },
     {
-      "price": 26.2,
-      "sma200": 26.403552728429,
-      "updated": "2026-08-07",
+      "price": 27.8,
+      "sma200": 26.0155465,
+      "updated": "2026-10-02",
       "symbol": "PFE",
       "name": "Pfizer",
-      "source": "Tiingo",
-      "distance": -0.7709293159243402
+      "source": "Alpha Vantage key 1",
+      "distance": 6.8591812976137145
     },
     {
-      "price": 17.0,
-      "sma200": 16.679739165783,
-      "updated": "2026-08-07",
+      "price": 12.32,
+      "sma200": 16.6162255,
+      "updated": "2026-10-02",
       "symbol": "PCG",
       "name": "PG&E Corporation",
-      "source": "Tiingo",
-      "distance": 1.920059007121555
+      "source": "Alpha Vantage key 1",
+      "distance": -25.85560421047487
     },
     {
-      "price": 188.05,
-      "sma200": 120.50734548227,
-      "updated": "2026-08-07",
+      "price": 187.46,
+      "sma200": 123.8607165,
+      "updated": "2026-10-02",
       "symbol": "PM",
       "name": "Philip Morris International",
-      "source": "Tiingo",
-      "distance": 56.04857882100427
+      "source": "Alpha Vantage key 1",
+      "distance": 51.347420955699064
     },
     {
-      "price": 252.02,
-      "sma200": 125.348923,
-      "updated": "2026-09-01",
+      "price": 264.58,
+      "sma200": 128.711519,
+      "updated": "2026-10-02",
       "symbol": "PSX",
       "name": "Phillips 66",
       "source": "Alpha Vantage key 1",
-      "distance": 101.05477890703538
+      "distance": 105.56046735801475
     },
     {
-      "price": 97.66,
-      "sma200": 79.459496,
-      "updated": "2026-09-01",
+      "price": 95.92,
+      "sma200": 80.0666665,
+      "updated": "2026-10-02",
       "symbol": "PNW",
       "name": "Pinnacle West Capital",
       "source": "Alpha Vantage key 1",
-      "distance": 22.90538565711515
+      "distance": 19.8001667772693
     },
     {
-      "price": 237.49,
-      "sma200": 164.657442,
-      "updated": "2026-09-01",
+      "price": 221.03,
+      "sma200": 166.46666199999999,
+      "updated": "2026-10-02",
       "symbol": "PNC",
       "name": "PNC Financial Services",
       "source": "Alpha Vantage key 1",
-      "distance": 44.23277631144058
+      "distance": 32.77733652159134
     },
     {
       "price": 109.7,
