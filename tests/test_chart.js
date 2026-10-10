@@ -19,7 +19,7 @@ vm.runInContext(`state.wishlist=['A'];state.earnings={A:{quarters:[{fiscal_date_
 assert.match(elements.get('#earnings-list').innerHTML,/10\.0×/);
 assert.match(elements.get('#earnings-list').innerHTML,/80\.00/);
 vm.runInContext("state.stocks[0].updated='2026-07-01';renderEarnings()",context);
-assert.match(elements.get('#earnings-list').innerHTML,/N\/A/);
+assert.match(elements.get('#earnings-list').innerHTML,/Awaiting price after earnings report/);
 vm.runInContext(`state.wishlist=['A','C','B'];state.earnings.B=state.earnings.A;state.earnings.C=state.earnings.A;state.stocks.push({symbol:'B',price:40,updated:'2026-10-01'},{symbol:'C',price:160,updated:'2026-10-01'});renderEarnings()`,context);
 const cards=elements.get('#earnings-list').innerHTML;
 assert.ok(cards.indexOf('<strong>B</strong>')<cards.indexOf('<strong>C</strong>'));
@@ -31,3 +31,12 @@ console.log('Chart checks passed, including collapsed card summaries and ascendi
 assert.match(vm.runInContext("card({symbol:'Y',name:'Young stock',price:30,sma200:20,weeks:2,distance:50,updated:'2026-10-09'})",context),/2W ·/);
 assert.match(vm.runInContext("card({symbol:'N',name:'Nasdaq stock',price:30,sma200:20,distance:50,updated:'2026-10-09'})",context),/200W ·/);
 assert.equal(vm.runInContext("Object.keys(poolConfig).join(',')",context),'wishlist,nasdaq');
+
+vm.runInContext("state.wishlist=['LOSS','MISSING','SHORT'];state.earnings={LOSS:{quarters:[{fiscal_date_ending:'2026-06-30',eps:-1,eps_ttm:-4}]},SHORT:{quarters:[{fiscal_date_ending:'2026-06-30',eps:2}]} };renderEarnings()",context);
+const pending=elements.get('#earnings-list').innerHTML;
+assert.match(pending,/Trailing earnings are zero or negative/);
+assert.match(pending,/Need four consecutive reported quarters/);
+assert.match(pending,/Awaiting reported earnings/);
+assert.doesNotMatch(pending,/N\/A|NaN|undefined/);
+assert.match(vm.runInContext("card({symbol:'SHORT',name:'Short',price:30,sma200:20,distance:50,updated:'2026-10-09'})",context),/EPS <b>2.00<\/b>/);
+assert.ok(fs.readFileSync('index.html','utf8').indexOf('id="earnings-section"')<fs.readFileSync('index.html','utf8').indexOf('id="stock-list"'));

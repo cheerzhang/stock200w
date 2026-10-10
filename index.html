@@ -45,18 +45,18 @@
       <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search symbol or company" autocomplete="off"></label>
     </section>
 
+    <section id="earnings-section" class="results">
+      <div class="section-head"><div><small>WISHLIST · EARNINGS</small><h2>EPS &amp; valuation</h2></div></div>
+      <p>Sorted by PE, lowest first. Green: latest quarterly EPS. Blue: trailing 12-month PE. Select a stock to view its chart and saved history. Stocks without a valid PE appear last.</p>
+      <div id="earnings-list" class="eps-list" aria-live="polite"></div>
+    </section>
+
     <section class="results">
       <div class="section-head"><div><small id="pool-label">WISHLIST</small><h2 id="results-title">Signals</h2></div><span id="result-label">Nearest first</span></div>
       <div id="stock-list" class="stock-list" aria-live="polite"><div class="empty"><span class="loader"></span><p>Loading data…</p></div></div>
       <details class="above-note" id="above-note" hidden><summary><span>Above the current range</span><b id="above-count">0</b></summary><div id="above-list" class="above-list"></div></details>
       <details class="history-note" id="history-note" hidden><summary><span>Less than 200 weeks of history</span><b id="history-count">0</b></summary><div id="history-list" class="history-list"></div></details>
       <details class="blacklist-note" id="blacklist-note"><summary><span>Shared blacklist</span><b id="blacklist-count">0</b></summary><div id="blacklist-list" class="blacklist-list"></div></details>
-    </section>
-
-    <section id="earnings-section" class="results">
-      <div class="section-head"><div><small>WISHLIST · EARNINGS</small><h2>EPS &amp; valuation</h2></div></div>
-      <p>Sorted by PE, lowest first. Green: latest quarterly EPS. Blue: trailing 12-month PE. Select a stock to view its chart and saved history. Stocks without a valid PE appear last.</p>
-      <div id="earnings-list" class="eps-list" aria-live="polite"></div>
     </section>
 
     <footer><p>Averages use up to 200 weekly adjusted closing prices. Wishlist stocks with shorter histories use all available weeks. Scans cover Wishlist and Nasdaq-100.</p><p>For research only. Not investment advice.</p></footer>
