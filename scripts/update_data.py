@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rotate through wishlist, Nasdaq-100 and S&P 500 weekly 200-week SMA data."""
+"""Rotate through wishlist and Nasdaq-100 weekly 200-week SMA data."""
 import argparse
 import datetime as dt
 import json
@@ -20,7 +20,7 @@ WATCHLIST_FILE=ROOT/"data/watchlist.json"
 EARNINGS_FILE=ROOT/"data/earnings.json"
 ALPHA_VANTAGE_API_URL="https://www.alphavantage.co/query"
 TIINGO_API_URL="https://api.tiingo.com/tiingo/daily"
-SCAN_ORDER_VERSION="nasdaq-sp500-excluding-wishlist-v4"
+SCAN_ORDER_VERSION="nasdaq-excluding-wishlist-v5"
 
 class InsufficientHistory(Exception):
     def __init__(self, weeks, latest):
@@ -54,18 +54,18 @@ def resolve_watchlist(values, valid_symbols, symbol_names):
             seen.add(symbol)
     return resolved
 
-def build_scan_order(nasdaq, sp500, wishlist):
-    names={symbol:name for symbol,name in [*sp500,*nasdaq]}
+def build_scan_order(nasdaq, wishlist):
+    names={symbol:name for symbol,name in nasdaq}
     seen=set()
     order=[]
-    for group in ([(symbol,names.get(symbol,symbol)) for symbol in wishlist],nasdaq,sp500):
+    for group in ([(symbol,names.get(symbol,symbol)) for symbol in wishlist],nasdaq):
         for symbol,name in group:
             if symbol not in seen:
                 order.append((symbol,name))
                 seen.add(symbol)
     return order
 
-def fetch_alpha_vantage(symbol, key):
+def fetch_alpha_vantage(symbol, key, allow_short_history=False):
     params=urllib.parse.urlencode({"function":"TIME_SERIES_WEEKLY_ADJUSTED","symbol":symbol,"apikey":key})
     req=urllib.request.Request(f"{ALPHA_VANTAGE_API_URL}?{params}",headers={"User-Agent":"stock200w/1.0"})
     with urllib.request.urlopen(req,timeout=30) as response:
@@ -75,11 +75,12 @@ def fetch_alpha_vantage(symbol, key):
         message=payload.get("Note") or payload.get("Information") or payload.get("Error Message") or "unknown API response"
         raise RuntimeError(message)
     points=sorted(series.items(),reverse=True)
-    if len(points)<200:
+    if len(points)<200 and not allow_short_history:
         latest=points[0][0] if points else dt.date.today().isoformat()
         raise InsufficientHistory(len(points),latest)
+    if not points: raise RuntimeError("No weekly prices available")
     closes=[float(values["5. adjusted close"]) for _,values in points[:200]]
-    return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0][0]}
+    return {"price":closes[0],"sma200":sum(closes)/len(closes),"weeks":len(closes),"updated":points[0][0]}
 
 def fetch_earnings(symbol, key):
     params=urllib.parse.urlencode({"function":"EARNINGS","symbol":symbol,"apikey":key})
@@ -190,7 +191,7 @@ def update_earnings(wishlist, blacklist, keys, limit, today):
         temporary.replace(EARNINGS_FILE)
     return sum(requests),requests,key_index
 
-def fetch_tiingo(symbol, key):
+def fetch_tiingo(symbol, key, allow_short_history=False):
     start_date=(dt.date.today()-dt.timedelta(days=366*6)).isoformat()
     params=urllib.parse.urlencode({"startDate":start_date,"resampleFreq":"weekly"})
     encoded_symbol=urllib.parse.quote(symbol,safe="")
@@ -203,11 +204,12 @@ def fetch_tiingo(symbol, key):
     if not isinstance(payload,list):
         raise RuntimeError(payload.get("detail") or payload.get("message") or "unknown Tiingo API response")
     points=sorted(payload,key=lambda row:row["date"],reverse=True)
-    if len(points)<200:
+    if len(points)<200 and not allow_short_history:
         latest=points[0]["date"][:10] if points else dt.date.today().isoformat()
         raise InsufficientHistory(len(points),latest)
+    if not points: raise RuntimeError("No weekly prices available")
     closes=[float(row["adjClose"]) for row in points[:200]]
-    return {"price":closes[0],"sma200":sum(closes)/200,"updated":points[0]["date"][:10]}
+    return {"price":closes[0],"sma200":sum(closes)/len(closes),"weeks":len(closes),"updated":points[0]["date"][:10]}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -220,17 +222,17 @@ def main():
     if not keys and not tiingo_key:
         raise SystemExit("an Alpha Vantage or Tiingo API key is required")
     nasdaq=load(SYMBOLS_FILE,[])
-    sp500=load(SP500_FILE,[])
-    symbols=build_scan_order(nasdaq,sp500,[])
-    symbol_names={name.upper():symbol for symbol,name in symbols}
+    symbols=build_scan_order(nasdaq,[])
+    legacy_names=load(SP500_FILE,[])
+    symbol_names={name.upper():symbol for symbol,name in [*legacy_names,*symbols]}
     valid_symbols={symbol for symbol,_ in symbols}
     watchlist=resolve_watchlist(load(WATCHLIST_FILE,[]),valid_symbols,symbol_names)
     blacklist=set(resolve_watchlist(load(BLACKLIST_FILE,[]),valid_symbols|set(watchlist),symbol_names))
     wishlist_set=set(watchlist)
     # Wishlist symbols are never part of the normal rotation. They are scanned
     # only when --rescan-wishlist is explicitly selected.
-    scan_order=[row for row in build_scan_order(nasdaq,sp500,[]) if row[0] not in wishlist_set]
-    names={symbol:name for symbol,name in build_scan_order(nasdaq,sp500,[])}
+    scan_order=[row for row in build_scan_order(nasdaq,[]) if row[0] not in wishlist_set]
+    names={symbol:name for symbol,name in [*legacy_names,*symbols]}
     old=load(OUTPUT_FILE,{"stocks":[]})
     cached={row["symbol"]:row for row in old.get("stocks",[])}
     insufficient={row["symbol"]:row for row in old.get("insufficient_history",[])}
@@ -249,7 +251,7 @@ def main():
     if state.get("next_symbol") in order_index:
         cursor=order_index[state["next_symbol"]]
     elif state.get("scan_order")==SCAN_ORDER_VERSION:
-        cursor=state.get("cursor",0)%len(scan_order)
+        cursor=state.get("cursor",0)%max(1,len(scan_order))
     else:
         # On a queue migration, continue at the first symbol with no stored
         # result instead of throwing away progress and restarting at index 0.
@@ -270,9 +272,8 @@ def main():
     # consumes request quota but never rewinds the normal rotation cursor.
     if args.rescan_wishlist:
         for symbol in watchlist:
-            known=insufficient.get(symbol)
             if len(batch)>=limit: break
-            if symbol not in blacklist and (not known or dt.date.fromisoformat(known["retry_after"])<=today):
+            if symbol not in blacklist:
                 batch.append((symbol,names.get(symbol,symbol),0))
                 batch_symbols.add(symbol)
     while len(batch)<limit and scanned<len(scan_order):
@@ -301,7 +302,7 @@ def main():
             try:
                 key_requests[key_index]+=1
                 alpha_requests+=1
-                result=fetch_alpha_vantage(symbol,keys[key_index])
+                result=fetch_alpha_vantage(symbol,keys[key_index],allow_short_history=symbol in wishlist_set)
                 source=f"Alpha Vantage key {key_index+1}"
                 break
             except InsufficientHistory as exc:
@@ -319,7 +320,7 @@ def main():
         if result is None and insufficient_error is None and tiingo_key and tiingo_requests<tiingo_limit:
             try:
                 tiingo_requests+=1
-                result=fetch_tiingo(symbol,tiingo_key)
+                result=fetch_tiingo(symbol,tiingo_key,allow_short_history=symbol in wishlist_set)
                 source="Tiingo"
             except InsufficientHistory as exc:
                 insufficient_error=exc
@@ -352,12 +353,12 @@ def main():
             progress_scanned=max(progress_scanned,scan_position)
             print(f"failed {symbol}: {message}")
         if index<len(batch)-1: time.sleep(1)
-    storage_order=build_scan_order(nasdaq,sp500,watchlist)
+    storage_order=build_scan_order(nasdaq,watchlist)
     ordered=[cached[symbol] for symbol,_ in storage_order if symbol in cached and symbol not in blacklist]
     young=[insufficient[symbol] for symbol,_ in storage_order if symbol in insufficient]
     OUTPUT_FILE.write_text(json.dumps({"generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"stocks":ordered,"insufficient_history":young},indent=2)+"\n")
-    next_cursor=(cursor+progress_scanned)%len(scan_order)
-    STATE_FILE.write_text(json.dumps({"cursor":next_cursor,"next_symbol":scan_order[next_cursor][0],"scan_order":SCAN_ORDER_VERSION})+"\n")
+    next_cursor=(cursor+progress_scanned)%max(1,len(scan_order))
+    STATE_FILE.write_text(json.dumps({"cursor":next_cursor,"next_symbol":scan_order[next_cursor][0] if scan_order else None,"scan_order":SCAN_ORDER_VERSION})+"\n")
     eligible_total=sum(symbol not in blacklist for symbol,_ in storage_order)
     print(f"coverage: {len(ordered)}/{eligible_total}")
     print(f"requests used: Alpha Vantage {alpha_requests}/{alpha_limit} {key_requests}; Tiingo {tiingo_requests}/{tiingo_limit}; planned stocks: {len(batch)}")

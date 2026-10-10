@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Track wishlist, Nasdaq-100 and S&P 500 stocks around their 200-week moving average">
+  <meta name="description" content="Track wishlist and Nasdaq-100 stocks around their 200-week moving average">
   <title>200W · Long-term Trend Watch</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
@@ -36,7 +36,6 @@
     <nav class="tabs" aria-label="Stock universe">
       <button class="active" data-tab="wishlist">Wishlist</button>
       <button data-tab="nasdaq">Nasdaq-100</button>
-      <button data-tab="sp500">S&amp;P 500</button>
     </nav>
 
     <section class="controls" aria-label="Filters">
@@ -60,7 +59,7 @@
       <div id="earnings-list" class="eps-list" aria-live="polite"></div>
     </section>
 
-    <footer><p>The 200-week average uses weekly adjusted closing prices. Alpha Vantage data is scanned in a deduplicated Wishlist → Nasdaq-100 → S&amp;P 500 rotation.</p><p>For research only. Not investment advice.</p></footer>
+    <footer><p>Averages use up to 200 weekly adjusted closing prices. Wishlist stocks with shorter histories use all available weeks. Scans cover Wishlist and Nasdaq-100.</p><p>For research only. Not investment advice.</p></footer>
   </main>
   <script src="app.js?v={{ site.github.build_revision }}" defer></script>
 </body>

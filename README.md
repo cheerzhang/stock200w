@@ -1,14 +1,15 @@
 # 200W
 
-A mobile-friendly static site for comparing Wishlist, Nasdaq-100, and S&P 500 stocks with their 200-week moving averages.
+A mobile-friendly static site for comparing Wishlist and Nasdaq-100 stocks with their 200-week moving averages.
 
 ## How it works
 
 - Market data comes from Alpha Vantage `TIME_SERIES_WEEKLY_ADJUSTED`.
 - Distance is calculated as `(latest adjusted weekly close / 200-week average - 1) × 100%`.
-- The normal scan rotation is Nasdaq-100 → S&P 500, excluding every Wishlist symbol. Symbols shared by both indexes are scanned only once. The state stores both the cursor and the next symbol, so scanning continues where the previous batch stopped even if the queue definition changes.
-- `data/blacklist.json` is shared by all three stock universes. Blacklisted stocks are never scanned and do not consume request quota.
-- Stocks with less than 200 weeks of history are stored with an estimated retry date. They are skipped without consuming quota until that date, then automatically rejoin the scan plan.
+- The normal scan rotation is Nasdaq-100, excluding every Wishlist symbol. The state stores both the cursor and the next symbol, so scanning continues where the previous batch stopped even if the queue definition changes.
+- `data/blacklist.json` is shared by both stock universes. Blacklisted stocks are never scanned and do not consume request quota.
+- Non-Wishlist stocks with less than 200 weeks of history are stored with an estimated retry date. They are skipped without consuming quota until that date, then automatically rejoin the scan plan.
+- Wishlist stocks are fetched regardless of history length when Wishlist scanning is selected, bypassing insufficient-history retry dates. Their average uses the available weekly closes (up to 200), and cards show the actual number of weeks.
 - Initial coverage always takes priority: while any eligible stock has no stored result, previously scanned stocks are skipped without consuming quota. Normal refresh rotation starts only after the first coverage pass is complete.
 
 ## Local setup
@@ -32,7 +33,7 @@ Run a scan:
 ./scripts/local_update.sh
 ```
 
-When run interactively, the script asks whether to scan the Wishlist in this run. Choosing `N` skips every Wishlist symbol and continues the normal Nasdaq-100 → S&P 500 rotation. Choosing `y` scans the Wishlist first, then resumes the saved normal plan with any remaining quota. A symbol is never requested twice within the same batch. You can also pass the option directly:
+When run interactively, the script asks whether to scan the Wishlist in this run. Choosing `N` skips every Wishlist symbol and continues the normal Nasdaq-100 rotation. Choosing `y` scans the Wishlist first, then resumes the saved normal plan with any remaining quota. A symbol is never requested twice within the same batch. You can also pass the option directly:
 
 ```bash
 ./scripts/local_update.sh --rescan-wishlist
@@ -46,25 +47,19 @@ A non-interactive run skips the Wishlist and resumes the normal plan. The update
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000>. The first tab is Wishlist, followed by Nasdaq-100 and S&P 500. Wishlist cards show whether each stock belongs to either index.
+Open <http://localhost:8000>. The first tab is Wishlist, followed by Nasdaq-100. Wishlist cards show Nasdaq-100 membership.
 
 ## List files
 
-- `data/watchlist.json`: Wishlist symbol array; stocks outside both indexes are supported.
+- `data/watchlist.json`: Wishlist symbol array; stocks outside Nasdaq-100 are supported.
 - `data/blacklist.json`: shared blacklist symbol array.
 - `data/nasdaq100.json`: Nasdaq-100 `[symbol, name]` snapshot.
-- `data/sp500.json`: S&P 500 `[symbol, name]` snapshot.
+- `data/sp500.json`: legacy snapshot used only to resolve company names; S&P 500 is no longer scanned or displayed.
 
 Wishlist and blacklist example:
 
 ```json
 ["AAPL", "MSFT"]
-```
-
-To refresh the S&P 500 snapshot, download the constituents page and run:
-
-```bash
-python3 scripts/update_sp500.py /path/to/downloaded-page.html
 ```
 
 ## GitHub Pages deployment

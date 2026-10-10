@@ -28,3 +28,6 @@ assert.equal((cards.match(/<details class="eps-card">/g)||[]).length,3);
 assert.doesNotMatch(cards,/<details[^>]*\bopen\b/);
 assert.doesNotMatch(cards.match(/<summary class="eps-summary">[\s\S]*?<\/summary>/)[0],/valuation-chart|Latest stored price/);
 console.log('Chart checks passed, including collapsed card summaries and ascending PE with unavailable PE last.');
+assert.match(vm.runInContext("card({symbol:'Y',name:'Young stock',price:30,sma200:20,weeks:2,distance:50,updated:'2026-10-09'})",context),/2W ·/);
+assert.match(vm.runInContext("card({symbol:'N',name:'Nasdaq stock',price:30,sma200:20,distance:50,updated:'2026-10-09'})",context),/200W ·/);
+assert.equal(vm.runInContext("Object.keys(poolConfig).join(',')",context),'wishlist,nasdaq');
