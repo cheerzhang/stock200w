@@ -132,11 +132,11 @@ def append_valuation(record, stock, today):
     if not isinstance(price,(int,float)) or not math.isfinite(price) or price<=0 or not price_date: return False
     if price_date<(latest.get("reported_date") or latest["fiscal_date_ending"]): return False
     snapshots=record.setdefault("valuations",[])
-    if any(row["observed_at"]==today.isoformat() for row in snapshots): return False
-    ttm=latest.get("eps_ttm")
-    pe=price/ttm if isinstance(ttm,(int,float)) and math.isfinite(ttm) and ttm>0 else None
+    if any(row["fiscal_date_ending"]==latest["fiscal_date_ending"] for row in snapshots): return False
+    eps=latest.get("eps")
+    pe=price/eps if isinstance(eps,(int,float)) and math.isfinite(eps) and eps!=0 else None
     snapshots.append({"observed_at":today.isoformat(),"price":price,"price_date":price_date,
-                      "fiscal_date_ending":latest["fiscal_date_ending"],"eps":latest["eps"],"eps_ttm":ttm,"pe":pe})
+                      "fiscal_date_ending":latest["fiscal_date_ending"],"eps":latest["eps"],"pe_basis":"quarterly_eps","pe":pe})
     snapshots.sort(key=lambda row:row["observed_at"])
     return True
 
@@ -154,7 +154,7 @@ def update_earnings(wishlist, blacklist, keys, limit, today):
         record=records.get(symbol,{})
         checked=record.get("checked_at")
         retry_days=1 if record.get("error") else 7
-        if checked and record.get("quarters") and "eps_ttm" in record["quarters"][-1] and (today-dt.date.fromisoformat(checked)).days<retry_days: continue
+        if checked and record.get("quarters") and (today-dt.date.fromisoformat(checked)).days<retry_days: continue
         if used>=budget: break
         while key_index<len(keys) and used<budget:
             if requests[key_index]>=25:

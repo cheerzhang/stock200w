@@ -41,12 +41,13 @@ class EarningsTests(unittest.TestCase):
         record={"quarters":[{"fiscal_date_ending":"2026-06-30","reported_date":"2026-07-23","eps":2,"eps_ttm":8}]}
         self.assertFalse(u.append_valuation(record,{"price":80,"updated":"2026-07-01"},today))
         self.assertTrue(u.append_valuation(record,{"price":80,"updated":"2026-10-01"},today))
-        self.assertEqual(record["valuations"][0]["pe"],10)
+        self.assertEqual(record["valuations"][0]["pe"],40)
         self.assertFalse(u.append_valuation(record,{"price":160,"updated":"2026-10-02"},today))
         self.assertEqual(record["valuations"][0]["price"],80)
-        record["quarters"][0]["eps_ttm"]=-2
+        record["quarters"].append({"fiscal_date_ending":"2026-09-30","eps":-2})
         self.assertTrue(u.append_valuation(record,{"price":80,"updated":"2026-10-08"},today+dt.timedelta(days=7)))
-        self.assertIsNone(record["valuations"][-1]["pe"])
+        self.assertEqual(record["valuations"][-1]["pe"],-40)
+        self.assertFalse(u.append_valuation(record,{"price":100,"updated":"2026-10-09"},today+dt.timedelta(days=8)))
 
     def test_fetch_calculates_ttm_from_four_consecutive_quarters(self):
         import io

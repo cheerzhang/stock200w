@@ -21,16 +21,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 4.31,
           "eps_ttm": 13.86,
-          "pe": 33.131313131313135
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 453.31,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 4.31,
-          "eps_ttm": 13.86,
-          "pe": 32.70634920634921
+          "pe": 106.54292343387472,
+          "pe_ttm": 33.131313131313135,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -54,16 +47,9 @@
           "fiscal_date_ending": "2026-07-31",
           "eps": 2.22,
           "eps_ttm": 7.010000000000001,
-          "pe": 32.932952924393724
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 229.28,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-07-31",
-          "eps": 2.22,
-          "eps_ttm": 7.010000000000001,
-          "pe": 32.707560627674745
+          "pe": 103.990990990991,
+          "pe_ttm": 32.932952924393724,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -87,16 +73,9 @@
           "fiscal_date_ending": "2026-08-31",
           "eps": 33.19,
           "eps_ttm": 75.28,
-          "pe": 14.577444208289055
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 1029.0,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-08-31",
-          "eps": 33.19,
-          "eps_ttm": 75.28,
-          "pe": 13.668969181721572
+          "pe": 33.06387466104249,
+          "pe_ttm": 14.577444208289055,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -120,16 +99,9 @@
           "fiscal_date_ending": "2026-07-31",
           "eps": 0.62,
           "eps_ttm": 2.98,
-          "pe": 89.95973154362416
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 275.28,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-07-31",
-          "eps": 0.62,
-          "eps_ttm": 2.98,
-          "pe": 92.37583892617448
+          "pe": 432.38709677419354,
+          "pe_ttm": 89.95973154362416,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -153,16 +125,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 0.3,
           "eps_ttm": 0.97,
-          "pe": 123.71134020618557
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 104.7,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 0.3,
-          "eps_ttm": 0.97,
-          "pe": 107.93814432989691
+          "pe": 400.0,
+          "pe_ttm": 123.71134020618557,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -186,16 +151,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 0.78,
           "eps_ttm": 2.87,
-          "pe": 55.89547038327525
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 156.68,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 0.78,
-          "eps_ttm": 2.87,
-          "pe": 54.59233449477352
+          "pe": 205.66666666666666,
+          "pe_ttm": 55.89547038327525,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -219,16 +177,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 0.41,
           "eps_ttm": 1.2,
-          "pe": 158.36666666666667
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 209.05,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 0.41,
-          "eps_ttm": 1.2,
-          "pe": 174.20833333333334
+          "pe": 463.5121951219512,
+          "pe_ttm": 158.36666666666667,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -252,16 +203,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 4.74,
           "eps_ttm": 17.89,
-          "pe": 28.664058133035212
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 535.07,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 4.74,
-          "eps_ttm": 17.89,
-          "pe": 29.90888764673002
+          "pe": 108.1856540084388,
+          "pe_ttm": 28.664058133035212,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -285,16 +229,9 @@
           "fiscal_date_ending": "2026-08-31",
           "eps": 1.63,
           "eps_ttm": 7.47,
-          "pe": 18.48326639892905
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 141.4,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-08-31",
-          "eps": 1.63,
-          "eps_ttm": 7.47,
-          "pe": 18.92904953145917
+          "pe": 84.70552147239263,
+          "pe_ttm": 18.48326639892905,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -318,16 +255,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 1.17,
           "eps_ttm": 4.55,
-          "pe": 14.918681318681319
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 71.51,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 1.17,
-          "eps_ttm": 4.55,
-          "pe": 15.716483516483517
+          "pe": 58.01709401709402,
+          "pe_ttm": 14.918681318681319,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -350,7 +280,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": -0.09,
           "eps_ttm": null,
-          "pe": null
+          "pe": -1806.3333333333333,
+          "pe_ttm": null,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -373,7 +305,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 8.76,
           "eps_ttm": null,
-          "pe": null
+          "pe": 19.29566210045662,
+          "pe_ttm": null,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -397,16 +331,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 1.66,
           "eps_ttm": 5.76,
-          "pe": 106.89756944444446
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 608.1,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 1.66,
-          "eps_ttm": 5.76,
-          "pe": 105.57291666666667
+          "pe": 370.921686746988,
+          "pe_ttm": 106.89756944444446,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -430,16 +357,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 9.11,
           "eps_ttm": 19.91,
-          "pe": 16.988448016072326
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 351.66,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 9.11,
-          "eps_ttm": 19.91,
-          "pe": 17.662481165243598
+          "pe": 37.12843029637761,
+          "pe_ttm": 16.988448016072326,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -463,16 +383,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 1.88,
           "eps_ttm": 8.559999999999999,
-          "pe": 28.99883177570094
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 262.43,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 1.88,
-          "eps_ttm": 8.559999999999999,
-          "pe": 30.657710280373838
+          "pe": 132.0372340425532,
+          "pe_ttm": 28.99883177570094,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -496,16 +409,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 0.33,
           "eps_ttm": 1.74,
-          "pe": 203.51149425287358
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 382.7,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 0.33,
-          "eps_ttm": 1.74,
-          "pe": 219.94252873563218
+          "pe": 1073.060606060606,
+          "pe_ttm": 203.51149425287358,
+          "pe_basis": "quarterly_eps"
         }
       ]
     },
@@ -529,16 +435,9 @@
           "fiscal_date_ending": "2026-06-30",
           "eps": 6.18,
           "eps_ttm": 29.62,
-          "pe": 24.50810263335584
-        },
-        {
-          "observed_at": "2026-10-10",
-          "price": 718.67,
-          "price_date": "2026-10-09",
-          "fiscal_date_ending": "2026-06-30",
-          "eps": 6.18,
-          "eps_ttm": 29.62,
-          "pe": 24.26299797434166
+          "pe": 117.46440129449837,
+          "pe_ttm": 24.50810263335584,
+          "pe_basis": "quarterly_eps"
         }
       ]
     }

@@ -16,7 +16,7 @@ const gap=draw([points[0],{...points[1],pe:null},{...points[1],observed_at:'2026
 assert.equal((gap.match(/<polyline/g)||[]).length,1);
 assert.doesNotMatch(graph,/NaN|Infinity/);
 vm.runInContext(`state.wishlist=['A'];state.earnings={A:{quarters:[{fiscal_date_ending:'2026-06-30',eps:2,eps_ttm:8,reported_date:'2026-07-23',saved_at:'2026-10-03'}],valuations:${JSON.stringify(points)}}};state.stocks=[{symbol:'A',price:80,updated:'2026-10-01'}];renderEarnings()`,context);
-assert.match(elements.get('#earnings-list').innerHTML,/10\.0×/);
+assert.match(elements.get('#earnings-list').innerHTML,/40\.0×/);
 assert.match(elements.get('#earnings-list').innerHTML,/80\.00/);
 vm.runInContext("state.stocks[0].updated='2026-07-01';renderEarnings()",context);
 assert.match(elements.get('#earnings-list').innerHTML,/Awaiting price after earnings report/);
@@ -34,9 +34,15 @@ assert.equal(vm.runInContext("Object.keys(poolConfig).join(',')",context),'wishl
 
 vm.runInContext("state.wishlist=['LOSS','MISSING','SHORT'];state.earnings={LOSS:{quarters:[{fiscal_date_ending:'2026-06-30',eps:-1,eps_ttm:-4}]},SHORT:{quarters:[{fiscal_date_ending:'2026-06-30',eps:2}]} };renderEarnings()",context);
 const pending=elements.get('#earnings-list').innerHTML;
-assert.match(pending,/Trailing earnings are zero or negative/);
-assert.match(pending,/Need four consecutive reported quarters/);
+assert.match(pending,/Awaiting price/);
+vm.runInContext("state.stocks.push({symbol:'SHORT',price:80,updated:'2026-10-09'});renderEarnings()",context);
+assert.match(elements.get('#earnings-list').innerHTML,/40\.0×/);
 assert.match(pending,/Awaiting reported earnings/);
 assert.doesNotMatch(pending,/N\/A|NaN|undefined/);
 assert.match(vm.runInContext("card({symbol:'SHORT',name:'Short',price:30,sma200:20,distance:50,updated:'2026-10-09'})",context),/EPS <b>2.00<\/b>/);
 assert.ok(fs.readFileSync('index.html','utf8').indexOf('id="earnings-section"')<fs.readFileSync('index.html','utf8').indexOf('id="stock-list"'));
+
+vm.runInContext("state.stocks.push({symbol:'LOSS',price:20,updated:'2026-10-09'});renderEarnings()",context);
+assert.match(elements.get('#earnings-list').innerHTML,/-20\.0×/);
+vm.runInContext("state.earnings.SHORT.quarters[0].eps=0;renderEarnings()",context);
+assert.match(elements.get('#earnings-list').innerHTML,/Quarterly EPS is zero; PE is undefined/);
