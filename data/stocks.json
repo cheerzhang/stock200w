@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T14:38:19.225683+00:00",
+  "generated_at": "2026-10-12T17:21:48.368199+00:00",
   "stocks": [
     {
       "price": 453.31,
@@ -727,58 +727,64 @@
       "distance": 7.62610877692782
     },
     {
-      "price": 179.79,
-      "sma200": 181.1554905,
-      "updated": "2026-09-11",
+      "price": 181.97,
+      "sma200": 181.794267,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "ODFL",
       "name": "Old Dominion Freight Line",
       "source": "Alpha Vantage key 1",
-      "distance": -0.7537671070477536
+      "distance": 0.09666586460617133
     },
     {
-      "price": 85.82,
-      "sma200": 78.1090915,
-      "updated": "2026-09-11",
+      "price": 86.45,
+      "sma200": 78.6931495,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "ORLY",
       "name": "O'Reilly Automotive",
       "source": "Alpha Vantage key 1",
-      "distance": 9.87197309803558
+      "distance": 9.857084827949357
     },
     {
-      "price": 330.65,
-      "sma200": 169.29965,
-      "updated": "2026-09-11",
+      "price": 418.78,
+      "sma200": 175.42175,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "PANW",
       "name": "Palo Alto Networks",
       "source": "Alpha Vantage key 1",
-      "distance": 95.30459749916787
+      "distance": 138.72752381047388
     },
     {
-      "price": 115.8,
-      "sma200": 114.4603175,
-      "updated": "2026-09-11",
+      "price": 103.98,
+      "sma200": 114.4007285,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "PAYX",
       "name": "Paychex",
       "source": "Alpha Vantage key 1",
-      "distance": 1.1704340240013655
+      "distance": -9.108970403103678
     },
     {
-      "price": 122.73,
-      "sma200": 94.30238250000001,
-      "updated": "2026-09-11",
+      "price": 108.04,
+      "sma200": 95.331356,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "PCAR",
       "name": "PACCAR",
       "source": "Alpha Vantage key 1",
-      "distance": 30.145174221870796
+      "distance": 13.331021956721155
     },
     {
-      "price": 77.81,
-      "sma200": 107.21155,
-      "updated": "2026-09-11",
+      "price": 81.35,
+      "sma200": 107.21780000000001,
+      "weeks": 200,
+      "updated": "2026-10-09",
       "symbol": "PDD",
       "name": "PDD Holdings",
       "source": "Alpha Vantage key 1",
-      "distance": -27.42386431312671
+      "distance": -24.126404384346646
     },
     {
       "price": 136.32,
