@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T12:27:38.111715+00:00",
+  "generated_at": "2026-10-19T15:17:25.702390+00:00",
   "stocks": [
     {
       "price": 412.61,
@@ -302,64 +302,64 @@
       "distance": 91.98853327472433
     },
     {
-      "price": 361.54,
-      "sma200": 204.95102375466797,
+      "price": 328.75,
+      "sma200": 206.33266899999998,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "AVGO",
       "name": "Broadcom",
-      "source": "Tiingo",
-      "distance": 76.40311981694386
+      "source": "Alpha Vantage key 1",
+      "distance": 59.33007680911646
     },
     {
-      "price": 422.89,
-      "sma200": 424.58824999999996,
+      "price": 390.29,
+      "sma200": 425.69300000000004,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "AXON",
       "name": "Axon Enterprise",
-      "source": "Tiingo",
-      "distance": -0.3999757412033844
+      "source": "Alpha Vantage key 1",
+      "distance": -8.31655676743569
     },
     {
-      "price": 160.34,
-      "sma200": 160.2452725020955,
+      "price": 163.45,
+      "sma200": 160.683779,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "BKNG",
       "name": "Booking Holdings",
-      "source": "Tiingo",
-      "distance": 0.05911406709564471
+      "source": "Alpha Vantage key 1",
+      "distance": 1.7215309580191018
     },
     {
-      "price": 56.7,
-      "sma200": 40.1787909102825,
+      "price": 55.7,
+      "sma200": 40.3265685,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "BKR",
       "name": "Baker Hughes",
-      "source": "Tiingo",
-      "distance": 41.11922911420767
+      "source": "Alpha Vantage key 1",
+      "distance": 38.122339866334045
     },
     {
-      "price": 104.25,
-      "sma200": 76.1562003881985,
+      "price": 112.4,
+      "sma200": 76.472589,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "CCEP",
       "name": "Coca-Cola Europacific Partners",
-      "source": "Tiingo",
-      "distance": 36.88970755972096
+      "source": "Alpha Vantage key 1",
+      "distance": 46.980769802366716
     },
     {
-      "price": 352.84,
-      "sma200": 283.83925,
+      "price": 319.51,
+      "sma200": 284.6208,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-16",
       "symbol": "CDNS",
       "name": "Cadence Design Systems",
-      "source": "Tiingo",
-      "distance": 24.309798591984723
+      "source": "Alpha Vantage key 1",
+      "distance": 12.258134331714343
     },
     {
       "price": 298.07,
