@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T13:34:31.473736+00:00",
+  "generated_at": "2026-10-26T15:51:10.902490+00:00",
   "stocks": [
     {
       "price": 418.51,
@@ -691,50 +691,54 @@
       "distance": 44.569625666201304
     },
     {
-      "price": 1217.8,
-      "sma200": 767.748184,
-      "updated": "2026-09-18",
+      "price": 1140.12,
+      "sma200": 790.311733,
+      "weeks": 200,
+      "updated": "2026-10-23",
       "symbol": "MPWR",
       "name": "Monolithic Power Systems",
       "source": "Alpha Vantage key 1",
-      "distance": 58.61971742547291
+      "distance": 44.26206171482967
     },
     {
-      "price": 153.92,
-      "sma200": 163.278185,
-      "updated": "2026-09-18",
+      "price": 146.01,
+      "sma200": 166.59238000000002,
+      "weeks": 200,
+      "updated": "2026-10-23",
       "symbol": "MSTR",
       "name": "Strategy",
       "source": "Alpha Vantage key 1",
-      "distance": -5.731436198901907
+      "distance": -12.354934841557597
     },
     {
-      "price": 71.79,
-      "sma200": 72.988,
-      "updated": "2026-09-18",
+      "price": 65.85,
+      "sma200": 73.9566075,
+      "weeks": 200,
+      "updated": "2026-10-23",
       "symbol": "NFLX",
       "name": "Netflix",
       "source": "Alpha Vantage key 1",
-      "distance": -1.6413657039513252
+      "distance": -10.96130254487404
     },
     {
-      "price": 227.99,
-      "sma200": 211.835216,
-      "updated": "2026-09-18",
+      "price": 234.92,
+      "sma200": 213.81927299999998,
+      "weeks": 200,
+      "updated": "2026-10-23",
       "symbol": "NXPI",
       "name": "NXP Semiconductors",
       "source": "Alpha Vantage key 1",
-      "distance": 7.62610877692782
+      "distance": 9.868486925404518
     },
     {
-      "price": 181.97,
-      "sma200": 181.794267,
+      "price": 182.7,
+      "sma200": 182.223892,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-23",
       "symbol": "ODFL",
       "name": "Old Dominion Freight Line",
       "source": "Alpha Vantage key 1",
-      "distance": 0.09666586460617133
+      "distance": 0.26127638630393246
     },
     {
       "price": 86.45,
