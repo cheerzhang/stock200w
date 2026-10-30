@@ -1,195 +1,195 @@
 {
-  "generated_at": "2026-10-29T15:51:57.721095+00:00",
+  "generated_at": "2026-10-30T15:32:22.772349+00:00",
   "stocks": [
     {
-      "price": 439.51,
-      "sma200": 209.269521,
+      "price": 431.81,
+      "sma200": 209.231021,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "TSM",
       "name": "TSM",
       "source": "Alpha Vantage key 1",
-      "distance": 110.02102833694542
+      "distance": 106.37953107345398
     },
     {
-      "price": 215.38,
-      "sma200": 121.796784,
+      "price": 213.66,
+      "sma200": 121.788184,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "NVDA",
       "name": "NVIDIA",
       "source": "Alpha Vantage key 1",
-      "distance": 76.83553943427603
+      "distance": 75.43573849495941
     },
     {
-      "price": 983.23,
-      "sma200": 239.094754,
+      "price": 934.27,
+      "sma200": 238.849954,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "MU",
       "name": "Micron Technology",
       "source": "Alpha Vantage key 1",
-      "distance": 311.23026898365157
+      "distance": 291.1535189158965
     },
     {
-      "price": 251.65,
-      "sma200": 92.6105845,
+      "price": 218.34,
+      "sma200": 92.4440345,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "MRVL",
       "name": "Marvell Technology",
       "source": "Alpha Vantage key 1",
-      "distance": 171.72919959273122
+      "distance": 136.18614352016408
     },
     {
-      "price": 95.53,
-      "sma200": 42.077185,
+      "price": 92.07,
+      "sma200": 42.059885,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "INTC",
       "name": "Intel",
       "source": "Alpha Vantage key 1",
-      "distance": 127.03514980861956
+      "distance": 118.90216770683035
     },
     {
-      "price": 131.2,
-      "sma200": 66.690589,
+      "price": 128.88,
+      "sma200": 66.678989,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "GLW",
       "name": "Corning Inc.",
       "source": "Alpha Vantage key 1",
-      "distance": 96.72940660338145
+      "distance": 93.28427430115953
     },
     {
-      "price": 196.81,
-      "sma200": 81.7174,
+      "price": 196.42,
+      "sma200": 81.71545,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "PLTR",
       "name": "Palantir Technologies",
       "source": "Alpha Vantage key 1",
-      "distance": 140.8422196496707
+      "distance": 140.37070101186492
     },
     {
-      "price": 531.01,
-      "sma200": 403.26102299999997,
+      "price": 530.14,
+      "sma200": 403.25667300000003,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "MSFT",
       "name": "Microsoft",
       "source": "Alpha Vantage key 1",
-      "distance": 31.678979547696095
+      "distance": 31.464656506750455
     },
     {
-      "price": 144.54,
-      "sma200": 148.4909945,
+      "price": 139.56,
+      "sma200": 148.4660945,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "ORCL",
       "name": "Oracle Corporation",
       "source": "Alpha Vantage key 1",
-      "distance": -2.6607637138560625
+      "distance": -5.998739665102459
     },
     {
-      "price": 65.27,
-      "sma200": 67.4762,
+      "price": 65.74,
+      "sma200": 67.47855,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "UBER",
       "name": "Uber",
       "source": "Alpha Vantage key 1",
-      "distance": -3.269597280226222
+      "distance": -2.576448367666473
     },
     {
-      "price": 145.23,
-      "sma200": 145.2685,
+      "price": 143.89,
+      "sma200": 145.2015,
       "weeks": 20,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "SPCX",
       "name": "SPCX",
       "source": "Alpha Vantage key 1",
-      "distance": -0.026502648543902385
+      "distance": -0.9032275837370984
     },
     {
-      "price": 164.7,
-      "sma200": 164.333675,
+      "price": 162.09,
+      "sma200": 164.17055,
       "weeks": 16,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "SKHY",
       "name": "SKHY",
       "source": "Alpha Vantage key 1",
-      "distance": 0.22291535803602436
+      "distance": -1.2673101235270212
     },
     {
-      "price": 578.44,
-      "sma200": 195.469525,
+      "price": 566.42,
+      "sma200": 195.409425,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "AMD",
       "name": "Advanced Micro Devices",
       "source": "Alpha Vantage key 1",
-      "distance": 195.9233670824135
+      "distance": 189.8631936509715
     },
     {
-      "price": 324.89,
-      "sma200": 201.95492050000001,
+      "price": 283.82,
+      "sma200": 201.7495705,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "GOOGL",
       "name": "Alphabet Class A",
       "source": "Alpha Vantage key 1",
-      "distance": 60.87253491800908
+      "distance": 40.67935772879376
     },
     {
-      "price": 254.6,
-      "sma200": 189.770075,
+      "price": 243.79,
+      "sma200": 189.716025,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "AMZN",
       "name": "Amazon",
       "source": "Alpha Vantage key 1",
-      "distance": 34.16235410140403
+      "distance": 28.502586958587184
     },
     {
-      "price": 404.22,
-      "sma200": 294.3641,
+      "price": 403.3,
+      "sma200": 294.3595,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "TSLA",
       "name": "Tesla",
       "source": "Alpha Vantage key 1",
-      "distance": 37.31973430183913
+      "distance": 37.009337222002344
     },
     {
-      "price": 612.49,
-      "sma200": 510.10850250000004,
+      "price": 624.52,
+      "sma200": 510.1686525,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "META",
       "name": "Meta Platforms",
       "source": "Alpha Vantage key 1",
-      "distance": 20.070533425386294
+      "distance": 22.414420592021767
     },
     {
-      "price": 182.34,
-      "sma200": 63.679975000000006,
+      "price": 171.99,
+      "sma200": 63.628225,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "NBIS",
       "name": "Nebius Group",
       "source": "Alpha Vantage key 1",
-      "distance": 186.33805211135837
+      "distance": 170.30457002375914
     },
     {
-      "price": 58.6,
-      "sma200": 30.8682,
+      "price": 59.1,
+      "sma200": 30.870700000000003,
       "weeks": 200,
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "symbol": "RKLB",
       "name": "Rocket Lab",
       "source": "Alpha Vantage key 1",
-      "distance": 89.83938162899034
+      "distance": 91.44366664831051
     },
     {
       "price": 347.1,
@@ -462,24 +462,24 @@
       "distance": 11.911361205644933
     },
     {
-      "price": 280.24,
-      "sma200": 133.585475,
+      "price": 265.84,
+      "sma200": 133.513475,
       "weeks": 200,
-      "updated": "2026-10-26",
+      "updated": "2026-10-29",
       "symbol": "DDOG",
       "name": "Datadog",
       "source": "Alpha Vantage key 1",
-      "distance": 109.78328669340733
+      "distance": 99.11098860995115
     },
     {
-      "price": 78.57,
-      "sma200": 91.551875,
+      "price": 79.93,
+      "sma200": 91.55867500000001,
       "weeks": 200,
-      "updated": "2026-10-26",
+      "updated": "2026-10-29",
       "symbol": "DXCM",
       "name": "DexCom",
       "source": "Alpha Vantage key 1",
-      "distance": -14.179802434412192
+      "distance": -12.70078995791497
     },
     {
       "price": 209.7,
@@ -492,34 +492,34 @@
       "distance": 39.06030532503719
     },
     {
-      "price": 42.12,
-      "sma200": 38.8092765,
+      "price": 45.91,
+      "sma200": 38.896306,
       "weeks": 200,
-      "updated": "2026-10-12",
+      "updated": "2026-10-29",
       "symbol": "EXC",
       "name": "Exelon",
       "source": "Alpha Vantage key 1",
-      "distance": 8.530752950264331
+      "distance": 18.031774019877346
     },
     {
-      "price": 195.11,
-      "sma200": 155.7503715,
+      "price": 206.43,
+      "sma200": 156.6679365,
       "weeks": 200,
-      "updated": "2026-10-12",
+      "updated": "2026-10-29",
       "symbol": "FANG",
       "name": "Diamondback Energy",
       "source": "Alpha Vantage key 1",
-      "distance": 25.27096925736707
+      "distance": 31.76276180799764
     },
     {
-      "price": 50.38,
-      "sma200": 36.1712525,
+      "price": 52.55,
+      "sma200": 36.297698,
       "weeks": 200,
-      "updated": "2026-10-15",
+      "updated": "2026-10-29",
       "symbol": "FAST",
       "name": "Fastenal",
       "source": "Alpha Vantage key 1",
-      "distance": 39.28187861340993
+      "distance": 44.775021269943906
     },
     {
       "price": 181.91,
