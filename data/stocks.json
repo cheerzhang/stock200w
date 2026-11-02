@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T15:45:20.850341+00:00",
+  "generated_at": "2026-11-02T19:11:33.886544+00:00",
   "stocks": [
     {
       "price": 406.13,
@@ -252,64 +252,64 @@
       "distance": 30.906343272885795
     },
     {
-      "price": 223.82,
-      "sma200": 258.83585,
+      "price": 165.0,
+      "sma200": 258.4433,
       "weeks": 200,
-      "updated": "2026-10-13",
+      "updated": "2026-10-30",
       "symbol": "ALNY",
       "name": "Alnylam Pharmaceuticals",
       "source": "Alpha Vantage key 1",
-      "distance": -13.52820716295675
+      "distance": -36.15620911820891
     },
     {
-      "price": 464.24,
-      "sma200": 224.69362850000002,
+      "price": 390.09,
+      "sma200": 227.31194449999998,
       "weeks": 200,
-      "updated": "2026-10-13",
+      "updated": "2026-10-30",
       "symbol": "AMAT",
       "name": "Applied Materials",
       "source": "Alpha Vantage key 1",
-      "distance": 106.61021992441589
+      "distance": 71.60998770128421
     },
     {
-      "price": 414.87,
-      "sma200": 285.2674614777955,
+      "price": 466.01,
+      "sma200": 288.4218795,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-30",
       "symbol": "AMGN",
       "name": "Amgen",
-      "source": "Tiingo",
-      "distance": 45.431938802558605
+      "source": "Alpha Vantage key 1",
+      "distance": 61.57234701051868
     },
     {
-      "price": 277.04,
-      "sma200": 242.55147499999998,
+      "price": 228.5,
+      "sma200": 246.174925,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-30",
       "symbol": "APP",
       "name": "AppLovin",
-      "source": "Tiingo",
-      "distance": 14.219053914225842
+      "source": "Alpha Vantage key 1",
+      "distance": -7.179823452774481
     },
     {
-      "price": 1780.34,
-      "sma200": 927.3157983099114,
+      "price": 1565.9,
+      "sma200": 941.95817,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-10-30",
       "symbol": "ASML",
       "name": "ASML Holding",
-      "source": "Tiingo",
-      "distance": 91.98853327472433
+      "source": "Alpha Vantage key 1",
+      "distance": 66.2388044258908
     },
     {
-      "price": 328.75,
-      "sma200": 206.33266899999998,
+      "price": 326.08,
+      "sma200": 209.04299350000002,
       "weeks": 200,
-      "updated": "2026-10-16",
+      "updated": "2026-10-30",
       "symbol": "AVGO",
       "name": "Broadcom",
       "source": "Alpha Vantage key 1",
-      "distance": 59.33007680911646
+      "distance": 55.987050577708054
     },
     {
       "price": 390.29,
