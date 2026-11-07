@@ -19,7 +19,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -54,7 +54,7 @@
         }
       ],
       "start_quarter": "2026-07-31",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -80,7 +80,7 @@
         }
       ],
       "start_quarter": "2026-08-31",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -106,7 +106,7 @@
         }
       ],
       "start_quarter": "2026-07-31",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -139,7 +139,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -181,7 +181,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -213,10 +213,17 @@
           "eps": 0.41,
           "eps_ttm": 1.2,
           "saved_at": "2026-10-03"
+        },
+        {
+          "fiscal_date_ending": "2026-09-30",
+          "reported_date": "2026-11-02",
+          "eps": 0.32,
+          "eps_ttm": 1.31,
+          "saved_at": "2026-11-07"
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -228,6 +235,15 @@
           "pe": 463.5121951219512,
           "pe_ttm": 158.36666666666667,
           "pe_basis": "quarterly_eps"
+        },
+        {
+          "observed_at": "2026-11-07",
+          "price": 154.99,
+          "price_date": "2026-11-05",
+          "fiscal_date_ending": "2026-09-30",
+          "eps": 0.32,
+          "pe_basis": "quarterly_eps",
+          "pe": 484.34375
         }
       ]
     },
@@ -249,7 +265,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -284,7 +300,7 @@
         }
       ],
       "start_quarter": "2026-08-31",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -307,10 +323,17 @@
           "eps": 1.17,
           "eps_ttm": 4.55,
           "saved_at": "2026-10-03"
+        },
+        {
+          "fiscal_date_ending": "2026-09-30",
+          "reported_date": "2026-11-04",
+          "eps": 0.25,
+          "eps_ttm": 1.69,
+          "saved_at": "2026-11-07"
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -322,6 +345,15 @@
           "pe": 58.01709401709402,
           "pe_ttm": 14.918681318681319,
           "pe_basis": "quarterly_eps"
+        },
+        {
+          "observed_at": "2026-11-07",
+          "price": 68.78,
+          "price_date": "2026-11-05",
+          "fiscal_date_ending": "2026-09-30",
+          "eps": 0.25,
+          "pe_basis": "quarterly_eps",
+          "pe": 275.12
         }
       ]
     },
@@ -341,7 +373,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-10",
@@ -381,7 +413,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-10",
@@ -413,10 +445,17 @@
           "eps": 1.66,
           "eps_ttm": 5.76,
           "saved_at": "2026-10-03"
+        },
+        {
+          "fiscal_date_ending": "2026-09-30",
+          "reported_date": "2026-11-03",
+          "eps": 1.84,
+          "eps_ttm": 6.4,
+          "saved_at": "2026-11-07"
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -428,6 +467,15 @@
           "pe": 370.921686746988,
           "pe_ttm": 106.89756944444446,
           "pe_basis": "quarterly_eps"
+        },
+        {
+          "observed_at": "2026-11-07",
+          "price": 404.4,
+          "price_date": "2026-11-05",
+          "fiscal_date_ending": "2026-09-30",
+          "eps": 1.84,
+          "pe_basis": "quarterly_eps",
+          "pe": 219.78260869565216
         }
       ]
     },
@@ -449,7 +497,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -491,7 +539,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -533,7 +581,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -575,7 +623,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-03",
@@ -610,7 +658,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-10",
@@ -634,7 +682,7 @@
         }
       ],
       "start_quarter": "2026-06-30",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-07",
       "valuations": [
         {
           "observed_at": "2026-10-10",
