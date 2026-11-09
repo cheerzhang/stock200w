@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T15:47:57.004811+00:00",
+  "generated_at": "2026-11-09T19:29:54.771609+00:00",
   "stocks": [
     {
       "price": 375.44,
@@ -612,64 +612,64 @@
       "distance": -10.99381719204514
     },
     {
-      "price": 161.74,
-      "sma200": 91.544864,
+      "price": 138.49,
+      "sma200": 92.57142449999999,
       "weeks": 200,
-      "updated": "2026-10-20",
+      "updated": "2026-11-06",
       "symbol": "KLAC",
       "name": "KLA",
       "source": "Alpha Vantage key 1",
-      "distance": 76.67839891050579
+      "distance": 49.60340164150765
     },
     {
-      "price": 501.89,
-      "sma200": 426.664788,
+      "price": 515.25,
+      "sma200": 428.78860249999997,
       "weeks": 200,
-      "updated": "2026-10-20",
+      "updated": "2026-11-06",
       "symbol": "LIN",
       "name": "Linde",
       "source": "Alpha Vantage key 1",
-      "distance": 17.630986693938276
+      "distance": 20.16410813997791
     },
     {
-      "price": 263.45,
-      "sma200": 124.663221,
+      "price": 200.44,
+      "sma200": 126.264918,
       "weeks": 200,
-      "updated": "2026-10-20",
+      "updated": "2026-11-06",
       "symbol": "LRCX",
       "name": "Lam Research",
       "source": "Alpha Vantage key 1",
-      "distance": 111.3293703521426
+      "distance": 58.74559867848645
     },
     {
-      "price": 397.31,
-      "sma200": 255.830794,
+      "price": 416.47,
+      "sma200": 258.418744,
       "weeks": 200,
-      "updated": "2026-10-20",
+      "updated": "2026-11-06",
       "symbol": "MAR",
       "name": "Marriott International",
       "source": "Alpha Vantage key 1",
-      "distance": 55.30186721775174
+      "distance": 61.16091021632704
     },
     {
-      "price": 75.85,
-      "sma200": 71.7443445,
+      "price": 58.35,
+      "sma200": 71.76002249999999,
       "weeks": 200,
-      "updated": "2026-10-20",
+      "updated": "2026-11-06",
       "symbol": "MCHP",
       "name": "Microchip Technology",
       "source": "Alpha Vantage key 1",
-      "distance": 5.722619014241603
+      "distance": -18.687316465097247
     },
     {
-      "price": 60.41,
-      "sma200": 61.851663435244,
+      "price": 66.02,
+      "sma200": 61.9444645,
       "weeks": 200,
-      "updated": "2026-10-09",
+      "updated": "2026-11-06",
       "symbol": "MDLZ",
       "name": "Mondelez International",
-      "source": "Tiingo",
-      "distance": -2.330840199234674
+      "source": "Alpha Vantage key 1",
+      "distance": 6.579337690456577
     },
     {
       "price": 1889.85,
