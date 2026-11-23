@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T16:54:08.065253+00:00",
+  "generated_at": "2026-11-23T20:52:42.571782+00:00",
   "stocks": [
     {
       "price": 318.71,
@@ -492,54 +492,64 @@
       "distance": 39.06030532503719
     },
     {
-      "price": 45.91,
-      "sma200": 38.896306,
+      "price": 45.7,
+      "sma200": 39.028115,
       "weeks": 200,
-      "updated": "2026-10-29",
+      "updated": "2026-11-20",
       "symbol": "EXC",
       "name": "Exelon",
       "source": "Alpha Vantage key 1",
-      "distance": 18.031774019877346
+      "distance": 17.095073641143067
     },
     {
-      "price": 206.43,
-      "sma200": 156.6679365,
+      "price": 175.75,
+      "sma200": 156.5233825,
       "weeks": 200,
-      "updated": "2026-10-29",
+      "updated": "2026-11-20",
       "symbol": "FANG",
       "name": "Diamondback Energy",
       "source": "Alpha Vantage key 1",
-      "distance": 31.76276180799764
+      "distance": 12.283543322992019
     },
     {
-      "price": 51.91,
-      "sma200": 36.294498,
+      "price": 50.61,
+      "sma200": 36.7582725,
       "weeks": 200,
-      "updated": "2026-10-30",
+      "updated": "2026-11-20",
       "symbol": "FAST",
       "name": "Fastenal",
       "source": "Alpha Vantage key 1",
-      "distance": 43.02443306971762
+      "distance": 37.68329292406221
     },
     {
-      "price": 136.08,
-      "sma200": 86.34545,
+      "price": 124.56,
+      "sma200": 87.46440000000001,
       "weeks": 200,
-      "updated": "2026-10-30",
+      "updated": "2026-11-20",
       "symbol": "FTNT",
       "name": "Fortinet",
       "source": "Alpha Vantage key 1",
-      "distance": 57.599502926905835
+      "distance": 42.41222714613029
     },
     {
-      "price": 170.68,
-      "sma200": 95.6994195,
+      "price": 80.64,
+      "sma200": 76.359219,
       "weeks": 200,
-      "updated": "2026-10-30",
+      "updated": "2026-11-20",
+      "symbol": "GEHC",
+      "name": "GE HealthCare",
+      "source": "Alpha Vantage key 1",
+      "distance": 5.606108936237297
+    },
+    {
+      "price": 166.43,
+      "sma200": 97.06854600000001,
+      "weeks": 200,
+      "updated": "2026-11-20",
       "symbol": "GILD",
       "name": "Gilead Sciences",
       "source": "Alpha Vantage key 1",
-      "distance": 78.35008915597446
+      "distance": 71.45615841407576
     },
     {
       "price": 278.22,
@@ -1040,13 +1050,6 @@
       "weeks": 157,
       "checked_at": "2026-07-05",
       "retry_after": "2027-04-29"
-    },
-    {
-      "symbol": "GEHC",
-      "name": "GE HealthCare",
-      "weeks": 182,
-      "checked_at": "2026-07-05",
-      "retry_after": "2026-11-05"
     }
   ]
 }
